@@ -23,17 +23,21 @@ jobs:
 
       - name: Make .icns from Atom.jpeg
         run: |
+          ls -la resources || true
+          file resources/Atom.jpeg || true
           mkdir -p resources/icon.iconset
-          sips -z 16 16     resources/Atom.jpeg --out resources/icon.iconset/icon_16x16.png
-          sips -z 32 32     resources/Atom.jpeg --out resources/icon.iconset/icon_16x16@2x.png
-          sips -z 32 32     resources/Atom.jpeg --out resources/icon.iconset/icon_32x32.png
-          sips -z 64 64     resources/Atom.jpeg --out resources/icon.iconset/icon_32x32@2x.png
-          sips -z 128 128   resources/Atom.jpeg --out resources/icon.iconset/icon_128x128.png
-          sips -z 256 256   resources/Atom.jpeg --out resources/icon.iconset/icon_128x128@2x.png
-          sips -z 256 256   resources/Atom.jpeg --out resources/icon.iconset/icon_256x256.png
-          sips -z 512 512   resources/Atom.jpeg --out resources/icon.iconset/icon_256x256@2x.png
-          sips -z 512 512   resources/Atom.jpeg --out resources/icon.iconset/icon_512x512.png
-          sips -z 1024 1024 resources/Atom.jpeg --out resources/icon.iconset/icon_512x512@2x.png
+          sips -s format png resources/Atom.jpeg --out resources/Atom.png
+          sips -s format png -z 16 16     resources/Atom.png --out resources/icon.iconset/icon_16x16.png
+          sips -s format png -z 32 32     resources/Atom.png --out resources/icon.iconset/icon_16x16@2x.png
+          sips -s format png -z 32 32     resources/Atom.png --out resources/icon.iconset/icon_32x32.png
+          sips -s format png -z 64 64     resources/Atom.png --out resources/icon.iconset/icon_32x32@2x.png
+          sips -s format png -z 128 128   resources/Atom.png --out resources/icon.iconset/icon_128x128.png
+          sips -s format png -z 256 256   resources/Atom.png --out resources/icon.iconset/icon_128x128@2x.png
+          sips -s format png -z 256 256   resources/Atom.png --out resources/icon.iconset/icon_256x256.png
+          sips -s format png -z 512 512   resources/Atom.png --out resources/icon.iconset/icon_256x256@2x.png
+          sips -s format png -z 512 512   resources/Atom.png --out resources/icon.iconset/icon_512x512.png
+          sips -s format png -z 1024 1024 resources/Atom.png --out resources/icon.iconset/icon_512x512@2x.png
+          file resources/icon.iconset/icon_16x16.png || true
           iconutil -c icns resources/icon.iconset -o resources/Atom.icns
 
       - name: Build .app
