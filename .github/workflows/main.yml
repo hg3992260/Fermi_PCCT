@@ -29,6 +29,7 @@ jobs:
     - name: Build with PyInstaller (Onedir Mode)
       run: |
         pyinstaller --noconfirm --onedir --windowed --name "FermiSimulator" \
+          --icon "resources/Atom.ico" \
           --add-data "data:data" \
           --add-data "src:src" \
           --hidden-import "matplotlib.backends.backend_svg" \
