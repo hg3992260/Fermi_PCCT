@@ -1495,7 +1495,12 @@ class MainWindow(QMainWindow):
             except Exception as e:
                 import traceback
                 tb_str = traceback.format_exc()
-                print(f"Error simulating {mat_name}: {e}\n{tb_str}")
+                error_msg = f"Error simulating {mat_name}: {str(e)}\n\n{tb_str}"
+                print(error_msg)
+                
+                # Show error in UI to avoid silent crash in no-console mode
+                t = TRANSLATIONS[self.current_lang]
+                QMessageBox.critical(self, t['msg_sim_error_title'], t['msg_sim_error_text'].format(str(e)))
 
         # Update Summary Widget
         if summary_data:
