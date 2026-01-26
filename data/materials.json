@@ -112,5 +112,19 @@
             "Pb": 1,
             "I": 3
         }
+    },
+    "4H-SiC": {
+        "name": "4H-SiC",
+        "Eg": 3.26,
+        "mu_e": 950.0,
+        "mu_h": 120.0,
+        "tau_e": 1e-06,
+        "tau_h": 1e-06,
+        "W_pair": 7.8,
+        "density": 3.21,
+        "atomic_composition": {
+            "Si": 0.5,
+            "C": 0.5
+        }
     }
 }

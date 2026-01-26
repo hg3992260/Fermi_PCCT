@@ -78,28 +78,19 @@ class MaterialManager:
                     data = json.load(f)
                     for name, props in data.items():
                         self.materials[name] = MaterialProperties(**props)
-                # Success loading user data.
-                # However, if we are in frozen mode, we might want to ensure default materials exist
-                # in case the user's file is old and missing new defaults (like GaAs).
-                # But we shouldn't overwrite user's custom changes.
-                # Let's just return what we have. If a material is missing, 
-                # DetectorSimulator handles fallback to hardcoded MATERIALS if needed (but MATERIALS is populated here!)
-                
-                # Wait, MATERIALS global is populated by _manager which calls this.
-                # So if we only load user file, and user file lacks GaAs, then MATERIALS lacks GaAs.
-                # DetectorSimulator checks MATERIALS global.
-                # So we SHOULD merge with bundled defaults if possible?
-                pass 
+                return
             except Exception as e:
                 print(f"Error loading user materials: {e}")
         
-        # 2. If materials is empty (user file missing or failed), load bundled
-        if not self.materials and os.path.exists(self.bundled_data_file):
+        # 2. Fallback to bundled data
+        if os.path.exists(self.bundled_data_file):
             try:
                 with open(self.bundled_data_file, 'r') as f:
                     data = json.load(f)
                     for name, props in data.items():
                         self.materials[name] = MaterialProperties(**props)
+                # Auto-copy to user dir so they have a writable copy immediately?
+                # Optional, but good for UX. Let's do it on next save.
             except Exception as e:
                 print(f"Error loading bundled materials: {e}")
 

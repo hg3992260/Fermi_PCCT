@@ -1,12 +1,13 @@
 import sys
 import os
+import re
 import numpy as np
 
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, 
                             QHBoxLayout, QLabel, QListWidget, QDoubleSpinBox, 
                             QPushButton, QGroupBox, QFormLayout, QMessageBox, 
                             QInputDialog, QTabWidget, QGridLayout, QAbstractItemView, QScrollArea, QFileDialog,
-                            QDialog, QCheckBox, QDialogButtonBox, QLineEdit, QTableWidget, QTableWidgetItem, QHeaderView)
+                            QDialog, QCheckBox, QDialogButtonBox, QLineEdit, QTableWidget, QTableWidgetItem, QHeaderView, QCompleter)
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QColor, QIcon
 
@@ -20,6 +21,143 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from matplotlib import font_manager
 import xraylib # Import xraylib for atomic number lookups
+
+def parse_atomic_composition(text: str) -> dict:
+    value = (text or "").strip()
+    if not value:
+        raise ValueError("Composition is required.")
+
+    items = {}
+
+    if (":" in value) or ("=" in value):
+        parts = re.split(r"[,\n;]+", value)
+        for part in parts:
+            part = part.strip()
+            if not part:
+                continue
+            if ":" in part:
+                sym, num = part.split(":", 1)
+            else:
+                sym, num = part.split("=", 1)
+            sym = sym.strip()
+            num = num.strip()
+            if not re.fullmatch(r"[A-Z][a-z]?", sym):
+                raise ValueError(f"Invalid element symbol: {sym}")
+            try:
+                coeff = float(num)
+            except ValueError:
+                raise ValueError(f"Invalid composition number: {num}")
+            if coeff <= 0:
+                raise ValueError("Composition numbers must be > 0.")
+            items[sym] = items.get(sym, 0.0) + coeff
+    else:
+        value = re.sub(r"\s+", "", value)
+        tokens = re.findall(r"([A-Z][a-z]?)([0-9]*\.?[0-9]+(?:[eE][+-]?\d+)?)?", value)
+        if not tokens:
+            raise ValueError("Invalid composition format.")
+        for sym, num in tokens:
+            coeff = float(num) if num else 1.0
+            if coeff <= 0:
+                raise ValueError("Composition numbers must be > 0.")
+            items[sym] = items.get(sym, 0.0) + coeff
+
+    if not items:
+        raise ValueError("Composition is required.")
+
+    for sym in list(items.keys()):
+        try:
+            xraylib.SymbolToAtomicNumber(sym)
+        except Exception:
+            raise ValueError(f"Invalid element symbol: {sym}")
+
+    total = float(sum(items.values()))
+    if total <= 0:
+        raise ValueError("Composition numbers must sum to > 0.")
+
+    return {sym: val / total for sym, val in items.items()}
+
+_XRAYLIB_ELEMENT_SYMBOLS = None
+
+def get_xraylib_element_symbols() -> list:
+    global _XRAYLIB_ELEMENT_SYMBOLS
+    if _XRAYLIB_ELEMENT_SYMBOLS is not None:
+        return _XRAYLIB_ELEMENT_SYMBOLS
+    symbols = []
+    for z in range(1, 119):
+        try:
+            sym = xraylib.AtomicNumberToSymbol(z)
+        except Exception:
+            continue
+        if sym:
+            symbols.append(sym)
+    _XRAYLIB_ELEMENT_SYMBOLS = sorted(set(symbols), key=lambda s: (len(s), s))
+    return _XRAYLIB_ELEMENT_SYMBOLS
+
+def composition_text_to_formula(text: str) -> str:
+    value = (text or "").strip()
+    if not value:
+        raise ValueError("Composition is required.")
+
+    if (":" in value) or ("=" in value):
+        parts = re.split(r"[,\n;]+", value)
+        order = []
+        coeffs = {}
+        for part in parts:
+            part = part.strip()
+            if not part:
+                continue
+            if ":" in part:
+                sym, num = part.split(":", 1)
+            else:
+                sym, num = part.split("=", 1)
+            sym = sym.strip()
+            num = num.strip()
+            if not re.fullmatch(r"[A-Z][a-z]?", sym):
+                raise ValueError(f"Invalid element symbol: {sym}")
+            try:
+                coeff = float(num)
+            except ValueError:
+                raise ValueError(f"Invalid composition number: {num}")
+            if coeff <= 0:
+                raise ValueError("Composition numbers must be > 0.")
+            if sym not in coeffs:
+                order.append(sym)
+                coeffs[sym] = 0.0
+            coeffs[sym] += coeff
+
+        if not order:
+            raise ValueError("Composition is required.")
+
+        for sym in order:
+            try:
+                xraylib.SymbolToAtomicNumber(sym)
+            except Exception:
+                raise ValueError(f"Invalid element symbol: {sym}")
+
+        out = []
+        for sym in order:
+            coeff = coeffs[sym]
+            if abs(coeff - 1.0) < 1e-12:
+                out.append(sym)
+            else:
+                out.append(f"{sym}{coeff:g}")
+        return "".join(out)
+
+    value = re.sub(r"\s+", "", value)
+    if not re.fullmatch(r"(?:[A-Z][a-z]?(?:[0-9]*\.?[0-9]+(?:[eE][+-]?\d+)?)?)+", value):
+        raise ValueError("Invalid composition format.")
+
+    tokens = re.findall(r"([A-Z][a-z]?)([0-9]*\.?[0-9]+(?:[eE][+-]?\d+)?)?", value)
+    if not tokens:
+        raise ValueError("Invalid composition format.")
+
+    for sym, _ in tokens:
+        try:
+            xraylib.SymbolToAtomicNumber(sym)
+        except Exception:
+            raise ValueError(f"Invalid element symbol: {sym}")
+
+    return value
 
 # --- Scientific Plotting Style Configuration ---
 # Set global parameters for publication-quality plots
@@ -559,7 +697,7 @@ class ComparisonSummaryWidget(QWidget):
         self.table_group = QGroupBox()
         table_layout = QVBoxLayout(self.table_group)
         self.table = QTableWidget()
-        self.table.setColumnCount(9) # Added Flux Column
+        self.table.setColumnCount(10)
         self.table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         table_layout.addWidget(self.table)
         
@@ -583,7 +721,7 @@ class ComparisonSummaryWidget(QWidget):
         
         headers = [
             t['col_material'], t['col_density'], t['col_z_eff'], t['col_eg'],
-            t['col_mu_e'], t['col_res'], t['col_eff'], t['col_flux'], t['col_score']
+            t['col_mu_e'], t['col_res'], t['col_eff'], t['col_flux'], t['col_peak'], t['col_score']
         ]
         self.table.setHorizontalHeaderLabels(headers)
         
@@ -605,13 +743,28 @@ class ComparisonSummaryWidget(QWidget):
             # 1. Extract Metrics
             density = props.density
             # Z_eff approximation (weighted average)
-            z_eff = sum([xraylib.SymbolToAtomicNumber(el) * frac for el, frac in props.atomic_composition.items()]) if 'xraylib' in sys.modules else 0
+            if 'xraylib' in sys.modules:
+                z_eff = 0.0
+                for el, frac in props.atomic_composition.items():
+                    try:
+                        z_eff += xraylib.SymbolToAtomicNumber(el) * float(frac)
+                    except Exception:
+                        pass
+            else:
+                z_eff = 0
             eg = props.Eg
             mu_e = props.mu_e
             
             # Simulation results
             eff = res['interaction_efficiency']
             fwhm = res['noise_stats']['fwhm_noise_keV']
+            incident_energy = float(params.get('energy', 0.0))
+            e_axis = np.asarray(res.get('energy_axis', []), dtype=float)
+            spectrum = np.asarray(res.get('spectrum', []), dtype=float)
+            peak_ratio = 0.0
+            if incident_energy > 0 and len(e_axis) > 0 and len(spectrum) == len(e_axis) and np.any(spectrum > 0):
+                peak_energy = float(e_axis[int(np.argmax(spectrum))])
+                peak_ratio = max(0.0, min(1.0, peak_energy / incident_energy))
             
             # Extract Max Throughput from flux data
             # flux_data is stored in sim result? No, it's passed separately in update_data.
@@ -658,10 +811,18 @@ class ComparisonSummaryWidget(QWidget):
             # Flux Score (New)
             # > 100 Mcps/mm2 is target. 
             score_flux = min(max_throughput / 100.0, 1.0) * 100
+
+            score_peak = (peak_ratio ** 4) * 100
             
             # Total weighted score
-            # Adjusted weights: Eff 20%, Speed 20%, Res 20%, Flux 20%, Stability 20%
-            total_score = (0.2 * score_eff + 0.2 * score_speed + 0.2 * score_res + 0.2 * score_stability + 0.2 * score_flux)
+            total_score = (
+                0.14 * score_eff +
+                0.14 * score_speed +
+                0.14 * score_res +
+                0.14 * score_stability +
+                0.14 * score_flux +
+                0.30 * score_peak
+            )
             
             # 3. Fill Table
             self.table.setItem(row, 0, QTableWidgetItem(name))
@@ -672,6 +833,7 @@ class ComparisonSummaryWidget(QWidget):
             self.table.setItem(row, 5, QTableWidgetItem(f"{fwhm:.2f}"))
             self.table.setItem(row, 6, QTableWidgetItem(f"{eff*100:.1f}%"))
             self.table.setItem(row, 7, QTableWidgetItem(f"{max_throughput:.1f}")) # Flux Col
+            self.table.setItem(row, 8, QTableWidgetItem(f"{peak_ratio*100:.1f}%"))
             
             item_score = QTableWidgetItem(f"{total_score:.1f}")
             item_score.setFont(self.table.font())
@@ -682,12 +844,12 @@ class ComparisonSummaryWidget(QWidget):
                 item_score.setBackground(QColor("#fff3cd")) # Yellow
             else:
                 item_score.setBackground(QColor("#f8d7da")) # Red
-            self.table.setItem(row, 8, item_score)
+            self.table.setItem(row, 9, item_score)
             
             # 4. Prepare Radar Data
             radar_data.append({
                 'name': name,
-                'scores': [score_eff, score_speed, score_res, score_stability, score_flux]
+                'scores': [score_eff, score_speed, score_res, score_stability, score_flux, score_peak]
             })
             
         self.draw_radar(radar_data)
@@ -709,7 +871,7 @@ class ComparisonSummaryWidget(QWidget):
         self.canvas_radar.axes = ax # Update reference
         
         t = TRANSLATIONS[self.current_lang]
-        categories = [t['radar_efficiency'], t['radar_speed'], t['radar_resolution'], t['radar_stability'], t['radar_flux']]
+        categories = [t['radar_efficiency'], t['radar_speed'], t['radar_resolution'], t['radar_stability'], t['radar_flux'], t['radar_peak']]
         N = len(categories)
         
         # Angles for each axis
@@ -802,6 +964,9 @@ class RepositoryDialog(QDialog):
         self.edit_tau_h = QLineEdit("1e-6")
         self.edit_W = QDoubleSpinBox()
         self.edit_W.setValue(4.5)
+        self.edit_comp = QLineEdit()
+        self.edit_comp.setPlaceholderText(t['repo_comp_placeholder'])
+        self._setup_composition_completer()
         
         # Add to grid
         manual_layout.addWidget(QLabel(t['repo_lbl_name']), 0, 0)
@@ -823,10 +988,17 @@ class RepositoryDialog(QDialog):
         manual_layout.addWidget(self.edit_tau_e, 3, 1)
         manual_layout.addWidget(QLabel(t['repo_lbl_tau_h']), 3, 2)
         manual_layout.addWidget(self.edit_tau_h, 3, 3)
+
+        manual_layout.addWidget(QLabel(t['repo_lbl_comp']), 4, 0)
+        manual_layout.addWidget(self.edit_comp, 4, 1, 1, 3)
         
+        parse_comp_btn = QPushButton(t['repo_btn_parse_comp'])
+        parse_comp_btn.clicked.connect(self.parse_compound)
+        manual_layout.addWidget(parse_comp_btn, 5, 2)
+
         add_manual_btn = QPushButton(t['repo_btn_add'])
         add_manual_btn.clicked.connect(self.add_manual_material)
-        manual_layout.addWidget(add_manual_btn, 4, 3)
+        manual_layout.addWidget(add_manual_btn, 5, 3)
         
         layout.addWidget(manual_group)
         
@@ -849,6 +1021,65 @@ class RepositoryDialog(QDialog):
         btn_box.rejected.connect(self.reject)
         btn_box.button(QDialogButtonBox.StandardButton.Ok).setText(t['repo_btn_import'])
         layout.addWidget(btn_box)
+
+    def _setup_composition_completer(self):
+        symbols = get_xraylib_element_symbols()
+        completer = QCompleter(symbols, self)
+        completer.setCaseSensitivity(Qt.CaseSensitivity.CaseInsensitive)
+        completer.setCompletionMode(QCompleter.CompletionMode.PopupCompletion)
+        completer.setFilterMode(Qt.MatchFlag.MatchContains)
+        completer.activated.connect(self._insert_composition_completion)
+        self.edit_comp.textEdited.connect(self._update_composition_completion_prefix)
+        self.edit_comp.setCompleter(completer)
+        self._composition_completer = completer
+
+    def _update_composition_completion_prefix(self, text):
+        cursor = self.edit_comp.cursorPosition()
+        start = cursor
+        while start > 0 and text[start - 1].isalpha():
+            start -= 1
+        prefix = text[start:cursor]
+        if not prefix:
+            return
+        self._composition_completer.setCompletionPrefix(prefix)
+        self._composition_completer.complete(self.edit_comp.cursorRect())
+
+    def _insert_composition_completion(self, completion):
+        text = self.edit_comp.text()
+        cursor = self.edit_comp.cursorPosition()
+
+        start = cursor
+        while start > 0 and text[start - 1].isalpha():
+            start -= 1
+
+        end = cursor
+        while end < len(text) and text[end].isalpha():
+            end += 1
+
+        new_text = text[:start] + completion + text[end:]
+        self.edit_comp.setText(new_text)
+        self.edit_comp.setCursorPosition(start + len(completion))
+
+    def parse_compound(self):
+        t = TRANSLATIONS[self.lang]
+        try:
+            formula = composition_text_to_formula(self.edit_comp.text())
+            parsed = xraylib.CompoundParser(formula)
+            elements = parsed.get("Elements", ())
+            mass_fracs = parsed.get("massFractions", ())
+            n_atoms = parsed.get("nAtoms", ())
+            lines = [t['repo_parse_formula'].format(formula)]
+            for i, z in enumerate(elements):
+                sym = xraylib.AtomicNumberToSymbol(int(z))
+                mf = float(mass_fracs[i]) if i < len(mass_fracs) else 0.0
+                na = float(n_atoms[i]) if i < len(n_atoms) else 0.0
+                lines.append(f"{sym}: mass={mf:.6f}, atoms={na:g}")
+            mm = parsed.get("molarMass", None)
+            if mm is not None:
+                lines.append(t['repo_parse_molar_mass'].format(float(mm)))
+            QMessageBox.information(self, t['repo_parse_title'], "\n".join(lines))
+        except Exception as e:
+            QMessageBox.warning(self, t['msg_input_error_title'], t['repo_parse_failed'].format(str(e)))
         
     def add_manual_material(self):
         try:
@@ -861,8 +1092,18 @@ class RepositoryDialog(QDialog):
                 return
                 
             # Parse scientific notation manually if needed, but float() handles '1e-6'
-            tau_e = float(self.edit_tau_e.text())
-            tau_h = float(self.edit_tau_h.text())
+            try:
+                tau_e = float(self.edit_tau_e.text())
+                tau_h = float(self.edit_tau_h.text())
+            except ValueError:
+                QMessageBox.warning(self, t['msg_input_error_title'], t['msg_invalid_num'])
+                return
+
+            try:
+                atomic_composition = parse_atomic_composition(self.edit_comp.text())
+            except ValueError as e:
+                QMessageBox.warning(self, t['msg_input_error_title'], t['msg_comp_invalid_text'].format(str(e)))
+                return
             
             # Construct property object
             props = MaterialProperties(
@@ -874,7 +1115,7 @@ class RepositoryDialog(QDialog):
                 mu_h=self.edit_mu_h.value(),
                 tau_e=tau_e,
                 tau_h=tau_h,
-                atomic_composition={name: 1.0} # Dummy composition for manual entry
+                atomic_composition=atomic_composition
             )
             
             # Add to repo_data temporarily (so it shows in list)
@@ -889,8 +1130,8 @@ class RepositoryDialog(QDialog):
                 
             QMessageBox.information(self, t['msg_added_title'], t['msg_added_text'].format(name))
             
-        except ValueError:
-            QMessageBox.warning(self, t['msg_input_error_title'], t['msg_invalid_num'])
+        except Exception as e:
+            QMessageBox.warning(self, t['msg_input_error_title'], str(e))
 
     def fetch_catalog(self):
         # Deprecated functionality, kept for API compatibility or future re-enablement
@@ -1385,6 +1626,28 @@ class MainWindow(QMainWindow):
                     "W_pair": 5.0,
                     "density": 4.16,
                     "atomic_composition": {"C": 1, "H": 6, "N": 1, "Pb": 1, "I": 3}
+                },
+                "SiC": {
+                    "name": "SiC",
+                    "Eg": 1.5,
+                    "mu_e": 1000.0,
+                    "mu_h": 100.0,
+                    "tau_e": 1.0e-6,
+                    "tau_h": 1.0e-6,
+                    "W_pair": 4.5,
+                    "density": 5.0,
+                    "atomic_composition": {"Si": 0.5, "C": 0.5}
+                },
+                "4H-SiC": {
+                    "name": "4H-SiC",
+                    "Eg": 3.26,
+                    "mu_e": 950.0,
+                    "mu_h": 120.0,
+                    "tau_e": 1.0e-6,
+                    "tau_h": 1.0e-6,
+                    "W_pair": 7.8,
+                    "density": 3.21,
+                    "atomic_composition": {"Si": 0.5, "C": 0.5}
                 }
             }
             
@@ -1495,23 +1758,11 @@ class MainWindow(QMainWindow):
             except Exception as e:
                 import traceback
                 tb_str = traceback.format_exc()
-                error_msg = f"Error simulating {mat_name}: {str(e)}\n\n{tb_str}"
-                print(error_msg)
-                
-                # Show error in UI to avoid silent crash in no-console mode
-                t = TRANSLATIONS[self.current_lang]
-                QMessageBox.critical(self, t['msg_sim_error_title'], t['msg_sim_error_text'].format(str(e)))
+                print(f"Error simulating {mat_name}: {e}\n{tb_str}")
 
         # Update Summary Widget
         if summary_data:
-            try:
-                self.summary_widget.update_data(summary_data)
-            except Exception as e:
-                import traceback
-                error_msg = f"Error updating summary: {str(e)}\n\n{traceback.format_exc()}"
-                print(error_msg)
-                QMessageBox.critical(self, TRANSLATIONS[self.current_lang]['msg_sim_error_title'], 
-                                   f"Summary Error: {str(e)}")
+            self.summary_widget.update_data(summary_data)
 
     def sync_tabs(self, index):
         """Synchronize all result widgets to show the same tab index."""
