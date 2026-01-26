@@ -1504,7 +1504,14 @@ class MainWindow(QMainWindow):
 
         # Update Summary Widget
         if summary_data:
-            self.summary_widget.update_data(summary_data)
+            try:
+                self.summary_widget.update_data(summary_data)
+            except Exception as e:
+                import traceback
+                error_msg = f"Error updating summary: {str(e)}\n\n{traceback.format_exc()}"
+                print(error_msg)
+                QMessageBox.critical(self, TRANSLATIONS[self.current_lang]['msg_sim_error_title'], 
+                                   f"Summary Error: {str(e)}")
 
     def sync_tabs(self, index):
         """Synchronize all result widgets to show the same tab index."""
