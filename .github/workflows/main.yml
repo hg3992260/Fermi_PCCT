@@ -1,4 +1,4 @@
-name: build-windows-exe
+name: build-macos-dmg
 
 on:
   workflow_dispatch:
@@ -7,8 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
-
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -19,23 +18,47 @@ jobs:
 
       - name: Install dependencies
         run: |
+          python -V
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt pyinstaller
 
-      - name: Build exe (PyInstaller)
+      - name: Make .icns from Atom.jpeg
         run: |
-          pyinstaller `
-            --noconsole `
-            --onefile `
-            --name Fermi `
-            --icon resources/Atom.ico `
-            --add-data "resources/Atom.jpeg;resources" `
-            --add-data "data;data" `
-            --collect-all xraylib `
+          mkdir -p resources/icon.iconset
+          sips -s format png resources/Atom.jpeg --out resources/Atom.png
+          sips -s format png -z 16 16     resources/Atom.png --out resources/icon.iconset/icon_16x16.png
+          sips -s format png -z 32 32     resources/Atom.png --out resources/icon.iconset/icon_16x16@2x.png
+          sips -s format png -z 32 32     resources/Atom.png --out resources/icon.iconset/icon_32x32.png
+          sips -s format png -z 64 64     resources/Atom.png --out resources/icon.iconset/icon_32x32@2x.png
+          sips -s format png -z 128 128   resources/Atom.png --out resources/icon.iconset/icon_128x128.png
+          sips -s format png -z 256 256   resources/Atom.png --out resources/icon.iconset/icon_128x128@2x.png
+          sips -s format png -z 256 256   resources/Atom.png --out resources/icon.iconset/icon_256x256.png
+          sips -s format png -z 512 512   resources/Atom.png --out resources/icon.iconset/icon_256x256@2x.png
+          sips -s format png -z 512 512   resources/Atom.png --out resources/icon.iconset/icon_512x512.png
+          sips -s format png -z 1024 1024 resources/Atom.png --out resources/icon.iconset/icon_512x512@2x.png
+          iconutil -c icns resources/icon.iconset -o resources/Atom.icns
+
+      - name: Build .app (PyInstaller)
+        run: |
+          pyinstaller \
+            --windowed \
+            --name Fermi \
+            --icon resources/Atom.icns \
+            --add-data "resources/Atom.jpeg:resources" \
+            --add-data "data:data" \
+            --collect-all xraylib \
             src/gui.py
+
+      - name: Create DMG
+        run: |
+          rm -rf dmg_root
+          mkdir -p dmg_root
+          cp -R "dist/Fermi.app" dmg_root/
+          ln -s /Applications dmg_root/Applications
+          hdiutil create -volname "Fermi" -srcfolder dmg_root -ov -format UDZO "dist/Fermi.dmg"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Fermi-windows-exe
-          path: dist/Fermi.exe
+          name: Fermi-macos-dmg
+          path: dist/Fermi.dmg
