@@ -14,7 +14,7 @@
   <a href="https://github.com/hg3992260/Fermi_PCCT/actions/workflows/windows-build.yml"><img alt="windows build" src="https://github.com/hg3992260/Fermi_PCCT/actions/workflows/windows-build.yml/badge.svg"></a>
   <a href="https://github.com/hg3992260/Fermi_PCCT/actions/workflows/macos-dmg.yml"><img alt="macos build" src="https://github.com/hg3992260/Fermi_PCCT/actions/workflows/macos-dmg.yml/badge.svg"></a>
   <img alt="python" src="https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue">
-  <img alt="license" src="https://img.shields.io/badge/license-see%20credits-lightgrey">
+  <a href="LICENSE"><img alt="license" src="https://img.shields.io/badge/license-MIT-blue"></a>
 </p>
 
 ![Fermi main window](docs/screenshots/main_window.png)
@@ -246,3 +246,7 @@ Developed by **Christ** — `Christ.paul90@gmail.com`.
 
 Physics background adapted from the `kb/` knowledge base; X-ray cross-sections from the
 [NIST Xraylib](https://github.com/tschoonj/xraylib) project.
+
+## License
+
+Released under the [MIT License](LICENSE). © 2026 Christ (hg3992260).
