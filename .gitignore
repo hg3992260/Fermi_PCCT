@@ -1,0 +1,33 @@
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+.venv/
+venv/
+ENV/
+env/
+
+.idea/
+.vscode/
+
+dist/
+build/
+*.spec
+
+*.log
+
+# Session artifacts (opencode tooling)
+session-dashboard.html
+HANDOVER.md
+
+# OS metadata
+.DS_Store
+._*
+Thumbs.db
+desktop.ini

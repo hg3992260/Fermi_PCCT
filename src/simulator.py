@@ -478,14 +478,31 @@ class DetectorSimulator:
         
         # Simple exponential decay model for internal field due to trapped charge
         # Rate depends on detrapping time (approx by tau_h for simplicity in this mock)
-        tau_detrap = 10.0 # seconds, dummy value for slow detrapping
+        tau_detrap = 10.0
         
         # Normalized field strength at cathode (assuming hole trapping reduces field there)
         # TlBr is known for this. CZT less so but still present.
-        if "TlBr" in self.material.name:
-            decay_factor = 0.4 # Severe polarization
+        name = self.material.name
+        if name == "TlBr":
+            decay_factor = 0.4
+            tau_detrap = 20.0
+        elif name == "HgI2":
+            decay_factor = 0.35
+            tau_detrap = 18.0
+        elif name == "CdTe":
+            decay_factor = 0.18
+            tau_detrap = 14.0
+        elif name == "CZT":
+            decay_factor = 0.10
+            tau_detrap = 10.0
+        elif name == "GaAs":
+            decay_factor = 0.06
+            tau_detrap = 9.0
+        elif name == "Si":
+            decay_factor = 0.02
+            tau_detrap = 6.0
         else:
-            decay_factor = 0.1 # Mild
+            decay_factor = 0.10
             
         e_field_rel = 1.0 - decay_factor * (1 - np.exp(-t / tau_detrap))
         
