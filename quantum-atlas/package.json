@@ -27,9 +27,6 @@
     "electron": "^45.3.3",
     "electron-builder": "^26.0.12"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": ["electron", "electron-winstaller"]
-  },
   "build": {
     "appId": "com.quantumatlas.app",
     "productName": "Quantum Atlas",
