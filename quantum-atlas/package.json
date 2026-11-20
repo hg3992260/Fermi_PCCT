@@ -4,6 +4,11 @@
   "version": "0.9.0",
   "private": true,
   "description": "量子材料全尺度三维工作台：凝聚态 · 能带 · 自旋 · 光谱 · 液态自旋 · Bloch 动力学 · 量子计算 · 量子电路",
+  "author": "hg3992260",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hg3992260/Fermi_PCCT"
+  },
   "type": "module",
   "main": "main.cjs",
   "packageManager": "pnpm@11.28.5",
