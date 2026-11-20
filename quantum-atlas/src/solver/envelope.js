@@ -42,7 +42,7 @@ export function makeProblem({ kind, spec = {}, params = {}, observables = [], id
   return problem;
 }
 
-export const APP_VERSION = "0.9.0";
+export const APP_VERSION = "2.0.0";
 
 /* 深快照：spec/params 都是 JSON 可序列化的，用 JSON 往返即可（去掉函数/引用） */
 export function snapshotProblem(problem) {
