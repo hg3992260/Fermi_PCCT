@@ -1,0 +1,172 @@
+{
+ "L1_crystal": [
+  {
+   "id": "2002.07009v1",
+   "captions": [],
+   "figs": [
+    "https://static.arxiv.org/static/design-system/latest/logos/arxiv-logo.svg",
+    "/static/browse/0.3.4/images/icons/social/bibsonomy.png",
+    "/static/browse/0.3.4/images/icons/social/reddit.png"
+   ]
+  }
+ ],
+ "L2_bands": [
+  {
+   "id": "1011.5905v2",
+   "captions": [
+    "Figure 1: (color online). Spectrum of β\\beta at 300 K. The circles J.Appl.Phys._97_043102_2005_Euser, uptriangles Phys.Rev.Lett._30_901_1973_Reintjes, down triangles Appl.Phys.Lett._80_416_2002_Tsang, diamonds Appl.Phys.Lett._82_2954_2003_Dinu, and squares Appl.Phys.Lett._90_191104_2007_Bristow are ",
+    "Figure 2: (color online). Detailed calculation results. (a) Spectra of ξx​x​x​x\\xi^{xxxx}, ξx​x​y​y\\xi^{xxyy}, and ξx​y​x​y\\xi^{xyxy} at 4 K (red thin curves) and 300 K (black thick curves). (b) Temperature dependence of ξ⁡(T)/ξ⁡(T=0)\\xi(T)/\\xi(T=0) at different photon energies ℏ​ωi\\hbar\\omega_{i}: "
+   ],
+   "figs": [
+    "/html/1011.5905/assets/figa1.png",
+    "/html/1011.5905/assets/figa2.png",
+    "/assets/ar5iv.png"
+   ]
+  },
+  {
+   "id": "1512.05403v2",
+   "captions": [
+    "Figure 1: Local EPM conduction energy band-structure (ε\\varepsilon) color plot in the 𝐤\\mathbf{k}-space 1s​t1^{st} octant enclosing the Silicon Brillouin Zone. Conduction band local minimum: ko=(0.8562,0,0)​(2​π/a)k_{o}=(0.8562,0,0)(2\\pi/a)",
+    "Figure 2: Energy (E) vs r=|𝐤−𝐤0|2r=|\\mathbf{k}-\\mathbf{k}_{0}|^{2} for the parabolic, Kane, &amp; symmetrized EPM spherical average band.",
+    "Figure 3: Relative l2l_{2}-deviation in the angular space of EPM average from the EPM full band for Si, as a function of r=|𝐤−𝐤0|2r=|\\mathbf{k}-\\mathbf{k}_{0}|^{2}",
+    "Algorithm 1 DG-BP Algorithm"
+   ],
+   "figs": [
+    "/html/1512.05403/assets/EvsK3D.png",
+    "/html/1512.05403/assets/Momentum400nmEPMravgV0p5V_t5p0ps.png",
+    "/assets/ar5iv.png"
+   ]
+  }
+ ],
+ "L3_spinwave": [
+  {
+   "id": "2308.09407v1",
+   "captions": [
+    "Figure 1: (a) Crystal structure of TbMnO3 with structural parameters obtained by single-crystal X-ray diffraction str. The red, green and blue arrows at the lower left corners indicate the aa, bb, and cc directions, respectively. (b-c) Magnetic structure of manganese moments in TbMnO3. The zig-zag c",
+    "Figure 2: Sketch of the polarization patterns of magnetic excitations at the zone center of the cycloid structure and at characteristic propagation vectors. The static cycloid in the incommensurate multiferroic phase is shown for a chain along b→\\vec{b} by blue arrows (moments) and grey circles (pla",
+    "Figure 3: Model of the crystallographic unit cell of TbMnO3, showing Mn moments in the spin spiral phase with exchange interactions [(FM JF​MJ_{FM} (red) and AFM JAFMJ_{\\textrm{AFM}} (blue) and JNNJ_{\\textrm{NN}} (green)] and elliptic easy-plane anisotropy along b→\\vec{b} and c→\\vec{c} (ellipses).",
+    "Figure 4: Calculated neutron intensity for TbMnO3 at Q→=(0,k, 1)\\vec{Q}=(0,\\penalty\\ k,\\penalty\\ 1) of the total cross section S⟂​(ω,Q)S^{\\perp}(\\omega,Q) (left) and the components, My​y​(ω,Q)M^{yy}(\\omega,Q) (center) and Mz​z​(ω,Q)M^{zz}(\\omega,Q) (right). The scattering geometry was chosen in a wa"
+   ],
+   "figs": [
+    "/html/2308.09407/assets/figure-3-new.png",
+    "/html/2308.09407/assets/spinW_02_twobyseven.png",
+    "/html/2308.09407/assets/spinW_03_ellipse.png",
+    "/html/2308.09407/assets/fit_01_comparisonSenff.png",
+    "/html/2308.09407/assets/IN5_H1.png",
+    "/html/2308.09407/assets/IN5_K1.png"
+   ]
+  },
+  {
+   "id": "2407.20501v2",
+   "captions": [
+    "(a)",
+    "(b) Estimates of parameters for La2​CuO4{\\mathrm{La}}_{2}{\\mathrm{CuO}}_{4}",
+    "Figure 1: Magnon spectra of cuprate and iridate magnets, compared with predictions descended from a one-band Hubbard model. (a) Dispersion and intensity of excitations in La2​CuO4{\\mathrm{La}}_{2}{\\mathrm{CuO}}_{4}, as found in calculations of S⟂​(𝐪,ω)S_{\\perp}({\\bf q},\\omega) for the effective spin",
+    "Figure 2: Interactions and ground-state properties of model for magnetism in cuprate antiferromagnets. (a) Parameters of effective spin model ℋσ{\\mathcal{H}}_{\\sigma} [Eq. (1)]. (b) Parameters of parent one-band Hubbard model ℋ𝖴{\\mathcal{H}}_{\\sf U}. (c) Staggered magnetization squared, ms2​(π,π)m_{"
+   ],
+   "figs": [
+    "/html/2407.20501/assets/Sqw_LCO.png",
+    "/html/2407.20501/assets/Sqw_CCO.png",
+    "/html/2407.20501/assets/Sqw_SIO.png",
+    "/html/2407.20501/assets/fig2.png",
+    "/assets/ar5iv.png"
+   ]
+  }
+ ],
+ "L4_dielectric": [
+  {
+   "id": "1201.2911v1",
+   "captions": [],
+   "figs": [
+    "https://static.arxiv.org/static/design-system/latest/logos/arxiv-logo.svg",
+    "/static/browse/0.3.4/images/icons/social/bibsonomy.png",
+    "/static/browse/0.3.4/images/icons/social/reddit.png"
+   ]
+  },
+  {
+   "id": "0801.1384v1",
+   "captions": [
+    "Figure 1: (Color online) Surface scans of all films with AFM using the same color scale. The scan area is 1​μ​m21\\;\\mu m^{2}. The film thickness, rms roughness ww, and correlation length ξ\\xi are shown in each panel (in n​mnm).",
+    "Figure 2: (a) Measured ε′′\\varepsilon^{\\prime\\prime} as a function of frequency ω\\omega. (b) The same for |ε′||\\varepsilon^{\\prime}|.",
+    "Table 1: Dielectric function for different samples at fixed wavelengths λ=1,5,10​μ​m\\lambda=1,5,10\\;\\mu m.",
+    "Figure 3: X-ray reflectivity (counts) vs the angle of incidence (degrees). All 3 films were deposited at similar conditions."
+   ],
+   "figs": [
+    "/html/0801.1384/assets/fig1.png",
+    "/html/0801.1384/assets/fig2a.png",
+    "/html/0801.1384/assets/fig2b.png",
+    "/html/0801.1384/assets/fig3.png",
+    "/html/0801.1384/assets/fig4.png",
+    "/html/0801.1384/assets/fig5.png"
+   ]
+  }
+ ],
+ "L5_liquid": [
+  {
+   "id": "1204.0348v1",
+   "captions": [
+    "Figure 1: Shear flow in a planar Couette configuration in a strongly coupled 2D complex plasma is sustained by a pair of counterpropagating laser beams (indicated by arrows). Particle trajectories during 0.830.83 s of a steady-state flow are shown. The dashed-line box defines the region of interest ",
+    "Figure 2: Angle-averaged (a) pair correlation function g⁡(r)g(r) and (b) static structure factor S⁡(k)S(k) of the complex plasma under different levels of shear stress as controlled by the manipulation laser power PlaserP_{\\rm laser} (indicated in the inset). S⁡(k)S(k) was calculated (in this figure",
+    "Figure 3: (a) Interparticle distance Δ\\Delta and (b) bond density as functions of azimuthal angle ϕ\\phi in liquid complex plasma at different levels of shear stress (controlled by PlaserP_{\\rm laser}, see inset). The flow direction is indicated by the arrows in (a). The liquid’s microstructure is an",
+    "Figure 4: Fits with Eq. (2) of experimental Δ⁡(ϕ)\\Delta(\\phi) for (a) Plaser=1.05P_{\\rm laser}=1.05 W and (b) 1.21.2 W."
+   ],
+   "figs": [
+    "/html/1204.0348/assets/fig1_rev1.png",
+    "/html/1204.0348/assets/fig2.png",
+    "/html/1204.0348/assets/fig3_rev1.png",
+    "/html/1204.0348/assets/fig4.png",
+    "/html/1204.0348/assets/fig5.png",
+    "/html/1204.0348/assets/fig6.png"
+   ]
+  },
+  {
+   "id": "1810.07950v1",
+   "captions": [
+    "Figure 1: Energy per particle, in units of half of the binding energy, as a function of the density for different values of the ratio |g~|/g|\\tilde{g}|/g of coupling constants. Error bars are smaller than the symbol sizes. The dashed line is the result of the GGP approach at |g~|/g=0.9|\\tilde{g}|/g=",
+    "Figure 2: Phase diagram of the homogeneous liquid phase: (blue) circles correspond to the equilibrium density of the liquid and (red) squares to the spinodal point where the compressibility diverges. Dashed lines refer to the predictions of the GGP theory.",
+    "Figure 3: Chemical potential μeq\\mu_{\\text{eq}} in units of half of the dimer binding energy: (blue) circles and right vertical axis. Speed of sound ceqc_{\\text{eq}} in units of the Fermi velocity: (red) squares and left vertical axis. The dashed lines correspond to the results of the GGP theory.",
+    "Figure 4: Pair correlation function of parallel spins ga​ag_{aa} (dashed lines) and anti-parallel spins ga​bg_{ab} (solid lines) in the liquid for different values of the ratio |g~|/g|\\tilde{g}|/g of coupling constants."
+   ],
+   "figs": [
+    "/html/1810.07950/assets/energyVsdensity.png",
+    "/html/1810.07950/assets/phaseDiagram.png",
+    "/html/1810.07950/assets/liquidProperties.png",
+    "/html/1810.07950/assets/pairCorrelationsLiquid.png",
+    "/html/1810.07950/assets/StruFact.png",
+    "/html/1810.07950/assets/obdm.png"
+   ]
+  }
+ ],
+ "L6_bloch": [],
+ "L7_qsphere": [],
+ "L8_circuit": [
+  {
+   "id": "2307.08969v1",
+   "captions": [
+    "Figure 1: The illustration of quantum circuit diagrams. (A) A typical quantum programming code (A1) and its corresponding quantum circuit diagram (A2). (B) A hand-drawn quantum circuit diagram depicts the implementation of quantum PCA algorithm[49]. (C) An auto-generated diagram (using Qiskit librar",
+    "Figure 2: System overview. Quantivine has a four-step visualization pipeline with a three-part interactive interface.",
+    "Figure 3: The pipeline of our visualization approach comprises four stages. (A) We compile and parse the programming code to collect meta-data and semantic information of the quantum circuit. (B) Decompose the circuit to hierarchical components with semantic structure. (C) Abstract the circuit using",
+    "Figure 4: Statistics of the pattern occurrence in 18 benchmark quantum algorithms. Three commonly repeated patterns are identified in these algorithms: vertical, horizontal, and diagonal repetition."
+   ],
+   "figs": [
+    "/assets/ar5iv.png"
+   ]
+  },
+  {
+   "id": "2602.00643v2",
+   "captions": [
+    "Figure 1: QuVI architecture demonstrating execution flow. Top wire: independent operations execute in parallel via native dataflow. Bottom wires: entangling gates (e.g., CNOT) enforce synchronization using Notifiers to handle state dependencies between control and target qubits.",
+    "Figure 2: Butterfly crossovers illustrating the stride logic for qubit kk (adapted from 8). The figure details the transformation formula of |b⟩|b\\rangle from |a⟩|a\\rangle for each case of a three-qubit system (k=0,1,2k=0,1,2), where I2I_{2} denotes the 2×22\\times 2 Identity matrix. The arrow of the",
+    "Algorithm 1 Parallel Per-Element Single Qubit Gate Multiplication",
+    "Algorithm 2 Parallel Swap Update"
+   ],
+   "figs": [
+    "/html/2602.00643/assets/circuit_architecture.png",
+    "/html/2602.00643/assets/butterfly_stride.png",
+    "/html/2602.00643/assets/teleportation_labview_block_diagram.png",
+    "/html/2602.00643/assets/grover_labview_block_diagram.png",
+    "/assets/ar5iv.png"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>probe</title>
+<style>
+  body{margin:0;background:#0b0e14;color:#cfe;font:12px ui-monospace,Consolas}
+  #c{position:absolute;left:0;top:0;width:600px;height:400px}
+  #out{position:absolute;left:0;top:410px;white-space:pre-wrap;width:900px}
+</style>
+<script type="module">
+import { View3D } from "../src/engine.js";
+
+const canvas = document.getElementById("c");
+const layer = document.createElement("div");
+const out = document.getElementById("out");
+const log = [];
+try {
+  const v = new View3D(canvas, layer);
+  log.push(`ctx ok  client=${canvas.clientWidth}x${canvas.clientHeight} buffer=${canvas.width}x${canvas.height}`);
+  v.frame();
+  v.tri([-1,-1,0],[1,-1,0],[0,1,0], [1,0.3,0.3], 1);
+  v.line([-1.5,1.5,0],[1.5,1.5,0],[0.3,1,0.5],1);
+  v.point([0,0,1.2],[0.4,0.8,1],18,1);
+  v.label([0,0,0],"label");
+  v.cam.dist = 4;
+  v.draw();
+  const gl = v.gl;
+  const err = gl.getError();
+  const px = new Uint8Array(4);
+  gl.readPixels(Math.floor(canvas.width/2), Math.floor(canvas.height/2), 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, px);
+  log.push(`glError=${err}  centerPixel=${[...px].join(",")}`);
+  log.push(`GL_VERSION=${gl.getParameter(gl.VERSION)}`);
+  log.push(`RENDERER=${gl.getParameter(gl.RENDERER)}`);
+  log.push(`drawCalls: lines=${v._line.length/7} pts=${v._point.length/8} tris=${v._tri.length/30}`);
+} catch (e) {
+  log.push("THROW: " + e.message + "\n" + e.stack);
+}
+out.textContent = log.join("\n");
+</script>
+</head><body><canvas id="c"></canvas><pre id="out"></pre></body></html>

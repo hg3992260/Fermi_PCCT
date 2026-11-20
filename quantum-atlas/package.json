@@ -1,0 +1,27 @@
+{
+  "name": "quantum-atlas",
+  "productName": "Quantum Atlas",
+  "version": "0.9.0",
+  "private": true,
+  "description": "量子材料全尺度三维工作台：凝聚态 · 能带 · 自旋 · 光谱 · 液态自旋 · Bloch 动力学 · 量子计算 · 量子电路",
+  "type": "module",
+  "main": "main.cjs",
+  "scripts": {
+    "serve": "node scripts/serve.mjs",
+    "start": "electron .",
+    "test": "node scripts/test-all.mjs",
+    "test:physics": "node scripts/test-physics.mjs",
+    "test:audit": "node scripts/test-audit.mjs",
+    "test:ui": "node scripts/test-ui.mjs",
+    "test:mcp": "node scripts/test-mcp.mjs",
+    "mcp": "node mcp/atlas-mcp.mjs",
+    "test:convergence": "node scripts/test-convergence.mjs",
+    "test:solver": "node scripts/test-solver.mjs"
+  },
+  "dependencies": {
+    "xel": "^0.45.1"
+  },
+  "devDependencies": {
+    "electron": "^45.3.3"
+  }
+}

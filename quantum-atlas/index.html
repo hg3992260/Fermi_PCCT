@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>Quantum Atlas · 量子材料全尺度三维工作台</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Xel：主题用显式 URL（只写名字会被当成相对 URL 去 fetch） -->
+  <meta name="xel-theme" content="theme/atlas-light.css" />
+  <meta name="xel-icons" content="node_modules/xel/icons/fluent.svg" />
+  <meta name="xel-accent-color" content="blue" />
+
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self' data: blob:;
+    script-src  'self';
+    style-src   'self' 'unsafe-inline';
+    img-src     'self' data: blob:;
+    font-src    'self';
+    connect-src 'self' http://127.0.0.1:8701;
+  " />
+
+  <link rel="stylesheet" href="app.css" />
+  <link rel="stylesheet" href="glass.css" />
+  <link rel="stylesheet" href="casebook.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png" />
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png" />
+  <link rel="apple-touch-icon" href="assets/icon-256.png" />
+  <script src="node_modules/xel/xel.js" type="module"></script>
+</head>
+<body>
+
+<!-- ═══════════════════ 标题栏 ═══════════════════ -->
+<header class="titlebar" id="titlebar">
+  <x-titlebar id="xelTitlebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="assets/icon-64.png" alt="" width="22" height="22" />
+      </span>
+      <span class="brand-text">
+        <b>Quantum Atlas</b>
+        <i>量子材料全尺度工作台</i>
+      </span>
+    </div>
+
+    <x-menubar id="menubar" class="menubar">
+      <x-menuitem value="file">
+        <x-label>文件</x-label>
+        <x-menu>
+          <x-menuitem value="export-png"><x-icon href="#image"></x-icon><x-label>导出当前视图 PNG</x-label><x-shortcut value="Ctrl+Shift+S"></x-shortcut></x-menuitem>
+          <x-menuitem value="export-state"><x-icon href="#document"></x-icon><x-label>复制本页状态链接</x-label><x-shortcut value="Ctrl+L"></x-shortcut></x-menuitem>
+          <x-menuitem value="export"><x-icon href="#table"></x-icon><x-label>导出本层数据 CSV</x-label><x-shortcut value="Ctrl+E"></x-shortcut></x-menuitem>
+          <hr/>
+          <x-menuitem value="quit"><x-icon href="#logout"></x-icon><x-label>退出</x-label><x-shortcut value="Alt+F4"></x-shortcut></x-menuitem>
+        </x-menu>
+      </x-menuitem>
+      <x-menuitem value="view">
+        <x-label>视图</x-label>
+        <x-menu>
+          <x-menuitem value="cam-iso"><x-label>等轴视角</x-label><x-shortcut value="R"></x-shortcut></x-menuitem>
+          <x-menuitem value="cam-top"><x-label>俯视</x-label></x-menuitem>
+          <x-menuitem value="cam-front"><x-label>正视</x-label></x-menuitem>
+          <hr/>
+          <x-menuitem value="toggle-theme" togglable><x-label>浅色主题</x-label><x-shortcut value="T"></x-shortcut></x-menuitem>
+          <x-menuitem value="toggle-legend" togglable toggled><x-label>显示图例</x-label></x-menuitem>
+          <x-menuitem value="materials"><x-icon href="#grid"></x-icon><x-label>材料库…</x-label></x-menuitem>
+        </x-menu>
+      </x-menuitem>
+      <x-menuitem value="layer">
+        <x-label>图层</x-label>
+        <x-menu id="layer-menu">
+          <x-menuitem value="atlas"><x-label>L0 全景 · 尺度塔</x-label><x-shortcut value="1"></x-shortcut></x-menuitem>
+          <x-menuitem value="crystal"><x-label>L1 凝聚态 · 晶格</x-label><x-shortcut value="2"></x-shortcut></x-menuitem>
+          <x-menuitem value="bands"><x-label>L2 能带 · E(k)</x-label><x-shortcut value="3"></x-shortcut></x-menuitem>
+          <x-menuitem value="spin"><x-label>L3 自旋 · 原子→宏观</x-label><x-shortcut value="4"></x-shortcut></x-menuitem>
+          <x-menuitem value="spectra"><x-label>L4 光谱 · 半导体响应</x-label><x-shortcut value="5"></x-shortcut></x-menuitem>
+          <x-menuitem value="liquid"><x-label>L5 液态 · 自旋波函数</x-label><x-shortcut value="6"></x-shortcut></x-menuitem>
+          <x-menuitem value="bloch"><x-label>L6 Bloch · 运动方程</x-label><x-shortcut value="7"></x-shortcut></x-menuitem>
+          <x-menuitem value="qubit"><x-label>L7 量子计算 · 态</x-label><x-shortcut value="8"></x-shortcut></x-menuitem>
+          <x-menuitem value="circuit"><x-label>L8 量子电路</x-label><x-shortcut value="9"></x-shortcut></x-menuitem>
+        </x-menu>
+      </x-menuitem>
+      <x-menuitem value="help">
+        <x-label>帮助</x-label>
+        <x-menu>
+          <x-menuitem value="theory"><x-icon href="#question"></x-icon><x-label>理论框架与图例</x-label><x-shortcut value="F1"></x-shortcut></x-menuitem>
+          <x-menuitem value="shortcuts"><x-icon href="#note"></x-icon><x-label>快捷键</x-label></x-menuitem>
+          <hr/>
+          <x-menuitem value="about"><x-icon href="#info"></x-icon><x-label>关于 Quantum Atlas</x-label></x-menuitem>
+        </x-menu>
+      </x-menuitem>
+    </x-menubar>
+
+    <div class="titlebar-tail">
+      <span class="tail-group">
+        <span class="tail-key">体系</span>
+        <x-select id="sel-material" value="Si" size="small">
+          <x-menu>
+            <x-menuitem value="Si" toggled><x-label>硅 Si · 金刚石</x-label></x-menuitem>
+            <x-menuitem value="Ge"><x-label>锗 Ge · 金刚石</x-label></x-menuitem>
+            <x-menuitem value="C"><x-label>金刚石 C · 宽禁带</x-label></x-menuitem>
+            <x-menuitem value="Na"><x-label>钠 Na · bcc 金属</x-label></x-menuitem>
+            <x-menuitem value="graphene"><x-label>石墨烯 · 狄拉克</x-label></x-menuitem>
+            <x-menuitem value="He3"><x-label>液态 ³He · 费米液体</x-label></x-menuitem>
+          </x-menu>
+        </x-select>
+      </span>
+      <span class="chip chip-static" id="chip-layer" title="当前图层">L0 · 全景</span>
+      <x-buttons class="tb-actions">
+        <x-button skin="flat" size="small" value="theme" id="btn-theme"><svg class="tb-glyph" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.8" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 2.2 A5.8 5.8 0 0 1 8 13.8 Z" fill="currentColor"/></svg><x-tooltip>切换明暗主题 (T)</x-tooltip></x-button>
+        <x-button skin="flat" size="small" value="help" id="btn-help"><svg class="tb-glyph" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.8" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6.3 6.4a1.9 1.9 0 1 1 2.5 1.8c-.5.2-.7.6-.7 1.1v.3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="8.1" cy="11.6" r="0.85" fill="currentColor"/></svg><x-tooltip>理论框架 (F1)</x-tooltip></x-button>
+      </x-buttons>
+    </div>
+  </x-titlebar>
+</header>
+
+<!-- ═══════════════════ 主体 ═══════════════════ -->
+<div class="app">
+
+  <!-- 左：尺度导航 -->
+  <aside class="rail">
+    <div class="rail-scroll">
+      <div class="rail-group">
+        <x-nav id="nav">
+          <div class="nav-title">全景与结构</div>
+          <x-navitem value="atlas" data-l="0" selected>
+            <x-icon href="#home"></x-icon><x-label>全景 · 尺度塔</x-label>
+          </x-navitem>
+          <x-navitem value="crystal" data-l="1">
+            <x-icon href="#square"></x-icon><x-label>凝聚态 · 晶格</x-label>
+          </x-navitem>
+
+          <div class="nav-title">电子结构</div>
+          <x-navitem value="bands" data-l="2">
+            <x-icon href="#bars"></x-icon><x-label>能带 · E(k)</x-label>
+          </x-navitem>
+
+          <div class="nav-title">自旋与响应</div>
+          <x-navitem value="spin" data-l="3">
+            <x-icon href="#circle"></x-icon><x-label>自旋 · 原子→宏观</x-label>
+          </x-navitem>
+          <x-navitem value="spectra" data-l="4">
+            <x-icon href="#color-palette"></x-icon><x-label>光谱 · 半导体响应</x-label>
+          </x-navitem>
+          <x-navitem value="liquid" data-l="5">
+            <x-icon href="#earth"></x-icon><x-label>液态 · 自旋波函数</x-label>
+          </x-navitem>
+
+          <div class="nav-title">动力学与量子</div>
+          <x-navitem value="bloch" data-l="6">
+            <x-icon href="#clock"></x-icon><x-label>Bloch · 运动方程</x-label>
+          </x-navitem>
+          <x-navitem value="qubit" data-l="7">
+            <x-icon href="#tune"></x-icon><x-label>量子计算 · 态</x-label>
+          </x-navitem>
+          <x-navitem value="circuit" data-l="8">
+            <x-icon href="#code"></x-icon><x-label>量子电路</x-label>
+          </x-navitem>
+
+          <div class="nav-title">器件与系统</div>
+          <x-navitem value="device" data-l="9">
+            <x-icon href="#cpu"></x-icon><x-label>半导体探测器</x-label>
+          </x-navitem>
+        </x-nav>
+      </div>
+    </div>
+
+    <div class="rail-foot">
+      <div class="ladder" id="ladder">
+        <div class="ladder-head"><span>尺度</span><span id="ladder-val">10⁻¹⁰ m</span></div>
+        <div class="ladder-track"><i id="ladder-fill"></i><b id="ladder-dot"></b></div>
+        <div class="ladder-ticks"><span>Å</span><span>nm</span><span>µm</span><span>mm</span></div>
+      </div>
+      <div class="rail-hint">拖动旋转 · 滚轮缩放 · 右键平移<br/>单击对象查看读数</div>
+    </div>
+  </aside>
+
+  <!-- 中：视口 + 传送带 + 状态栏 -->
+  <section class="stage">
+    <div class="viewport" id="viewport">
+      <canvas id="gl"></canvas>
+      <div class="labels" id="labels"></div>
+
+      <div class="hud hud-top">
+        <div class="hud-left">
+          <span class="space-badge" id="space-badge"><i></i><span id="space-name">实空间 R³</span></span>
+          <span class="hud-title" id="space-note">晶体坐标 / 晶胞</span>
+        </div>
+        <div class="hud-right">
+          <span class="stat" id="hud-prim"></span>
+          <span class="stat-sep"></span>
+          <span class="stat" id="hud-fps"></span>
+        </div>
+      </div>
+
+      <div class="legend" id="legend"></div>
+
+      <!-- 迷你坐标轴：随相机旋转，指示当前视线方向 -->
+      <svg class="gizmo" id="gizmo" viewBox="-30 -30 60 60" width="58" height="58" aria-label="坐标轴">
+        <circle cx="0" cy="0" r="26" class="gizmo-ring"></circle>
+        <g id="gizmo-axes"></g>
+      </svg>
+
+      <div class="cam-rail">
+        <x-buttons vertical>
+          <x-button skin="dock" size="small" value="iso" id="cam-iso"><x-icon href="#square" size="small"></x-icon><x-tooltip>等轴视角</x-tooltip></x-button>
+          <x-button skin="dock" size="small" value="top" id="cam-top"><x-icon href="#bars" size="small"></x-icon><x-tooltip>俯视</x-tooltip></x-button>
+          <x-button skin="dock" size="small" value="front" id="cam-front"><x-icon href="#sort" size="small"></x-icon><x-tooltip>正视</x-tooltip></x-button>
+          <x-button skin="dock" size="small" value="reset" id="cam-reset"><x-icon href="#refresh" size="small"></x-icon><x-tooltip>重置相机 (R)</x-tooltip></x-button>
+        </x-buttons>
+      </div>
+
+      <div class="busy" id="busy" hidden>
+        <x-throbber size="small"></x-throbber>
+        <span id="busy-label">正在对角化…</span>
+        <x-progressbar id="busy-bar"></x-progressbar>
+      </div>
+    </div>
+
+    <!-- 传送带 -->
+    <div class="transport" id="transport">
+      <div class="tp-group">
+        <x-button skin="flat" id="btn-play" value="play"><span class="glyph" id="play-glyph">▶</span><x-tooltip>播放 / 暂停 (Space)</x-tooltip></x-button>
+        <x-button skin="flat" size="small" id="btn-step-back"><span class="glyph sm">◀</span><x-tooltip>上一帧 (←)</x-tooltip></x-button>
+        <x-button skin="flat" size="small" id="btn-step-fwd"><span class="glyph sm">▶</span><x-tooltip>下一帧 (→)</x-tooltip></x-button>
+      </div>
+
+      <div class="tp-body">
+        <div class="tp-meta">
+          <span id="tl-label">时间轴</span>
+          <span id="tl-hint" class="tp-hint"></span>
+        </div>
+        <x-slider id="timeline" min="0" max="1" step="0.001" value="0"></x-slider>
+      </div>
+
+      <div class="tp-value">
+        <b id="tl-value">—</b>
+        <i id="tl-unit"></i>
+      </div>
+    </div>
+
+    <div class="statusbar">
+      <span class="sb-tip" id="status-tip">就绪</span>
+      <span class="sb-spacer"></span>
+      <span class="sb-cell" id="status-space">—</span>
+      <span class="sb-cell" id="status-link">联动：无</span>
+    </div>
+  </section>
+
+  <!-- 右下角：MCP 连接状态与调用日志 -->
+  <div id="mcp-dock" data-state="off" data-expanded="0">
+    <div id="mcp-head">
+      <span id="mcp-dot" data-live="0"></span>
+      <span id="mcp-label">MCP · 连接中</span>
+      <span id="mcp-meta">—</span>
+      <span id="mcp-last">—</span>
+      <span class="mcp-acts">
+        <button class="mcp-act" id="mcp-copy" title="复制日志">⧉</button>
+        <button class="mcp-act" id="mcp-clear" title="清空">⌫</button>
+      </span>
+    </div>
+    <div id="mcp-log" hidden></div>
+  </div>
+
+  <!-- 右：检查器 -->
+  <aside class="inspector">
+    <div class="insp-head">
+      <div class="insp-eyebrow" id="insp-eyebrow">LAYER 0 · 全景</div>
+      <h2 class="insp-title" id="insp-title">尺度塔</h2>
+      <p class="insp-sub" id="insp-sub">复合空间 · 能量 × 长度 × 状态</p>
+    </div>
+
+    <div class="insp-scroll">
+      <section class="insp-block" id="block-params">
+        <div class="block-head">
+          <span>控制</span>
+          <span class="block-tools">
+            <span class="block-count" id="param-count"></span>
+            <x-button skin="flat" size="small" id="btn-params">
+              <x-icon href="#tune" size="small"></x-icon>
+              <x-tooltip>参数预设</x-tooltip>
+              <x-menu id="params-menu">
+                <x-menuitem value="reset"><x-icon href="#history-undo"></x-icon><x-label>恢复本层默认</x-label></x-menuitem>
+                <x-menuitem value="save"><x-icon href="#bookmark"></x-icon><x-label>保存当前为默认</x-label></x-menuitem>
+                <hr/>
+                <x-menuitem value="copy"><x-icon href="#copy"></x-icon><x-label>复制参数 JSON</x-label></x-menuitem>
+              </x-menu>
+            </x-button>
+          </span>
+        </div>
+        <div class="params" id="params"></div>
+      </section>
+
+      <section class="insp-block">
+        <div class="block-head"><span>读数</span><span class="block-note" id="readout-note"></span></div>
+        <div class="prov-note" id="prov-notice" hidden></div>
+        <div class="prov-legend">
+          <span><i data-kind="calc"></i>计算</span>
+          <span><i data-kind="calib"></i>标定</span>
+          <span><i data-kind="input"></i>输入</span>
+        </div>
+        <div class="trend" id="trend" hidden>
+          <svg id="trend-svg" viewBox="0 0 100 26" preserveAspectRatio="none"></svg>
+          <div class="trend-cap" id="trend-cap"></div>
+        </div>
+        <div class="readout" id="readout"></div>
+      </section>
+
+      <x-accordion id="acc-note" size="small">
+        <header><x-label>本层物理</x-label></header>
+        <div class="note" id="note"></div>
+      </x-accordion>
+    </div>
+  </aside>
+</div>
+
+<!-- ═══════════════════ 抽屉 / 弹窗 / 提示 ═══════════════════ -->
+<x-drawer id="drawer" position="right">
+  <div class="drawer-body">
+    <h3>一个母方程，八个尺度站点</h3>
+    <p class="muted">整个工作台只依赖三条不变式：谱定理、涨落–耗散（Kubo）、粗粒化（有效哈密顿量）。每一层都是同一结构在不同尺度上的重正化。</p>
+    <pre class="eq">∂ₜρ = −i[H, ρ] + Σₖ γₖ ( LₖρLₖ† − ½{Lₖ†Lₖ, ρ} )</pre>
+    <table class="tbl">
+      <thead><tr><th>层</th><th>自由度</th><th>生成元</th><th>三维载体</th></tr></thead>
+      <tbody>
+        <tr><td>L1 晶格</td><td>核 + 电子</td><td>H = T + V + e²/r</td><td>实空间晶胞 / 倒空间 BZ</td></tr>
+        <tr><td>L2 能带</td><td>Bloch 态 nk</td><td>H(k) = e<sup>−ikr</sup>H e<sup>ikr</sup></td><td>(k<sub>∥</sub>, k<sub>⊥</sub>, E) 曲面</td></tr>
+        <tr><td>L3 自旋</td><td>局域矩 S<sub>i</sub></td><td>Σ J<sub>ij</sub>S<sub>i</sub>·S<sub>j</sub> + DMI</td><td>箭头场 + 磁振子谱</td></tr>
+        <tr><td>L4 响应</td><td>极化 P(q,ω)</td><td>χ = Kubo</td><td>(ω, ε₁, ε₂) 曲线</td></tr>
+        <tr><td>L5 液态</td><td>无序自旋旋量</td><td>费米液体 / 无序 Heisenberg</td><td>g(r) + S(q,ω) 曲面</td></tr>
+        <tr><td>L6 Bloch</td><td>二能级 / M(t)</td><td>Bloch 方程</td><td>Bloch 球 + 轨迹</td></tr>
+        <tr><td>L7–L8 量子</td><td>n qubit</td><td>分段 H(t)</td><td>Q-sphere + 演化塔</td></tr>
+      </tbody>
+    </table>
+    <h3>三种三维语法</h3>
+    <ul>
+      <li><b>多面体 = 对称性的基本域</b>：布里渊区是倒格子的 Wigner–Seitz 胞。</li>
+      <li><b>曲面 = 谱</b>：E(k)、ε(ω)、S(q,ω) 都是某个自伴算符的谱数据。</li>
+      <li><b>球 = 状态空间</b>：Bloch 球 = CP¹，Q-sphere = 2ⁿ 维希尔伯特空间的半径–相位嵌入。</li>
+    </ul>
+    <p class="muted">快捷键：<b>1…9</b> 切换层 · <b>Space</b> 播放 · <b>←/→</b> 步进 · <b>R</b> 重置视角 · <b>T</b> 主题 · <b>F1</b> 本页</p>
+  </div>
+</x-drawer>
+
+<dialog id="dialog-about">
+  <h3>Quantum Atlas</h3>
+  <p class="muted">量子材料全尺度三维工作台 · v0.9</p>
+  <p>九个尺度站点、一个母方程。界面层：Xel 控件库 + 自研 WebGL2 渲染器；物理层：经验赝势能带、JDOS + Kramers–Kronig、线性自旋波、Bloch 方程 RK4、复数态矢量子电路。</p>
+  <p class="muted">本原型用于展示结构与联动，精度有限；各层的模型与误差见 <code>docs/设计说明.md</code>。</p>
+  <footer>
+    <x-button id="about-close"><x-label>关闭</x-label></x-button>
+  </footer>
+</dialog>
+
+<dialog id="dialog-materials">
+  <h3>材料库 · 探测器半导体</h3>
+  <p class="muted">来源：<code>Fermi/data/materials.json</code>（9 种），参数为 µτ 积、带隙、对生成能、密度与极化系数。</p>
+  <table class="tbl" id="mat-table">
+    <thead><tr><th>材料</th><th>E<sub>g</sub> (eV)</th><th>µe τe</th><th>µh τh</th><th>W (eV)</th><th>ρ (g/cm³)</th><th>极化</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <footer>
+    <div class="mat-form">
+      <div class="mat-row">
+        <label>名称 <input id="cm-name" placeholder="如 CdZnTe-2" /></label>
+        <label>E<sub>g</sub> (eV) <input id="cm-eg" value="1.6" /></label>
+        <label>µe <input id="cm-mue" value="1000" /></label>
+        <label>µh <input id="cm-muh" value="80" /></label>
+      </div>
+      <div class="mat-row">
+        <label>τe (s) <input id="cm-taue" value="5e-6" /></label>
+        <label>τh (s) <input id="cm-tauh" value="5e-7" /></label>
+        <label>W (eV) <input id="cm-w" value="4.6" /></label>
+        <label>ρ (g/cm³) <input id="cm-rho" value="5.8" /></label>
+        <label>成分 <input id="cm-comp" value="Cd0.45Zn0.05Te0.5" style="width:150px" /></label>
+      </div>
+      <div class="mat-row">
+        <x-button id="cm-add"><x-label>添加为自定义材料</x-label></x-button>
+        <span class="muted" id="cm-hint">成分写法：Cd0.45Zn0.05Te0.5 或 Cd:0.45,Zn:0.05,Te:0.5</span>
+      </div>
+    </div>
+    <x-button id="mat-close"><x-label>关闭</x-label></x-button>
+  </footer>
+</dialog>
+
+<!-- ═══════════════════ 案例库（独立子页面） ═══════════════════ -->
+<section id="casebook" hidden aria-label="案例库">
+  <div class="cb-shell">
+    <header class="cb-head">
+      <div class="cb-title">
+        <span class="cb-eyebrow">CASEBOOK · 这个程序能仿真什么</span>
+        <h1>十二个可以直接复现的算例</h1>
+        <p>每一层至少一个真问题：问题、怎么操作、会看到什么、以及对应的数字。<br>点「在界面中打开」会把三维工作台切到能复现它的状态。</p>
+      </div>
+      <x-button id="cb-close"><x-icon href="#close"></x-icon><x-tooltip>关闭 (Esc)</x-tooltip></x-button>
+    </header>
+    <div class="cb-body">
+      <nav class="cb-toc" id="cb-toc"></nav>
+      <div class="cb-list" id="cb-list"></div>
+    </div>
+    <footer class="cb-foot" id="cb-foot"></footer>
+  </div>
+</section>
+
+<!-- 鼠标跟随的浮窗：模式（跟随/固定/最大化）由右键切换 -->
+<div id="float-dialog" hidden data-mode="follow" aria-live="polite">
+  <header class="fd-head" id="fd-head">
+    <span class="fd-dot"></span>
+    <span class="fd-title" id="fd-title">案例预览</span>
+    <span class="fd-mode" id="fd-mode">跟随</span>
+  </header>
+  <div class="fd-body" id="fd-body"></div>
+</div>
+
+<div id="fd-menu" hidden role="menu">
+  <button data-mode="follow" role="menuitem">跟随鼠标</button>
+  <button data-mode="pin" role="menuitem">固定位置</button>
+  <button data-mode="max" role="menuitem">最大化</button>
+  <hr />
+  <button data-mode="min" role="menuitem">最小化</button>
+  <button data-mode="hide" role="menuitem">收起浮窗</button>
+  <p class="fd-hint">右键切换 · 拖动标题栏也会固定</p>
+</div>
+
+<x-notification id="toast" timeout="2600"><x-label id="toast-label">已更新</x-label></x-notification>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

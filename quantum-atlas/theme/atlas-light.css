@@ -1,0 +1,54 @@
+/* ─────────────────────────────────────────────────────────────
+   Quantum Atlas · 浅色主题（默认）
+   基于 Siemens Healthineers UI MarCom 调色板：
+   Healthy Orange #ec6602 / Siemens Petrol #009999 / 中性灰阶
+   ───────────────────────────────────────────────────────────── */
+@import url("/node_modules/xel/themes/fluent.css");
+
+:root {
+  --accent-color: color(srgb 0.925 0.400 0.008);      /* #ec6602 */
+  --background-color: color(srgb 1 1 1);
+  --foreground-color: color(srgb 1 1 1);
+  --border-color: color(srgb 0.902 0.902 0.902);      /* #e6e6e6 */
+  --text-color: color(srgb 0.102 0.102 0.102);        /* #1a1a1a */
+  --error-color: color(srgb 0.851 0 0.114);           /* #d9001d */
+  --titlebar-color: color(srgb 1 1 1);
+  --autofill-background-color: color(srgb 0.984 0.910 0.855);
+
+  --atlas-hairline: color(srgb 0 0 0 / 0.07);
+  --atlas-hairline-strong: color(srgb 0 0 0 / 0.13);
+}
+
+/* 几何：与深色主题同一套 */
+x-button[skin="normal"] { border-radius: 6px; }
+x-button[skin="flat"] { border-radius: 6px; }
+x-select { border-radius: 6px; }
+x-input, x-numberinput { border-radius: 6px; }
+x-menu { border-radius: 10px; padding: 5px; }
+x-menuitem { border-radius: 6px; }
+x-popover { border-radius: 10px; }
+dialog { border-radius: 12px; }
+x-tooltip { border-radius: 6px; }
+
+x-navitem::part(button) { border-radius: 8px; }
+x-navitem::part(button)::before { border-radius: 0 3px 3px 0; }
+x-navitem[toggled]::part(button) { background-color: color(srgb 0.925 0.400 0.008 / 0.10); }
+
+x-slider::part(thumb) { border-width: 3px; }
+x-slider::part(groove-track) { height: 3px; background-color: color(srgb 0 0 0 / 0.14); }
+x-slider::part(range-track) { height: 3px; }
+x-slider::part(tick) { background-color: color(srgb 0 0 0 / 0.20); }
+
+x-switch::part(indicator) { width: 32px; height: 17px; }
+x-switch::part(indicator-thumb) { width: 11px; height: 11px; left: 9px; }
+x-switch::part(indicator-track) { background-color: color(srgb 0 0 0 / 0.08); border-color: color(srgb 0 0 0 / 0.20); }
+x-switch[toggled]::part(indicator-track) { background-color: var(--accent-color); border-color: transparent; }
+
+x-tabs { box-shadow: 0 0 0 1px var(--border-color); border-radius: 8px; background: color(srgb 0 0 0 / 0.035); }
+x-tab { border-radius: 6px; }
+x-tab[toggled] { background-color: color(srgb 1 1 1 / 0.95); box-shadow: 0 1px 2px color(srgb 0 0 0 / 0.08); }
+
+x-titlebar::part(buttons) { right: 0; top: 0; }
+x-titlebar::part(button) { padding: 0 13px; }
+
+x-progressbar { height: 2px; }

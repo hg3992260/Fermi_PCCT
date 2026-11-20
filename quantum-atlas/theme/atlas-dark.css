@@ -1,0 +1,52 @@
+/* ─────────────────────────────────────────────────────────────
+   Quantum Atlas · 深色主题（备选）
+   同一套西门子医疗品牌色，在深底上取更亮的同族色
+   ───────────────────────────────────────────────────────────── */
+@import url("/node_modules/xel/themes/fluent-dark.css");
+
+:root {
+  --accent-color: color(srgb 1 0.604 0.235);         /* #ff9a3c */
+  --background-color: color(srgb 0.039 0.066 0.075); /* #0a1113 */
+  --foreground-color: color(srgb 0.063 0.10 0.11);
+  --border-color: color(srgb 0.114 0.169 0.176);
+  --text-color: color(srgb 0.933 0.949 0.965);
+  --error-color: color(srgb 1 0.44 0.44);
+  --titlebar-color: color(srgb 0.055 0.086 0.094);
+  --autofill-background-color: color(srgb 0.6 0.4 0.1 / 0.35);
+
+  --atlas-hairline: color(srgb 1 1 1 / 0.055);
+  --atlas-hairline-strong: color(srgb 1 1 1 / 0.10);
+}
+
+x-button[skin="normal"] { border-radius: 6px; }
+x-button[skin="flat"] { border-radius: 6px; }
+x-select { border-radius: 6px; }
+x-input, x-numberinput { border-radius: 6px; }
+x-menu { border-radius: 10px; padding: 5px; }
+x-menuitem { border-radius: 6px; }
+x-popover { border-radius: 10px; }
+dialog { border-radius: 12px; }
+x-tooltip { border-radius: 6px; }
+
+x-navitem::part(button) { border-radius: 8px; }
+x-navitem::part(button)::before { border-radius: 0 3px 3px 0; }
+x-navitem[toggled]::part(button) { background-color: color(srgb 1 1 1 / 0.075); }
+
+x-slider::part(thumb) { border-width: 3px; }
+x-slider::part(groove-track) { height: 3px; background-color: color(srgb 1 1 1 / 0.14); }
+x-slider::part(range-track) { height: 3px; }
+x-slider::part(tick) { background-color: color(srgb 1 1 1 / 0.22); }
+
+x-switch::part(indicator) { width: 32px; height: 17px; }
+x-switch::part(indicator-thumb) { width: 11px; height: 11px; left: 9px; }
+x-switch::part(indicator-track) { background-color: color(srgb 0 0 0 / 0.28); border-color: color(srgb 1 1 1 / 0.22); }
+x-switch[toggled]::part(indicator-track) { background-color: var(--accent-color); border-color: transparent; }
+
+x-tabs { box-shadow: 0 0 0 1px var(--border-color); border-radius: 8px; background: color(srgb 0 0 0 / 0.16); }
+x-tab { border-radius: 6px; }
+x-tab[toggled] { background-color: color(srgb 1 1 1 / 0.08); box-shadow: none; }
+
+x-titlebar::part(buttons) { right: 0; top: 0; }
+x-titlebar::part(button) { padding: 0 13px; }
+
+x-progressbar { height: 2px; }

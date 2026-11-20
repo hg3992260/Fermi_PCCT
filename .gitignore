@@ -31,3 +31,12 @@ HANDOVER.md
 ._*
 Thumbs.db
 desktop.ini
+
+# Node / Electron dependencies
+node_modules/
+
+# 参考论文图片（第三方下载，非本项目代码；设计文档仍按 arXiv ID 引用）
+quantum-atlas/docs/figs/
+
+# Harness / session tooling state (opencode goals)
+**/.opencode/

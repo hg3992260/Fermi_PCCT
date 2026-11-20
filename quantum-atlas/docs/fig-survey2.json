@@ -1,0 +1,80 @@
+{
+ "L1": [
+  {
+   "id": "1503.04938v1",
+   "caps": [],
+   "imgs": [
+    "/static/browse/0.3.4/images/icons/social/bibsonomy.png",
+    "/static/browse/0.3.4/images/icons/social/reddit.png"
+   ]
+  },
+  {
+   "id": "1803.09279v2",
+   "caps": [
+    "Figure 1: Ball-and-stick models of the Si24 crystal with (a) a perspective view and (b) orthogonal projection along the xx-axis. (a) The primitive cell and the orthorhombic Bravais unitcell are shown as the red and black parallelepipeds, respectively. Twelve a",
+    "Figure 2: (a) Electrical conductivity tensor components and (b) power factor at 300 K with a varying doping concentration. The continuous and dashed lines are for Si24 and dSi, respectively. (c) Electronic band dispersion of Si24 from first-principles calculat",
+    "Figure 3: (a) Lattice thermal conductivity (κl\\kappa_{l}) due to anharmonic phonons. Grüneisen parameters for (b) dSi and (c) Si24 are shown."
+   ],
+   "imgs": [
+    "/html/1803.09279/assets/fig1.png",
+    "/html/1803.09279/assets/fig2.png",
+    "/html/1803.09279/assets/fig3.png",
+    "/html/1803.09279/assets/fig4.png"
+   ]
+  }
+ ],
+ "L6": [
+  {
+   "id": "2606.01405v1",
+   "caps": [
+    "(a) Rabi Oscillation",
+    "(b) CUQ Oscillation",
+    "Figure 1: Comparative Bloch-sphere trajectories for pure state (a) Hermitian (Rabi) and (b) non-Hermitian (CUQ) oscillations. The vectors are the evolution of the initial state 𝐛0\\mathbf{b}_{0} captured in equal time intervals. The Bloch vector rotates in the "
+   ],
+   "imgs": [
+    "/html/2606.01405/assets/Images/Bloch_Rabi_pure.png",
+    "/html/2606.01405/assets/Images/Bloch_CUQ_pure.png",
+    "/html/2606.01405/assets/Images/harm_b05eep.png",
+    "/html/2606.01405/assets/Images/anh_b05eg_r05.png"
+   ]
+  },
+  {
+   "id": "2208.00708v2",
+   "caps": [
+    "Figure 1: Dissipative quantum Rabi model described by the Hamiltonian in Eq. (1) for a qubit of frequency Δ\\Delta coupled through gg to a harmonic oscillator of frequency ω0\\omega_{0}, in turn coupled to a bath via a coupling strength α\\alpha",
+    "Figure 2: Oscillator position in (a)(a), oscillator momentum in (b)(b) and oscillator number in (c)(c) as a function of time (in units of 1/Δ1/\\Delta) for two different methods: MPS simulations (blue solid line) and the HEM approach (green dashed line) (partic",
+    "Figure 3: Oscillator position in (a)(a) and qubit fidelity in (b)(b) as a function of time (in units of 1/Δ1/\\Delta). In panel (a)(a) the oscillator position is computed with three methods: MPS simulations (blue solid line), LME solution (red dashed line) and "
+   ],
+   "imgs": [
+    "/html/2208.00708/assets/Fig1.png",
+    "/html/2208.00708/assets/Fig2.png",
+    "/html/2208.00708/assets/Fig3.png",
+    "/html/2208.00708/assets/Fig4.png"
+   ]
+  }
+ ],
+ "L7": [
+  {
+   "id": "2303.08366v4",
+   "caps": [],
+   "imgs": [
+    "/static/browse/0.3.4/images/icons/social/bibsonomy.png",
+    "/static/browse/0.3.4/images/icons/social/reddit.png"
+   ]
+  },
+  {
+   "id": "2302.02957v1",
+   "caps": [
+    "Figure 1: (a) 4 qubits entangled state qsphere [1] (b) GHZ state spherical phase spaces [2] (c) Majumdar-Ghosh model qubism representation [3]",
+    "Figure 2: (a) schematic of 2-qubit BTBS (b) Parameterized Bell state preparation circuit (c) Parameterized bell state evolution on the BTBS",
+    "Algorithm 1 Recursively compute the Bloch Sphere Binary tree"
+   ],
+   "imgs": [
+    "/html/2302.02957/assets/pics/VQC.png",
+    "/html/2302.02957/assets/pics/TE1.png",
+    "/html/2302.02957/assets/pics/TE2.png",
+    "/html/2302.02957/assets/pics/iris1.png"
+   ]
+  }
+ ]
+}
