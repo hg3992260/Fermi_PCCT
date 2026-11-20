@@ -1,0 +1,407 @@
+{
+ "L1_crystal_1803.09279": {
+  "id": "1803.09279",
+  "dir": "I:\\Fermi\\quantum-atlas\\docs\\figs\\L1_crystal_1803.09279",
+  "figs": [
+   {
+    "path": "L1_crystal_1803.09279\\fig4.pdf",
+    "kb": 2103
+   },
+   {
+    "path": "L1_crystal_1803.09279\\fig2.pdf",
+    "kb": 1683
+   },
+   {
+    "path": "L1_crystal_1803.09279\\fig1.pdf",
+    "kb": 635
+   },
+   {
+    "path": "L1_crystal_1803.09279\\fig3.pdf",
+    "kb": 615
+   },
+   {
+    "path": "L1_crystal_1803.09279\\figs2.pdf",
+    "kb": 18
+   },
+   {
+    "path": "L1_crystal_1803.09279\\figs1.pdf",
+    "kb": 11
+   }
+  ],
+  "captions": [
+   "(a) Lattice thermal conductivity ( _l) due to anharmonic phonons. Gr\"uneisen parameters for (b) dSi and (c) Si_24 are shown.",
+   "Electronic band dispersions and density of states of Na-doped Si_24 with (a) 0, (b) 1 and (c) 2 Na ions in a (3 2 2) supercell containing 288 Si atoms. The supercell band structures are unfolded to the irreducible Brillouin zone of the primitive cell of Si_24 ",
+   "Lattice thermal conductivities ( _xx) computed on different grid meshes."
+  ],
+  "err": null,
+  "rendered": [
+   "L1_crystal_1803.09279\\fig4_render.png",
+   "L1_crystal_1803.09279\\fig2_render.png",
+   "L1_crystal_1803.09279\\fig1_render.png"
+  ]
+ },
+ "L2_bands_1512.05403": {
+  "id": "1512.05403",
+  "dir": "I:\\Fermi\\quantum-atlas\\docs\\figs\\L2_bands_1512.05403",
+  "figs": [
+   {
+    "path": "L2_bands_1512.05403\\Momentum400nmEPMravgV0p5V_t5p0ps.pdf",
+    "kb": 3219
+   },
+   {
+    "path": "L2_bands_1512.05403\\EvsK3D.pdf",
+    "kb": 120
+   },
+   {
+    "path": "L2_bands_1512.05403\\pdf-x0p7-Rmax-0p5V-EPMravg-t5ps.pdf",
+    "kb": 93
+   },
+   {
+    "path": "L2_bands_1512.05403\\pdf-x0p3-Rmax-0p5V-EPMravg-t5ps.pdf",
+    "kb": 93
+   },
+   {
+    "path": "L2_bands_1512.05403\\EPMravg_Parab_Kane_vs_K2.pdf",
+    "kb": 15
+   },
+   {
+    "path": "L2_bands_1512.05403\\L2StdevEPMravg_vs_K2.pdf",
+    "kb": 7
+   },
+   {
+    "path": "L2_bands_1512.05403\\RCdiffIVcurves50nm.pdf",
+    "kb": 5
+   },
+   {
+    "path": "L2_bands_1512.05403\\RCdiffIVcurves400nm.pdf",
+    "kb": 5
+   },
+   {
+    "path": "L2_bands_1512.05403\\ECORRenergy_400nm_meff0p32_V0p5v_t5p0ps.pdf",
+    "kb": 4
+   },
+   {
+    "path": "L2_bands_1512.05403\\ECORRPotential_400nm_meff0p32_V0p5v_t5p0ps.pdf",
+    "kb": 4
+   }
+  ],
+  "captions": [
+   "Local EPM conduction energy band-structure ( ) color plot in the -space 1^st octant enclosing the Silicon Brillouin Zone. Conduction band local minimum: k_o = (0.8562,0,0) (2 /a)",
+   "Energy (E) vs r = | - _0|^2 for the parabolic, Kane, & symmetrized EPM spherical average band.",
+   "Relative l_2-deviation in the angular %( , )- space of EPM average from the EPM full band for Si, as a function of r = | - _0|^2",
+   "DG-BP Algorithm",
+   "Density ( , in log-scale) vs. position (x) plots for different conduction band models: parabolic, Kane, EPM average. 400nm channel. t=5.0ps. 0.5 Volts Bias.",
+   "Density ( , in log-scale) vs. position (x) plots for different conduction band models: parabolic, Kane, EPM average. t=10.0ps. Left:400nm channel. Right: 50nm channel. 0.5 Volts Bias."
+  ],
+  "err": null,
+  "rendered": [
+   "L2_bands_1512.05403\\Momentum400nmEPMravgV0p5V_t5p0ps_render.png",
+   "L2_bands_1512.05403\\EvsK3D_render.png",
+   "L2_bands_1512.05403\\pdf-x0p7-Rmax-0p5V-EPMravg-t5ps_render.png"
+  ]
+ },
+ "L3_spin_2308.09407": {
+  "id": "2308.09407",
+  "dir": "I:\\Fermi\\quantum-atlas\\docs\\figs\\L3_spin_2308.09407",
+  "figs": [
+   {
+    "path": "L3_spin_2308.09407\\tb_01_dispersion-n.png",
+    "kb": 1210
+   },
+   {
+    "path": "L3_spin_2308.09407\\tb_02_temp.png",
+    "kb": 734
+   },
+   {
+    "path": "L3_spin_2308.09407\\figure12-all.png",
+    "kb": 409
+   },
+   {
+    "path": "L3_spin_2308.09407\\spinW_05_bc_ellipse.png",
+    "kb": 282
+   },
+   {
+    "path": "L3_spin_2308.09407\\spinW_04_bc_SIAc.png",
+    "kb": 270
+   },
+   {
+    "path": "L3_spin_2308.09407\\chiral_03_elastic_inelastic-n.png",
+    "kb": 256
+   },
+   {
+    "path": "L3_spin_2308.09407\\K_pol-pattern.JPG",
+    "kb": 252
+   },
+   {
+    "path": "L3_spin_2308.09407\\spinW_03_ellipse.png",
+    "kb": 247
+   },
+   {
+    "path": "L3_spin_2308.09407\\spinW_02_twobyseven.png",
+    "kb": 219
+   },
+   {
+    "path": "L3_spin_2308.09407\\antichiral-all.png",
+    "kb": 189
+   }
+  ],
+  "captions": [
+   "Sketch of the polarization patterns of magnetic excitations at the zone center of the cycloid structure and at characteristic propagation vectors. The static cycloid in the incommensurate multiferroic phase is shown for a chain along ~ by blue arrows (moments)",
+   "Calculated neutron intensity for at Q=(0,~k,~1) of the total cross section S^ ( ,Q) (left) and the components, M^yy( ,Q) (center) and M^zz( ,Q) (right). The scattering geometry was chosen in a way that y is in the plane and z is parallel to . Different magneti",
+   "Calculated neutron intensity for along the paths (a) [H,0.28,1], (b) [0,K,1] and (c) [0,0.28,L]. The calculation is based on an elliptic spiral with moments in the plane, k=(0,~2/7,~0) and an elliptic easy-plane anisotropy. The parameters from model M-II were ",
+   "Comparison of inelastic scattering maps of obtained from neutron TOF spectroscopy at IN5 (left) at T= 17 ) and simulation (right). The incident neutron wave length and the energy resolution are given in the plot headers. Model M-II (cf. Tab.~ tab:tbmno-spinWfi",
+   "Comparison of inelastic scattering maps of obtained from neutron TOF spectroscopy at IN5 (left) at T= 17 ) and simulation (right). The incident neutron wave length and the energy resolution are given in the plot headers. Model M-II (cf. Tab.~ tab:tbmno-spinWfi",
+   "Comparison of inelastic scattering maps of obtained from neutron TOF spectroscopy at IN5 (left) at T= 17 ) and simulation (right) in the [0,K,L] plane. The incident neutron wave length and the energy resolution are given in the plot headers. Model M-II (cf. Ta"
+  ],
+  "err": null,
+  "rendered": []
+ },
+ "L4_dielectric_0801.1384": {
+  "id": "0801.1384",
+  "dir": "I:\\Fermi\\quantum-atlas\\docs\\figs\\L4_dielectric_0801.1384",
+  "figs": [
+   {
+    "path": "L4_dielectric_0801.1384\\fig1.eps",
+    "kb": 147
+   },
+   {
+    "path": "L4_dielectric_0801.1384\\fig5.eps",
+    "kb": 45
+   },
+   {
+    "path": "L4_dielectric_0801.1384\\fig6.eps",
+    "kb": 40
+   },
+   {
+    "path": "L4_dielectric_0801.1384\\fig2a.eps",
+    "kb": 29
+   },
+   {
+    "path": "L4_dielectric_0801.1384\\fig9.eps",
+    "kb": 26
+   },
+   {
+    "path": "L4_dielectric_0801.1384\\fig8.eps",
+    "kb": 25
+   },
+   {
+    "path": "L4_dielectric_0801.1384\\fig2b.eps",
+    "kb": 24
+   },
+   {
+    "path": "L4_dielectric_0801.1384\\fig11.eps",
+    "kb": 19
+   },
+   {
+    "path": "L4_dielectric_0801.1384\\fig7.eps",
+    "kb": 18
+   },
+   {
+    "path": "L4_dielectric_0801.1384\\fig12.eps",
+    "kb": 13
+   }
+  ],
+  "captions": [
+   "(Color online) Surface scans of all films with AFM using the same color scale. The scan area is 1; m^2. The film thickness, rms roughness w, and correlation length are shown in each panel (in nm).",
+   "(a) Measured ^ as a function of frequency . (b) The same for | ^ |.",
+   "Dielectric function for different samples at fixed wavelengths =1,5,10; m.",
+   "X-ray reflectivity (counts) vs the angle of incidence (degrees). All 3 films were deposited at similar conditions.",
+   "Imaginary part of the dielectric function in the interband region obtained in different experiments. The thin solid line represents the data by Th`eye The70, the solid circles are the data by Johnson and Christy Joh72, and the open circles are the data by Wang",
+   "Comparison of existing low-frequency data for gold. Panel (a) gives ^ and panel (b) shows - ^ as functions of the wavelength. The literature data are marked as PM Pad61, MS Mot64, and DM Dol65 (included in the handbook HB1). Our data are presented for samples "
+  ],
+  "err": null,
+  "rendered": []
+ },
+ "L5_liquid_1204.0348": {
+  "id": "1204.0348",
+  "dir": "I:\\Fermi\\quantum-atlas\\docs\\figs\\L5_liquid_1204.0348",
+  "figs": [
+   {
+    "path": "L5_liquid_1204.0348\\fig3_rev1.eps",
+    "kb": 813
+   },
+   {
+    "path": "L5_liquid_1204.0348\\fig2.eps",
+    "kb": 766
+   },
+   {
+    "path": "L5_liquid_1204.0348\\fig4.eps",
+    "kb": 578
+   },
+   {
+    "path": "L5_liquid_1204.0348\\fig6.eps",
+    "kb": 360
+   }
+  ],
+  "captions": [
+   "exp_layout Shear flow in a planar Couette configuration in a strongly coupled 2D complex plasma is sustained by a pair of counterpropagating laser beams (indicated by arrows). Particle trajectories during 0.83~s of a steady-state flow are shown. The dashed-lin",
+   "gr_Sk Angle-averaged (a) pair correlation function g(r) and (b) static structure factor S(k) of the complex plasma under different levels of shear stress as controlled by the manipulation laser power P_ laser (indicated in the inset). S(k) was calculated (in t",
+   "Delta_phi (a) Interparticle distance and (b) bond density as functions of azimuthal angle in liquid complex plasma at different levels of shear stress (controlled by P_ laser, see inset). The flow direction is indicated by the arrows in (a). The liquid's micro",
+   "Delta_phi_fits Fits with Eq.~( fit) of experimental ( ) for (a) P_ laser=1.05~W and (b) 1.2~W.",
+   "S_k Static structure factor S( k) of the 2D complex plasma under different levels of shear stress (controlled by P_ laser, as indicated). The arrows in (d) indicate schematically the direction of the flow. Color coding from dark blue to red corresponds to the ",
+   "fits Ellipticity of the liquid static structure factor S( k) (triangles) and relative amplitudes A_2 (circles) and A_4 (squares) in Eq.~( fit), for different levels of shear strain rate. The inset shows linear fits (forced to 0) of and A_2 for <0.8~ s^-1."
+  ],
+  "err": null,
+  "rendered": []
+ },
+ "L6_bloch_2606.01405": {
+  "id": "2606.01405",
+  "dir": "I:\\Fermi\\quantum-atlas\\docs\\figs\\L6_bloch_2606.01405",
+  "figs": [
+   {
+    "path": "L6_bloch_2606.01405\\Images\\Bloch_CUQ_pure.png",
+    "kb": 1436
+   },
+   {
+    "path": "L6_bloch_2606.01405\\Images\\Bloch_Rabi_pure.png",
+    "kb": 1407
+   },
+   {
+    "path": "L6_bloch_2606.01405\\Images\\anh_b05eg_r08.png",
+    "kb": 1392
+   },
+   {
+    "path": "L6_bloch_2606.01405\\Images\\anh_b05eg_r05.png",
+    "kb": 1341
+   },
+   {
+    "path": "L6_bloch_2606.01405\\Images\\anh_b05eg_r02.png",
+    "kb": 1265
+   },
+   {
+    "path": "L6_bloch_2606.01405\\Images\\harm_b05eep.png",
+    "kb": 1191
+   },
+   {
+    "path": "L6_bloch_2606.01405\\Images\\bgpbegp.png",
+    "kb": 1001
+   },
+   {
+    "path": "L6_bloch_2606.01405\\Images\\bg0begp.png",
+    "kb": 968
+   },
+   {
+    "path": "L6_bloch_2606.01405\\Images\\bgpbeg0.png",
+    "kb": 954
+   },
+   {
+    "path": "L6_bloch_2606.01405\\Images\\bgpbegn.png",
+    "kb": 931
+   }
+  ],
+  "captions": [],
+  "err": null,
+  "rendered": []
+ },
+ "L7_qsphere_2303.08366": {
+  "id": "2303.08366",
+  "dir": "I:\\Fermi\\quantum-atlas\\docs\\figs\\L7_qsphere_2303.08366",
+  "figs": [
+   {
+    "path": "L7_qsphere_2303.08366\\case2.pdf",
+    "kb": 1732
+   },
+   {
+    "path": "L7_qsphere_2303.08366\\case1.pdf",
+    "kb": 1390
+   },
+   {
+    "path": "L7_qsphere_2303.08366\\study2samplev3.pdf",
+    "kb": 1332
+   },
+   {
+    "path": "L7_qsphere_2303.08366\\study1aratingv3.pdf",
+    "kb": 1104
+   },
+   {
+    "path": "L7_qsphere_2303.08366\\case2.png",
+    "kb": 964
+   },
+   {
+    "path": "L7_qsphere_2303.08366\\4.pdf",
+    "kb": 960
+   },
+   {
+    "path": "L7_qsphere_2303.08366\\Fig2.pdf",
+    "kb": 877
+   },
+   {
+    "path": "L7_qsphere_2303.08366\\case1.png",
+    "kb": 799
+   },
+   {
+    "path": "L7_qsphere_2303.08366\\study2chartv6.pdf",
+    "kb": 612
+   },
+   {
+    "path": "L7_qsphere_2303.08366\\2_.png",
+    "kb": 600
+   }
+  ],
+  "captions": [
+   "New EG Logo",
+   "fig:ex1 % 'Empty' figure only to serve as an example of long caption requiring % more than one line. It is not typed centered but aligned on both sides.",
+   "fig:firstExample % Here is a sample figure.",
+   "fig:ex3% % For publications with color tables (i.e., publications not offering % color throughout the paper) please observe: % for the printed version -- and ONLY for the printed % version -- color figures have to be placed in the last page. % % For the electr"
+  ],
+  "err": null,
+  "rendered": [
+   "L7_qsphere_2303.08366\\case2_render.png",
+   "L7_qsphere_2303.08366\\case1_render.png",
+   "L7_qsphere_2303.08366\\study2samplev3_render.png"
+  ]
+ },
+ "L8_circuit_2307.08969": {
+  "id": "2307.08969",
+  "dir": "I:\\Fermi\\quantum-atlas\\docs\\figs\\L8_circuit_2307.08969",
+  "figs": [
+   {
+    "path": "L8_circuit_2307.08969\\figs\\CypressView.eps",
+    "kb": 3700
+   },
+   {
+    "path": "L8_circuit_2307.08969\\figs\\Sample.pdf",
+    "kb": 3425
+   },
+   {
+    "path": "L8_circuit_2307.08969\\figs\\teaser.pdf",
+    "kb": 2552
+   },
+   {
+    "path": "L8_circuit_2307.08969\\figs\\pipeline-all.pdf",
+    "kb": 2269
+   },
+   {
+    "path": "L8_circuit_2307.08969\\figs\\teaser_-_copy.pdf",
+    "kb": 1667
+   },
+   {
+    "path": "L8_circuit_2307.08969\\figs\\case-2.pdf",
+    "kb": 1659
+   },
+   {
+    "path": "L8_circuit_2307.08969\\figs\\case-1.pdf",
+    "kb": 1560
+   },
+   {
+    "path": "L8_circuit_2307.08969\\figs\\system-ui.pdf",
+    "kb": 1340
+   },
+   {
+    "path": "L8_circuit_2307.08969\\figs\\context-vis.pdf",
+    "kb": 1207
+   },
+   {
+    "path": "L8_circuit_2307.08969\\figs\\qc-samples.pdf",
+    "kb": 1015
+   }
+  ],
+  "captions": [],
+  "err": null,
+  "rendered": [
+   "L8_circuit_2307.08969\\figs\\Sample_render.png",
+   "L8_circuit_2307.08969\\figs\\teaser_render.png",
+   "L8_circuit_2307.08969\\figs\\pipeline-all_render.png"
+  ]
+ }
+}

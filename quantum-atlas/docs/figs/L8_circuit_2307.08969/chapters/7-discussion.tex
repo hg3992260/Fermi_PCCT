@@ -1,0 +1,73 @@
+\section{Discussion}
+\label{sec:discussion}
+In this section, we reflect on our research and discuss implications for quantum circuit visualization, followed by future work and limitations.
+
+\subsection{Implications}
+\label{sec:implication}
+% Feedback from our user evaluation with domain experts demonstrates the effectiveness of our pipeline that incorporates semantic analysis and visualization techniques for scalable circuit exploration and analysis.
+This study reveals implications for future quantum circuit visualization.
+
+% \textbf{Significance of visualizing quantum circuit.}
+% Feedback from our user evaluation with quantum experts demonstrates the potential of large-scale quantum circuit visualization.
+% % \textbf{Visualization benefits the pre-analysis before quantum circuit execution.}
+% Performing pre-analysis of quantum algorithms prior to execution is a critical step in the design process of quantum algorithms.
+% The reason for this stems from the high cost associated with executing and debugging quantum algorithms\cite{Huang:2019:SAVA}.
+% Our research shows opportunities to adopt visualization techniques to address potential issues in the circuit design phase to reduces the overall cost of the algorithm but also increases the likelihood of successful execution.
+% \textbf{Visualization facilitates the research on large-scale quantum circuit.}
+% Our proposed pipeline for quantum circuit visualization consists of four stages: code processing, component segmentation, pattern abstraction, and context enhancement. The first three stages aim to transform the original quantum circuit code into a simplified and abstracted grid-like representation. The final stage, context enhancement, complements the limitations of the previous stages by providing a contextual view of the circuit. This is achieved by extracting relevant context information from metadata and employing a set of visual representations to reveal factors of interest to domain experts. The three modules of context enhancement, Qubit Provenance, Idling \& Parallelism, and Connectivity \& Entanglement, use creative and academic approaches to visualize provenance, parallelism, and entanglement information of qubits and quantum gates. By complementing the previous stages, context enhancement improves the usability and comprehensibility of quantum circuit visualization for domain experts.
+% Our approach not only facilitates analysis and understanding of quantum circuits, but also has implications for the design of quantum algorithms and the development of quantum computing technologies.
+\added{\textbf{Benefits of semantics in quantum circuit interpretation.}}
+Our evaluation results indicate that semantics has a promising potential for enhancing the interpretation of quantum circuits.
+The user feedback showed a highly positive response towards the semantic representation of the circuit,
+which offered a new perspective of circuit visualization.
+To our knowledge, this area has not yet been explored in-depth by other researchers. 
+This approach effectively reduces the cognitive load of comprehending complex and scalable circuits and further facilitates navigation and analysis tasks.
+Moreover, the use of semantics could lead to the development of more advanced tools and techniques for quantum circuit visualization and analysis in the future.
+
+\textbf{Visual representations beyond typical diagrams.}
+Our work also explores the potential of visual representations beyond the typical quantum circuit diagrams.
+We involve a series of new diagrams to present various perspectives of circuits.
+For example, the abstracted circuit diagram allows users to analyze the circuit at various levels of abstraction, making it easier to identify patterns and relationships between different parts of the circuit.
+The augmented circuit diagram that uses color-coding and highlighting enhances the perception of gate placement context, which is critical for optimizing the circuit performance.
+These new diagrams could be extended to other visualizations and graphical interfaces for quantum computing, providing users with a more intuitive and interactive way to analyze and optimize quantum circuits.
+
+
+
+\subsection{Limitations and Future Work}
+\label{sec:limitation}
+Although our work has shown promising results, there are several limitations and opportunities for future research.
+
+\textbf{Scalability.}
+Our semantic-based segmentation and abstraction approaches for quantum circuits are scalable, enabling the visualization of larger and more complex circuits without any limitations.
+Our usage scenarios and user evaluation confirm that \emph{Quantivine} can efficiently visualize quantum circuits with up to 100 qubits.
+The feedback from domain experts suggests that the system's capability covers the majority of their research on current quantum devices. 
+\added{Nevertheless, as circuits scale up to hundreds of qubits, our system encounters challenges with interactions.
+The fully expanded circuits and matrix diagrams impose overhead in terms of rendering and visual perception, thereby hindering the interactivity of the system.
+Although our design of folding circuit mitigates this issue to some extent, 
+optimizing rendering techniques and developing new interactions tailored to the demands of large graphs and matrices can address it more adequately in future work.}
+
+\textbf{Generalizability.}
+Although our study focuses on semantic analysis of Python + Qiskit code, the methodologies employed in this research have the potential to be extended to other high-level quantum programming languages.
+The fundamental idea involves utilizing static analysis to deduce the structures and meanings of code snippets and then mapping them to dynamic compiled circuits.
+These semantic meanings are derived from predefined rules, which can be expanded to encompass more complicated patterns and leverage advanced deep learning techniques for intelligent inference \cite{Wang:2023:VIS} in forthcoming research.
+
+\textbf{Potentiality.}
+With increasing capability of the quantum circuit, its visualization and analysis are becoming an emerging field of research.
+While our work illustrates a potential pipeline of using semantic analysis and visualization techniques for quantum circuit representation and analysis,
+further work is needed to explore how it can be integrated with other quantum programming and simulation tools.
+We believe our work has the potential to lay the foundation for future research in large-scale quantum circuits by making their exploration and analysis more accessible to a wider range of researchers and practitioners.
+
+\textbf{Limitations.}
+Our system currently supports the visualization of static quantum circuits. 
+Future work could focus on developing a real-time visualization system that captures the dynamics of quantum circuits during execution.
+The current system is tailored to expert users and lacks certain features that could make it more accessible to novice users.
+Future work could focus on improving the user interface and developing features such as direct manipulation on diagrams.
+\added{Furthermore, it would be beneficial to offer users the ability to define their own grouping of quantum gates, in addition to automated methods, resulting in a more customizable and user-centric experience.}
+
+\section{Conclusion}
+This work presents a novel visualization approach for large-scale quantum circuits, that produces comprehensive representations of the circuit to fulfill the analysis requirements.
+The approach involves graph visualization techniques incorporated with semantic analysis, and a set of visual designs specialized for quantum circuits. 
+Then, we develop \emph{Quantivine}, a prototype system that allows quantum experts to interactively explore and analyze scalable quantum circuits.
+The evaluation results demonstrate the effectiveness of our pipeline and visual designs.
+% The findings also suggest that the tool has implications for facilitating the advancement of quantum computing education and research.
+

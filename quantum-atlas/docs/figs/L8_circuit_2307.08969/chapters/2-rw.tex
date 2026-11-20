@@ -1,0 +1,89 @@
+\section{Related Work}
+In this section, we discuss the related work in quantum circuit analysis, semantic analysis, and visualization techniques of complex graphs. 
+
+\subsection{Quantum Circuit Analysis}
+
+% In the current noisy intermediate-scale quantum (NISQ) era\cite{Preskill:2018:NISQ}, 
+The quantum circuit is an important computation model of current quantum computers.
+% from industry, such as IBM, Google, and D-Wave.
+The increasing interest in quantum computing~\cite{Nielsen:2010:QCBook}, coupled with advancements in actual quantum devices\cite{Preskill:2018:NISQ}, has motivated research in the analysis and visualization of quantum circuits.
+% Research in analysis, optimization and visualization of quantum circuits is motivated by growing interests in quantum computing and advances in actual quantum devices.
+
+\textbf{Quantum-Classic Difference.}
+Although quantum circuits are made up of bits and logical gates similar to classic circuits, they are two different models.
+Quantum circuits have unique features such as quantum \emph{superposition} and \emph{entanglement}\cite{Jozsa:2003:REQ, Preskill:2012:QCEF}, which are building blocks of quantum algorithms.
+These features power quantum algorithms as necessary parts of any quantum advantage that cannot be replicated in classical circuits.
+As such, the research in classical circuits\cite{Kim:2010:EEV} cannot be directly applied to quantum circuits.
+
+\textbf{Performance Analysis.}
+Most quantum research leverages mathematical or logical methods during the analysis process of quantum circuits\cite{Maslov:2008:QCS, Bhattacharjee:2017:QCP, Tan:2020:OLS4QC, Weiden:2022:TAS}.
+Besides, the network and graph theory is also applied to quantum circuit analysis\cite{Biamonte:2019:CNCQ, Iten:2022:EPPM}.
+Recently, VACSEN\cite{Ruan:2023:VACSEN} introduces visualization techniques for quantum circuit analysis,
+which provides an intuitive way for users to aware noises in the computation.
+These studies mainly focus on the performance of quantum circuits.
+
+% quantum circuits in analysis and optimization process.
+% For quantum computing researchers, optimization techniques are usually applied after the design of quantum algorithms.
+% Usually, it is imperative to limit the number of gates in the quantum circuit with the purpose of obtaining a robust implementation and meeting the hardware limitations\cite{Maslov:2008:QCS}.
+% For example, Tan et al.\cite{Tan:2020:OLS4QC} adapted a more efficient spacetime-based variable encoding, leading to a larger reduction in depth and additional cost.
+% \cite{Weiden:2022:TAS}
+% On the other hand, an equivalent circuit with lower cost is more favored, 
+% \cite{Bhattacharjee:2017:QCP}
+% Time-dependent diagrams of quantum circuits describes the process of quantum algorithms.
+
+\textbf{Quantum Circuit Visualization.}
+As the growing complexity of quantum circuits and the non-intuitive nature of quantum mechanism, it becomes increasingly challenging to comprehend the circuits.
+A number of studies have investigated visualization techniques to aid in the comprehension of quantum computing.
+For example, ShorVis\cite{Tao:2017:ShorVis} visualizes a quantum algorithm in terms of quantum states, circuit and probability distribution. 
+QuFlow\cite{Lin:2018:QuFlow} displays the parameter flow of quantum circuits.
+GraphStateVis\cite{Miller:2021:GSV} offers visual analysis of qubit graph states and their stabilizer.
+In addition, Fickler et al.\cite{Fickler:2013:RIQE} present real-time visualization of quantum entanglement state through advanced devices. 
+Existing research focuses on visualizing qubit states, parameters or quality indicators to enhance the comprehension of the circuit.
+Nevertheless, these studies are limited when scaling to large quantum circuits as the space of quantum states exponential increases.
+
+Our work proposes a novel approach to tackle this challenge by focusing on the efficient representation of quantum circuit structure. We combine semantic analysis and graph visualization techniques to generate visual representations for scalable circuits with high readability. This approach provides a significant contribution towards enhancing the comprehension of quantum circuits and facilitating circuit analysis.
+% The application of classical network and graph theory to quantum circuits has shown promising potential\cite{Biamonte:2019:CNCQ}, offering new avenues for the development of efficient and scalable visualization techniques.
+
+\subsection{Semantic Analysis of Programming Languages}
+Quantum circuits are commonly constructed using specific programming languages\cite{Svore:2018:QSharp, JavadiAbhari:2014:ScaffCC, Green:2013:Quipper}, or Python toolkits\cite{Qiskit, Cirq}.
+% Quantum circuits are commonly constructed using specific programming languages, such as Q\#\cite{Svore:2018:QSharp}, ScaffCC\cite{JavadiAbhari:2014:ScaffCC}, Quipper\cite{Green:2013:Quipper}, or Python toolkits like Qiskit\cite{Qiskit} or Cirq\cite{Cirq}.
+Researchers have studied utilizing semantics of quantum circuits for performance optimization and correctness verification\cite{Xu:2022:Quartz, Tao:2022:Giallar}.
+But there is a scarcity of research that employs semantics to interpret the quantum circuit.
+
+\added{Semantic analysis has been extensively used in the field of information visualization to facilitate the exploration and analysis of complex datasets.}
+Two forms of frequently used semantic information are \emph{semantic structure} and \emph{semantic meanings}.
+The semantic structure describes internal relationship of the data, which is often used to navigate exploring data or complex visualizations\cite{Borner:2000:EVSS, Albertoni:2005:VSA, Willett:2007:SW}.
+The semantic meanings, such as keywords, are often used to characterize data samples for efficient similarity measurements\cite{Brandes:2002:VBN, Thomas:2004:FPG, Xie:2019:SBM, Wu:2011:SPWC} and visual representations\cite{Sen:2017:Cartograph, Lai:2020:AAS}.
+% For example, Lai et al.\cite{Lai:2020:AAS} utilizes semantic analysis on natural languages to annotate text description for visualizations, which enables users to easily understand and interpret complex visualizations.
+% \cite{Thomas:2004:FPG, Cao:2010:FacetAtlas}.
+In recent years, there has been growing interest in applying semantic analysis techniques to code representation to facilitate comprehension and analysis of programs.
+Using semantic structure information, such as abstract syntax tree (AST), to enhance code representation has been proven to be effective\cite{Guo:2021:GraphCodeBERT, Guo:2022:UniXcoder}.
+% Moreover, SOMNUS\cite{Xiong:2022:VSD} visualize semantic meanings of data transformation scripts to enhance comprehension of data provenance.
+Additionally, certain studies have focused on visualizing the semantic meanings of scripts, aiming to improve comprehension of data provenance\cite{Xiong:2022:VSD, Feng:2023:XNLI}.
+
+\added{Motivated by previous studies, we attempt to utilize semantics to enhance the representation of quantum circuits.
+We employ AST to extract the semantic structure of quantum circuits from quantum programs,
+followed by inferring semantic meanings of code statements that represents various patterns in the circuits.
+Thus, our approach results in highly readable circuit diagrams that incorporate semantics.}
+
+\subsection{Visual Representation of Graph Data}
+The visual representation of graph data can be classified into two major categories: node-link diagram and matrix representation.
+Matrix representation~\cite{mueller2007comparison,pan2020rcanalyzer,han2022inet} uses an adjacency matrix to visualize a graph and utilizes the ordering of rows and columns to highlight typical patterns.
+An intuitive way for non-experts is using node-link diagram by utilizing nodes and edges to represent topology structures~\cite{ghoniem2004comparison,purchase2007important,han2021netv}.
+The key issue of node-link diagram is how to place nodes, as the positions impact the visual patterns.
+Various layout strategies and methods~\cite{hachul2007large,haleem2019evaluating,kwon2019deep,zhu2020drgraph,Wang:2021:G6} are proposed to handle different tasks and requirements, such as force-directed layout~\cite{hachul2005drawing,jacomy2014forceatlas2}, hierarchical layout~\cite{north2002online}, orthogonal layout~\cite{gorg2005dynamic,biedl1998better} and so on.
+
+As the scale of graph data continues to grow~\cite{lee2006task}, graph summarization\cite{Liu:2018:GSM} and visual abstraction techniques are employed to enhance the readability of graph visualization~\cite{chen2018structure,han2021visual} and facilitate the analysis of graph data. 
+Graph summarization focuses on extracting important information from the original graph, 
+involving aggregation based, bit compression based, simplification based and influence based methods.
+Aggregation based methods aggregate nodes or edges into super-nodes based on optimization function\cite{lefevre2010grass, maccioni2016scalable}.
+Bit compression based methods minimize the number of bits in describing graphs\cite{navlakha2008graph, koutra2014vog}.
+Simplification based methods remove inessential nodes or edges to simplify graphs\cite{shen2006visual,ghashami2016efficient}.
+Influence based methods utilize high-level description of the influence propagation to represent graphs\cite{mehmood2013csi,mathioudakis2011sparsification}.
+Some of these techniques may not faithfully represent the original data or introduce complex graph theory concepts that increase the cognitive load on users.
+For visual abstraction, it focuses on reducing visual complexity of graphs. Graph motifs\cite{motif2013cody, module2017li} are utilized to simplify graph visualizations, but the motifs and glyphs involve cognitive burden in comprehension.
+In addition, customized visual abstraction techniques~\cite{Viola:2018:PCAV} are employed to achieve different tasks and requirements\cite{Zhao:2023:ASTF,Zhou:2019:VALS}.
+
+However, the aforementioned work on visual representation of graph data is extensive and not tailored specifically to quantum circuits.
+Given the specialty of quantum circuits, a simple and customized representation that is more suitable for quantum experts is required.
+Our work builds upon the requirements of domain experts and provides a significant contribution towards the exploration of utilizing graph visualization techniques for large-scale quantum circuits.

@@ -1,0 +1,950 @@
+\documentclass[aps, amssymb, showpacs, superscriptaddress, twocolumn]{revtex4-1}
+
+\usepackage[version=3]{mhchem} % Formula subscripts using \ce{}
+\usepackage[T1]{fontenc} % Use modern font encodings
+\usepackage{graphicx}
+\usepackage{amssymb, gensymb}
+\usepackage{xfrac}
+\usepackage{xcolor}
+
+\begin{document}
+
+\title{Enhanced Thermoelectric Properties in a New Silicon Crystal Si$_{24}$ with Intrinsic Nanoscale Porous Structure}
+
+\author{Kisung Chae}
+\thanks{Contributed equally to this work}
+\affiliation{Korea Institute for Advanced Study, Seoul, South Korea}
+
+\author{Seoung-Hun Kang}
+\thanks{Contributed equally to this work}
+\affiliation{Korea Institute for Advanced Study, Seoul, South Korea}
+
+\author{Seon-Myeong Choi}
+\email{Present address: Samsung Advanced Institute of Technology, Suwon, South Korea}
+\affiliation{Korea Institute for Advanced Study, Seoul, South Korea}
+
+\author{Duck Young Kim}
+\email{duckyoung.kim@hpstar.ac.cn}
+\affiliation{Center for High Pressure Science \& Technology Advanced Research, Shanghai, P. R. China}
+\affiliation{Division of Advanced Nuclear Engineering, POSTECH, Pohang, South Korea} 
+
+\author{Young-Woo Son}
+\email{hand@kias.re.kr}
+\affiliation{Korea Institute for Advanced Study, Seoul, South Korea}
+
+\pacs{84.60.Rb, % Thermoelectric, electrogasdynamic and other direct energy conversion
+	85.80.Fi, % Thermoelectric devices
+	72.10.Di, % Scattering by phonons, magnons, and other nonlocalized excitations (see also 71.45.-d Collective effects in electronic structure of bulk materials
+	72.15.Jf % Thermoelectric and thermomagnetic effects
+	}
+
+\date{\today}
+
+\begin{abstract}
+Thermoelectric device is a promising next-generation energy solution owing to its capability to transform waste heat into useful electric energy, which can be realized in materials with high electric conductivities and low thermal conductivities. A recently synthesized silicon allotrope of Si$_{24}$ features highly anisotropic crystal structure with nanometre-sized regular pores. Here, based on first-principles study without any empirical parameter, we show that the slightly doped Si$_{24}$ can provide an order-of-magnitude enhanced thermoelectric figure of merit at room temperature, compared with the cubic diamond phase of silicon. We ascribe the enhancement to the intrinsic nanostructure formed by the nanopore array, which effectively hinders heat conduction while electric conductivity is maintained. This can be a viable option to enhance the thermoelectric figure of merit without further forming an extrinsic nanostructure. In addition, we propose a practical strategy to further diminish the thermal conductivity without affecting electric conductivity by confining rattling guest atoms in the pores.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+Thermoelectricity is one of the renewable energy solutions that converts waste heat into viable electric energy without generating greenhouse gases. It creates electric current by thermal motion of charge carriers due to a temperature gradient. Performance of thermoelectric materials can be evaluated through dimensionless figure of merit (ZT), 
+\begin{equation}
+ZT = \dfrac{\sigma S^2}{\kappa_{l}+\kappa_{e}}T,
+\label{eq:1}
+\end{equation}
+which is determined by Seebeck coefficient ($S$), electric conductivity ($\sigma$) and thermal conductivities ($\kappa$) at a given temperature ($T$). For $\kappa$, subscripts $l$ and $e$ refer to lattice and electronic contributions to heat conduction, respectively. To increase the ZT value, a material needs to be a good electrical conductor as well as a good heat insulator as seen in Eq.~(\ref{eq:1}). Such a conflicting condition has recently been realized in a layered crystalline material~\cite{Zhao:2014du, Zhao:2016hs} with strong bond anharmonicity, which can be measured by Gr\"uneisen parameter and be a fingerprint for potential thermoelectric materials.
+
+However, it is still challenging to achieve a high ZT in three-dimensional (3D) crystals because the materials properties listed above are coupled to each other. For instance, increasing a charge carrier in 3D semiconductor by doping would increase both $\sigma$ and $\kappa_{e}$ simultaneously. Also, lifetimes of both charge carriers and phonons in a heavily doped material will be significantly lowered due to increased scattering. In order to overcome this complication, various efforts have been made to reduce the $\kappa_{l}$ by post-processings such as alloying~\cite{Dughaish:2002ei, Yamashita:2002fp}, nanostructuring~\cite{Lee:2008bi, He:2011fh, Boukai:2008iz, Hochbaum:2008hl, Lee:2016im, Joshi:2008dd, Wang:2008te, Tang:2010kv, Nakamura:2015jp}, and confining rattling guest atoms in cages of skutterudites and clathrates~\cite{Dolyniuk:2016ht}. The alloy and nanostructure, however, might lower the mobility of charge carriers by enhancing impurity/boundary scattering, and the confinement is only valid for porous materials which can host guest atoms.
+
+Aforementioned favorable conditions for a higher ZT can be found in a new silicon allotrope, Si$_{24}$, with intriguing electronic properties such as quasi-direct bandgap~\cite{Kim:2014el}. Specifically, Si$_{24}$ shows the \emph{intrinsic} nanostructure as in the case of a good thermoelectric material, SnSe~\cite{Zhao:2014du, Zhao:2016hs} [see Figure~\ref{fig1}(a) and (b)]. This is in contrast to the previous studies for Si with post-processings of \emph{extrinsic} nanoscale structures~\cite{Lee:2008bi, He:2011fh, Boukai:2008iz, Hochbaum:2008hl, Lee:2016im, Joshi:2008dd, Wang:2008te, Tang:2010kv, Nakamura:2015jp}. Moreover, the Si$_{24}$ features regular array of nanosized pores as in skutterudites and clathrates, which makes it even more promising as a thermoelectric material. This indicates that an enhanced thermoelectric property can be achieved in a bulk Si material without post-processings, rendering thermal stability in operating conditions. We note here that Si$_{24}$ is shown to be stable in a wide range of temperature~\cite{Kim:2014el} ($\sim$750 K) and pressure~\cite{PhysRevB.95.094306} ($\sim$8 GPa). We also point out some of the advantages of employing a Si material over other materials containing heavy metal elements (e.g., PbTe) in that Si is cheap, non-toxic, Earth-abundant and free of phase separation.
+
+Besides, due to the complex interactions involved in the transport phenomena as mentioned above, describing transport properties to a reasonable degree remains challenging. Some of the previous studies~\cite{Zhang:2016bh, Ouyang:2017bs} used too simplified approximations to the electronic relaxation times. For instance, overestimated values of ZT were reported for black phosphorous obtained with a single-valued relaxation time, adapted from the experiment~\cite{Zhang:2016bh}, from a deformation potential theory~\cite{Qin:2014kc} or from a constant relaxation time approximation~\cite{Zhang:2014if}. When the effects of electron-phonon interactions were explicitly taken into account, the ZT values decreased by orders of magnitude~\cite{PhysRevB.91.235419}. 
+
+In this Letter, we report the enhanced thermoelectric properties of the Si$_{24}$ over the cubic diamond phase counterpart (dSi) by performing various first-principles calculations without using empirical relaxation times of electron and phonon in Si$_{24}$. Specifically, all of the elastic scattering events between electron and phonon with varying energies and momenta were explicitly enumerated for electric conductivity, $\sigma$. Similarly, the anharmonic effects of heat transport due to the three-phonon scattering were explicitly considered for the lattice thermal conductivity, $\kappa_{l}$. We ascribe the order-of-magnitude enhancement in the ZT to a significant anharmonicity in Si$_{24}$, which is also confirmed by anomalously high Gr\"{u}neisen parameters. In synergy with rattling effects of guest atoms in the nanopores, we believe that the Si$_{24}$ can serve as a promising thermoelectric material.
+
+\section{Computational Details}
+To describe the reliable thermoelectric properties for Si$_{24}$ using first-principles calculations, we performed density functional theory calculations as implemented in Quantum Espresso package~\cite{Giannozzi:2009vu}. We used norm-conserving pseudopotentials~\cite{Troullier:1991ey} with the plane wave kinetic energy cutoff of 60 Ry (816.34 eV), and exchange-correlation functional of Perdew-Burke-Ernzerhof~\cite{Perdew:1996iq} (PBE) within generalized gradient approximation was used. In order to evaluate the $\sigma$ explicitly from first-principles calculations, the phonon-mediated $\sigma$ was evaluated by using the transport Eliashberg spectral function~\cite{Allen:1978kg, Park:2014ht} as implemented in EPW package~\cite{Noffsinger:2010hw}. The Bloch wave function calculated on a $\Gamma$-centered $\boldsymbol{k}$/$\boldsymbol{q}$-point mesh of 10$\times$10$\times$6 was interpolated to a much denser grid of 40$\times$40$\times$9 by using the maximally localized Wannier functions (MLWFs)~\cite{Marzari:2012eu, Souza:2001ba, Marzari:1997co}. Using the MLWFs, the relaxation time ($\tau^{e-ph}_{n,\boldsymbol{k}}$) by electron-phonon coupling were computed on the denser $\boldsymbol{k}$/$\boldsymbol{q}$ grids as
+\begin{widetext}
+\begin{align}
+\label{eq:2}
+\nonumber \frac{1}{\tau^{e-ph}_{n,\boldsymbol{k}}} = \frac{2\pi}{N}\sum_{m,\lambda,\boldsymbol{q}}|g^{\boldsymbol{k},\lambda}_{m,n}|^{2} \left[ \delta\left(\varepsilon_{m,\boldsymbol{k}}-\varepsilon_{n,\boldsymbol{k}}+\omega_{\lambda,\boldsymbol{q}}\right) \left(n_{\lambda,\boldsymbol{q}}+f_{m,\boldsymbol{k}}\right) \right. + \\
+\left. \delta\left(\varepsilon_{m,\boldsymbol{k}}-\varepsilon_{n,\boldsymbol{k}}-\omega_{\lambda,\boldsymbol{q}}\right) \left(n_{\lambda,\boldsymbol{q}}-f_{m,\boldsymbol{k}}+1\right) \right],
+\end{align}
+\end{widetext}
+where $\omega_{\lambda,\boldsymbol{q}}$ is the energy of a phonon with polarization $\lambda$ and wave vector $\boldsymbol{q}$ in the Brillouin zone (BZ), and $n_{\lambda,\boldsymbol{q}}$ and $f_{m,\boldsymbol{k}}$ are Bose-Einstein and Fermi-Dirac distribution functions, respectively. $N$ is the total number of $\boldsymbol{k}$/$\boldsymbol{q}$ grid points in the full BZ. The $\varepsilon_{n,\boldsymbol{k}}$ is energy of a Bloch state at $n$th band at $\boldsymbol{k}$ point in the BZ~\cite{PhysRevB.76.165108}. The $g^{\boldsymbol{k},\lambda}_{m,n}$ is an electron-phonon coupling matrix element, which is computed as $\langle {\Psi_{m,\boldsymbol{k}+\boldsymbol{q}}}|\partial_{\lambda,\boldsymbol{q}}V|{\Psi_{n,\boldsymbol{k}}}\rangle$. $\Psi_{n,\boldsymbol{k}}$ is a Kohn-Sham wave function, and $\partial_{\lambda,\boldsymbol{q}}V$ is the variation of the Khon-sham potential for a unit displacement of the nuclei along the phonon mode of polarization $\lambda$ and wave vector $\boldsymbol{q}$. Using the $\tau^{e}_{n,\boldsymbol{k}}\approx\tau^{e-ph}_{n,\boldsymbol{k}}$ as in Eq.~(\ref{eq:2}), electron transport coefficients were calculated by using bolztrap code~\cite{Madsen:2006fj} within semi-classical Boltzmann transport equation: i.e., $\sigma_{\alpha\beta}\left(\varepsilon\right)=\frac{e^2}{N}\sum\limits_{n,\boldsymbol{k}}\tau^{e-ph}_{n,\boldsymbol{k}}v_{\alpha,n,\boldsymbol{k}}v_{\beta,n,\boldsymbol{k}}\left(-\frac{\partial f_{n,\boldsymbol{k}}}{\partial\varepsilon}\right)$, where $\alpha$, $\beta$=$x$, $y$ or $z$, and $N$ is the number of $\boldsymbol{k}$-points in the full Brillouin zone. The $v_{\alpha,n,\boldsymbol{k}}$ is a group velocity of electrons at $\varepsilon_{n,\boldsymbol{k}}$ along $\alpha$. 
+Note that other contributions for $\sigma$ such as electron-electron and impurity scattering are assumed to be negligible (see SI S1).
+The Seebeck coefficient, S, shown in Eq.~(\ref{eq:1}) was calculated from the Mott formula at the Fermi level as 
+$$S = \dfrac{\pi^2 k^2_B T}{3e} \left. \dfrac{\mathrm{d}\left(\log\left(\sigma\right)\right)}{\mathrm{d}\varepsilon}\right|_{\varepsilon=\varepsilon_F},$$ 
+where $e$ and $k_B$ are the charge of an electron and Boltzmann's constant, respectively. The electronic contribution to the thermal conductivity ($\kappa_{e}$) was evaluated \emph{via} Wiedemann-Franz law~\cite{Ziman:1962vn}: $\kappa_{e} = L_{0}\sigma T$ with $L_{0}$=2.44$\times$10$^{-8}$ W$\cdot$ohm/K$^2$.
+
+Similarly, the lattice thermal conductivity ($\kappa_{l}$) with anharmonic effects between three phonons was computed by solving Boltzmann transport equation as implemented in phono3py code~\cite{Togo:2015dy}. The third-order interatomic force constants were evaluated for dynamical matrix by a finite displacement method with a displacement and distance cutoff of 0.03~\AA\, and 15~\AA\, respectively. In a (3$\times$3$\times$2) supercell with 216 Si atoms, a total of 12,108 displaced configurations were generated. Hellmann-Feynman forces in each configuration was computed by first-principles calculations by using Vienna \emph{ab initio} software package~\cite{Kresse:1993bz, Kresse:1994il, Kresse:1996kg, Kresse:1996kl} with projector augmented wave method~\cite{Kresse:1999dk} and PBE exchange-correlation functional~\cite{Perdew:1996iq}. Plane wave was expanded with the kinetic cutoff energy of 400 eV, and $\Gamma$-centered 9$\times$9$\times$3 grid points in the BZ were used for the primitive cell of Si$_{24}$. After all the force evaluation, the $\kappa_{l}$ was evaluated by integrating over $\boldsymbol{q}$ points in the full BZ of 14$\times$14$\times$14 grid points.
+
+\section{Results and Discussion}
+% atomic structures
+The Si$_{24}$ crystal features an open-channel structure along a crystallographic axis ($x$) as shown in Figure~\ref{fig1}(a) and (b). Each of the channels, of which the diameter is approximately 0.54 nm, is composed of eight-membered-rings of distorted sp$^{3}$ Si bonds. When compared to the dSi having the ideal sp$^3$ bonding character with the distance of 2.35 \AA\, and with the angle of 109.5$\degree$, those in Si$_{24}$ range from 2.33 \AA\, to 2.41 \AA, and from 97.73$\degree$ to 135.63$\degree$, respectively~\cite{Kim:2014el}. In particular, the open-channel structure is attributed to its two-step synthesis process such that a high pressure phase of Na$_{4}$Si$_{24}$ compound is initially synthesized and pressurized at a hydrostatic pressure of 10 GPa, and that only loosely captured Na atoms in the cage are selectively removed from the compound at ambient pressure~\cite{Kim:2014el}. As a result, the structure with a regular array of one-dimensional nanopores is retained as seen in Figure~\ref{fig1}(b). Note that the structure is highly anisotropic owing to the open channels. For instance, when comparing densities along different orientations of the crystal, Si$_{24}$ shows denser atomic arrangement along the $x$-axis unlike the others, which significantly differs from isotropic atomic arrangement for dSi.
+
+\begin{figure}[]
+	\centering
+	\includegraphics[width=\columnwidth]{fig1.pdf}
+	\caption{Ball-and-stick models of the Si$_{24}$ crystal with (a) a perspective view and (b) orthogonal projection along the $x$-axis. (a) The primitive cell and the orthorhombic Bravais unitcell are shown as the red and black parallelepipeds, respectively. Twelve atoms in the primitive cell are shown in large blue balls, while the rest of the atoms are shown as small gray balls. (b) Continuous nanopores are shown where a one-dimensional array of Na ions (not shown) were confined for synthesis. (c) Thermoelectric figure of merit (ZT) of Si$_{24}$ along $x$-axis are shown in continuous lines as a function of temperature, and the ZT values for dSi are also shown as dashed lines for comparison. Positive and negative doping concentrations ($n$) refer to that of excess electron and hole, respectively. (d) The maximum values of ZT (ZT$_{\mathrm{max}}$) for a varying temperature are shown as squares, of which the optimum doping concentrations (in 10$^{20}$ cm$^{-3}$) for Si$_{24}$ are 0.21, 0.35, 0.44, 0.59 and 0.69 for increasing temperature; the values are 0.97, 1.81, 3.12, 3.43 and 4.03 for dSi. The enhancement (ratio of the ZT$_{\mathrm{max}}$ for Si$_{24}$ to dSi) is also plotted as orange circles.}
+	\label{fig1}
+\end{figure}
+
+% ZT, ZTmax
+We investigate thermoelectric properties of Si$_{24}$ for various temperatures up to 700 K since thermal stability of Si$_{24}$ in air was experimentally confirmed up to 750 K~\cite{Kim:2014el}. 
+The ZT obtained from our calculations indicates that Si$_{24}$ shows superior thermoelectric properties compared to dSi, especially when lightly doped with electrons as shown in Figure~\ref{fig1}(c). The overall ZT values are enhanced with an increasing temperature for both Si$_{24}$ and dSi. On the other hand, enhancement factor, defined as a ratio of the maximum ZT (ZT$_{\mathrm{max}}$) between Si$_{24}$ and dSi, decreases as temperature increases, which reaches $\sim$17 at 300 K. The optimal doping concentration for the ZT$_{\mathrm{max}}$ increases with temperature as in Figure~\ref{fig1}(c). We note that overall values of the optimal doping concentration are much smaller for Si$_{24}$ than dSi. This is advantageous because impurity scattering becomes significant for heavily doped semiconductors, of which the effects are difficult to be captured directly in the first-principles calculations. 
+
+It is worth noting here a constant relaxation time approximation can lead to inaccurate ZT value~\cite{Ouyang:2017bs}. As is known for other materials~\cite{PhysRevB.91.235419}, elaborated description of electron-phonon coupling tends to correct the overestimated ZT values obtained from simplified calculations. Likewise, the momentum dependence of relaxation time in Eq.~(\ref{eq:2}) needs to be taken into account in evaluating the electrical conductivity $\sigma$ to obtain a reliable ZT, specifically for a newly synthesized material. Another point to note is that evaluation of accurate $\sigma$ values requires remarkably dense $\boldsymbol{k}/\boldsymbol{q}$ grid points, and convergence test should be performed with caution. We confirmed that the data grid used here (40$\times$40$\times$9=14,400) gives reasonably converged ZT values less than 5\% relative error compared to that from the most dense grid mesh we tested (50$\times$50$\times$9=22,500). The detailed results are provided in SI S2.
+
+% electronic contributions
+To explain the enhanced ZT of Si$_{24}$, we will discuss the effects of each of the components in ZT hereafter. Firstly, we consider the effects of electronic contributions to the thermoelectric properties. We find that the electrical conductivity ($\sigma$) of Si$_{24}$ is highly anisotropic (Figure~\ref{fig2}(a)), which can be deduced from its anisotropic geometry (Figure~\ref{fig1}(a)). Compared with the dSi, it is remarkable that the $\sigma_{xx}$ for Si$_{24}$ is always higher throughout the doping range considered in this study, while $\sigma_{yy}$ and $\sigma_{zz}$ are largely suppressed. Note that the nanopores run along the $x$-axis (Figure~\ref{fig1}(b)) where the atomic arrangement is most densely packed. In contrast, along the orientations perpendicular to the nanopore axis, electrons are more likely to be scattered by electron-phonon coupling due to the anisotropic bonding. 
+
+\begin{figure}[]
+	\centering
+	\includegraphics[width=\columnwidth]{fig2.pdf}\\
+	\caption{(a) Electrical conductivity tensor components and (b) power factor at 300 K with a varying doping concentration. The continuous and dashed lines are for Si$_{24}$ and dSi, respectively. (c) Electronic band dispersion of Si$_{24}$ from first-principles calculations (black lines) and maximally locallized Wannier functions (MLWFs) (red circles). Relaxation times ($\tau^{e-ph}_{n,\boldsymbol{k}}$) as in Eq.~(\ref{eq:2}) of electrons at 300 K for both Si$_{24}$ and dSi are also provided aside. In the inset, the Fermi surface in the Brillouin zone of Si$_{24}$ at a doping concentration of 2.5$\times$10$^{20}$ cm$^{-3}$, which is marked as blue dotted line in (c). In (c), the zero energy denoted by a solid horizontal line was set to be middle between conduction and valence band edges.}
+	\label{fig2}
+\end{figure}
+
+Similarly, power factors ($\sigma S^{2}$) also show the high anisotropy as observed in the electric conductivity (Figure~\ref{fig2}(b)). In this case, however, the magnitude of the $\sigma S^{2}$ also varies significantly due to carrier type and density. When Si$_{24}$ is lightly doped by electrons, the $\sigma_{xx} S^{2}$ reaches the maximum, significantly exceeding that of the dSi (Figure~\ref{fig2}(b)). For higher doping concentration, the $\sigma_{xx}S^{2}$ drops substantially and becomes smaller than that of dSi. For hole doping, the $\sigma S^{2}$ in all directions are significantly diminished compared to the electron-doped cases, and become much smaller than that of dSi, except the peaks at low concentration. As the power factor is linearly proportional to the ZT, this agrees well with the above observation that ZT reaches the maximum at light electron doping as in Figure~\ref{fig1}(c). 
+
+These improved thermoelectric properties of Si$_{24}$ can be ascribed to its electronic band dispersions (Figure~\ref{fig2}(c)). With small electron doping concentration as marked in Figure~\ref{fig2}(c), there exist multiple electron pockets (or valleys) in the BZ as can be also seen in the Fermi surface at that doping level; see the inset of Figure~\ref{fig2}(c). This multiple \emph{valley degeneracy} is also known to be responsible for the good thermoelectric performance of PbTe$_{1-x}$Se$_{x}$~\cite{Pei:2011kx}. The highly anisotropic electronic structures are clearly seen in Si$_{24}$ from the Fermi surface, which is consistent with the anisotropic crystal structure. Note that the relaxation times in Si$_{24}$ are much longer than those in dSi, especially for low energies, or low doping levels. This agrees with the fact that high ZT$_{\mathrm{max}}$ of Si$_{24}$ occurs at much lower doping concentration than that of dSi as shown in Figure~\ref{fig1}(c).
+
+% thermal contributions
+Furthermore, Si$_{24}$ provides low lattice thermal conductivity ($\kappa_{l}$) as seen in Figure~\ref{fig3}(a), which renders even better thermoelectric performance compared to dSi. The calculated $\kappa_{l}$ for Si$_{24}$ is approximately 4 times lower than that of dSi along $x$-axis throughout the temperature range in this study. The difference becomes even greater to be $\sim$13 times for the $\kappa_{l}$ along $z$-axis. If we consider electronic contribution to the thermal conductivity \emph{via} Wiedemann-Franz law, the anisotropy in heat conduction becomes even greater due to higher electrical conductivity along the $x$-axis compared to the $z$-axis.
+
+\begin{figure}[]
+	\centering
+	\includegraphics[width=\columnwidth]{fig3.pdf}\\
+	\caption{(a) Lattice thermal conductivity ($\kappa_l$) due to anharmonic phonons. Gr\"{u}neisen parameters for (b) dSi and (c) Si$_{24}$ are shown.}
+	\label{fig3}
+\end{figure}
+
+We show the Gr\"{u}neisen parameter for both crystals in Figure~\ref{fig3}(b) and (c), which is a measure of anharmonicity of the bonds. The resistivity of the heat conduction through the lattice vibrations due to the Umklapp process increases with the magnitudes of Gr\"{u}neisen parameters. The highest Gr\"{u}neisen parameters shown along the $\Gamma$-Z path indicate that the anharmonic scattering of phonons occurs mostly along the $z$-direction, and agrees with the lowest $\kappa_{l}$ along $z$-direction (Figure~\ref{fig3}(a)).
+
+% effects of defects
+For practical aspects of its thermoelectric application, we discuss the effects of conventional defects on transport properties of Si$_{24}$.
+First of all, recent experiment~\cite{PhysRevB.95.094306} and theoretical calculations~\cite{Kim:2014el} of Raman spectra agree well with each other in a wide range of temperature and pressure. From these, we could infer that the local atomic structures of synthesized Si$_{24}$ samples are quite close to the ideal ones. Moreover, a recent theoretical work on various defects in Si$_{24}$~\cite{doi:10.1021/acs.jpcc.7b04032} revealed that population of substitutional dopants are dominant over intrinsic point defects such as vacancy and interstitial thanks to their relatively lower formation energies ($<$ 0.7 eV) compared with the intrinsic ones (2.3--3.7 eV). It is noteworthy that the typical n-type dopant states with very low ionization energy hybridize with conduction bands~\cite{doi:10.1021/acs.jpcc.7b04032}, realizing good electric conductivity of the doped Si$_{24}$.
+
+% effects of Na
+We further discuss the effects of remaining guest atoms in the cages of Si$_{24}$. As we mentioned above, the Si$_{24}$ crystal is synthesized by removing Na atoms confined in the cages of Na$_{4}$Si$_{24}$, which takes $\sim$8 days at 400 K~\cite{Kim:2014el}. This indicates that, on one hand, the Na atoms are loosely bound to the host Si atoms similar to clathrates, so that the trapped guest atoms can escape from the crystal. On the other hand, the relatively slow degassing process even at an elevated temperature is attributed to the high kinetic energy barrier for migration of Na atoms in the channel from one cage to the adjacent one. Based on our nudged elastic band calculations, the barrier is estimated to be $\sim$1 eV, which is in a good agreement to the literature~\cite{Arrieta:2017dp}. In addition, when comparing the size of the channel windows and Na atom, the transport behavior of the guest atoms is dominated by a single-file diffusion, of which the degassing rate is limited by diffusive motion of the atoms at the ends of the line. Thus, complete removal of the Na atoms might be difficult, and residual Na atoms might be remaining in the cages. 
+
+We expect that those residual guest atoms would have the rattling effects as observed in skutterudites and clathrates~\cite{Dolyniuk:2016ht}, enhancing the thermoelectric properties of the crystal. With the guest atoms, their thermal vibrations can interact with the acoustic phonons of the host atoms, which suppresses the lattice thermal conductivity further. Similarly, thermal conductivities of carbon nanotubes (CNTs) filled with water was suppressed by 20--35~\% compared to that of empty CNT~\cite{Thomas:2010jq}. In addition, the residual Na atoms in the channel would donate electrons to the host Si$_{24}$ crystal without affecting the electronic structures. For instance, band structures in Figure~\ref{fig4} are nearly unchanged for a single Na atom out of 288 Si atoms ($\sim$0.35 at.\%), and donor level begins to appear when two Na atoms are doped ($\sim$0.7 at.\%) as indicated by the arrow. This spontaneous electron doping is advantageous for the Si$_{24}$ to be used as a TE material as discussed above (see Figure~\ref{fig1}(c and d)). Moreover, this spontaneous doping effect would significantly lower the chances of electrons being scattered by impurities (i.e., dopant atoms), which becomes dominant at heavy doping. It is worth to note that large number of guest atoms would donate many electrons to the cage structure and eventually turn the the host materials into a metal~\cite{Stefanoski:2012jf}. In this case, thermal transport is dominated by electrons, i.e., $\kappa\approx\kappa_{e}$.
+
+\begin{figure}[]
+	\centering
+	\includegraphics[width=\columnwidth]{fig4.pdf}\\
+	\caption{Electronic band dispersions and density of states of Na-doped Si$_{24}$ with (a) 0, (b) 1 and (c) 2 Na ions in a (3$\times$2$\times$2) supercell containing 288 Si atoms. The supercell band structures are unfolded to the irreducible Brillouin zone of the primitive cell of Si$_{24}$ by using BandUP code~\cite{PhysRevB.89.041407, PhysRevB.91.041116}. Color-coding indicates spectral weight. Total and projected DOS to Na (magnified by a factor of 200) are shown in gray and red shades, respectively. For a single Na ion content, the ionic doping concentration corresponds to 1.58$\times$10$^{20}$ cm$^{-3}$. In (a), the zero energy of the pristine Si$_{24}$ was set to be the middle between edges of conduction and valence bands and was set to be charge neutral points due to Na atom doping for both (b) and (c).}
+	\label{fig4}
+\end{figure}
+
+\section{Conclusions}
+In conclusion, we demonstrate thermoelectric properties of a new silicon allotrope, Si$_{24}$ by using various \emph{ab initio} computational methods without empirical parameters: phonon-mediated electrical conductivity and lattice thermal conductivity with anharmonic phonon effects. The highly anisotropic structure of the Si$_{24}$ results in anisotropic electronic and thermal transport properties as well. The electron-doped Si$_{24}$ displays superior thermoelectric behavior to the Si in a cubic diamond phase, which is ascribed to the enhanced power factor and reduced lattice thermal conductivity. We also pointed out that the thermoelectric performance can be further enhanced by guest atoms in the cage, due to their role as electron donator and rattler. 
+
+% acknowledgement
+\begin{acknowledgements}
+We thank Korea Institute for Advanced Study for providing computing resources (KIAS Center for Advanced Computation Linux Cluster System) for this work. Y.-W.S. was supported by NRF of Korea (Grant No. 2017R1A5A1014862, SRC program: vdWMRC Center). DYK acknowledges the support by NSFC of China (Grant No. 11774015) and NRF (NRF-2017R1D1A1B03031913).
+\end{acknowledgements}
+
+%\bibliography{references}
+
+% references
+\begin{thebibliography}{47}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{http://dx.doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Zhao}\ \emph {et~al.}(2014)\citenamefont {Zhao},
+  \citenamefont {Lo}, \citenamefont {Zhang}, \citenamefont {Sun}, \citenamefont
+  {Tan}, \citenamefont {Uher}, \citenamefont {Wolverton}, \citenamefont
+  {Dravid},\ and\ \citenamefont {Kanatzidis}}]{Zhao:2014du}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.-D.}\ \bibnamefont
+  {Zhao}}, \bibinfo {author} {\bibfnamefont {S.-H.}\ \bibnamefont {Lo}},
+  \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Zhang}}, \bibinfo
+  {author} {\bibfnamefont {H.}~\bibnamefont {Sun}}, \bibinfo {author}
+  {\bibfnamefont {G.}~\bibnamefont {Tan}}, \bibinfo {author} {\bibfnamefont
+  {C.}~\bibnamefont {Uher}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Wolverton}}, \bibinfo {author} {\bibfnamefont {V.~P.}\ \bibnamefont
+  {Dravid}}, \ and\ \bibinfo {author} {\bibfnamefont {M.~G.}\ \bibnamefont
+  {Kanatzidis}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Nature}\ }\textbf {\bibinfo {volume} {508}},\ \bibinfo {pages} {373}
+  (\bibinfo {year} {2014})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Zhao}\ \emph {et~al.}(2016)\citenamefont {Zhao},
+  \citenamefont {Tan}, \citenamefont {Hao}, \citenamefont {He}, \citenamefont
+  {Pei}, \citenamefont {Chi}, \citenamefont {Wang}, \citenamefont {Gong},
+  \citenamefont {Xu}, \citenamefont {Dravid}, \citenamefont {Uher},
+  \citenamefont {Snyder}, \citenamefont {Wolverton},\ and\ \citenamefont
+  {Kanatzidis}}]{Zhao:2016hs}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.-D.}\ \bibnamefont
+  {Zhao}}, \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Tan}}, \bibinfo
+  {author} {\bibfnamefont {S.}~\bibnamefont {Hao}}, \bibinfo {author}
+  {\bibfnamefont {J.}~\bibnamefont {He}}, \bibinfo {author} {\bibfnamefont
+  {Y.}~\bibnamefont {Pei}}, \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Chi}}, \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont {Wang}}, \bibinfo
+  {author} {\bibfnamefont {S.}~\bibnamefont {Gong}}, \bibinfo {author}
+  {\bibfnamefont {H.}~\bibnamefont {Xu}}, \bibinfo {author} {\bibfnamefont
+  {V.~P.}\ \bibnamefont {Dravid}}, \bibinfo {author} {\bibfnamefont
+  {C.}~\bibnamefont {Uher}}, \bibinfo {author} {\bibfnamefont {G.~J.}\
+  \bibnamefont {Snyder}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Wolverton}}, \ and\ \bibinfo {author} {\bibfnamefont {M.~G.}\ \bibnamefont
+  {Kanatzidis}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Science}\ }\textbf {\bibinfo {volume} {351}},\ \bibinfo {pages} {141}
+  (\bibinfo {year} {2016})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Dughaish}(2002)}]{Dughaish:2002ei}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Z.~H.}\ \bibnamefont
+  {Dughaish}},\ }\href {\doibase 10.1016/S0921-4526(02)01187-0} {\bibfield
+  {journal} {\bibinfo  {journal} {Physica B: Condensed Matter}\ }\textbf
+  {\bibinfo {volume} {322}},\ \bibinfo {pages} {205} (\bibinfo {year}
+  {2002})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Yamashita}\ \emph {et~al.}(2002)\citenamefont
+  {Yamashita}, \citenamefont {Tomiyoshi},\ and\ \citenamefont
+  {Makita}}]{Yamashita:2002fp}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {O.}~\bibnamefont
+  {Yamashita}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Tomiyoshi}}, \ and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Makita}},\ }\href {\doibase 10.1063/1.1525400} {\bibfield  {journal}
+  {\bibinfo  {journal} {Journal of Applied Physics}\ }\textbf {\bibinfo
+  {volume} {93}},\ \bibinfo {pages} {368} (\bibinfo {year} {2002})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Lee}\ \emph {et~al.}(2008)\citenamefont {Lee},
+  \citenamefont {Galli},\ and\ \citenamefont {Grossman}}]{Lee:2008bi}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.-H.}\ \bibnamefont
+  {Lee}}, \bibinfo {author} {\bibfnamefont {G.~A.}\ \bibnamefont {Galli}}, \
+  and\ \bibinfo {author} {\bibfnamefont {J.~C.}\ \bibnamefont {Grossman}},\
+  }\href {\doibase 10.1021/nl802045f} {\bibfield  {journal} {\bibinfo
+  {journal} {Nano Letters}\ }\textbf {\bibinfo {volume} {8}},\ \bibinfo {pages}
+  {3750} (\bibinfo {year} {2008})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {He}\ \emph {et~al.}(2011)\citenamefont {He},
+  \citenamefont {Donadio}, \citenamefont {Lee}, \citenamefont {Grossman},\ and\
+  \citenamefont {Galli}}]{He:2011fh}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {He}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Donadio}},
+  \bibinfo {author} {\bibfnamefont {J.-H.}\ \bibnamefont {Lee}}, \bibinfo
+  {author} {\bibfnamefont {J.~C.}\ \bibnamefont {Grossman}}, \ and\ \bibinfo
+  {author} {\bibfnamefont {G.}~\bibnamefont {Galli}},\ }\href {\doibase
+  10.1021/nn2003184} {\bibfield  {journal} {\bibinfo  {journal} {ACS nano}\
+  }\textbf {\bibinfo {volume} {5}},\ \bibinfo {pages} {1839} (\bibinfo {year}
+  {2011})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Boukai}\ \emph {et~al.}(2008)\citenamefont {Boukai},
+  \citenamefont {Bunimovich}, \citenamefont {Tahir-Kheli}, \citenamefont {Yu},
+  \citenamefont {Goddard~III},\ and\ \citenamefont {Heath}}]{Boukai:2008iz}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~I.}\ \bibnamefont
+  {Boukai}}, \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Bunimovich}},
+  \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Tahir-Kheli}}, \bibinfo
+  {author} {\bibfnamefont {J.-K.}\ \bibnamefont {Yu}}, \bibinfo {author}
+  {\bibfnamefont {W.~A.}\ \bibnamefont {Goddard~III}}, \ and\ \bibinfo {author}
+  {\bibfnamefont {J.~R.}\ \bibnamefont {Heath}},\ }\href@noop {} {\bibfield
+  {journal} {\bibinfo  {journal} {Nature}\ }\textbf {\bibinfo {volume} {451}},\
+  \bibinfo {pages} {168} (\bibinfo {year} {2008})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Hochbaum}\ \emph {et~al.}(2008)\citenamefont
+  {Hochbaum}, \citenamefont {Chen}, \citenamefont {Delgado}, \citenamefont
+  {Liang}, \citenamefont {Garnett}, \citenamefont {Najarian}, \citenamefont
+  {Majumdar},\ and\ \citenamefont {Yang}}]{Hochbaum:2008hl}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~I.}\ \bibnamefont
+  {Hochbaum}}, \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Chen}},
+  \bibinfo {author} {\bibfnamefont {R.~D.}\ \bibnamefont {Delgado}}, \bibinfo
+  {author} {\bibfnamefont {W.}~\bibnamefont {Liang}}, \bibinfo {author}
+  {\bibfnamefont {E.~C.}\ \bibnamefont {Garnett}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Najarian}}, \bibinfo {author}
+  {\bibfnamefont {A.}~\bibnamefont {Majumdar}}, \ and\ \bibinfo {author}
+  {\bibfnamefont {P.}~\bibnamefont {Yang}},\ }\href {\doibase
+  10.1038/nature06381} {\bibfield  {journal} {\bibinfo  {journal} {Nature}\
+  }\textbf {\bibinfo {volume} {451}},\ \bibinfo {pages} {163} (\bibinfo {year}
+  {2008})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Lee}\ \emph {et~al.}(2016)\citenamefont {Lee},
+  \citenamefont {Anoop}, \citenamefont {Lee}, \citenamefont {Kim},
+  \citenamefont {Park}, \citenamefont {Choi}, \citenamefont {Kim},
+  \citenamefont {Kim}, \citenamefont {Lee}, \citenamefont {Lee}, \citenamefont
+  {Kim}, \citenamefont {Lee},\ and\ \citenamefont {Jo}}]{Lee:2016im}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.~J.}\ \bibnamefont
+  {Lee}}, \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Anoop}}, \bibinfo
+  {author} {\bibfnamefont {H.~J.}\ \bibnamefont {Lee}}, \bibinfo {author}
+  {\bibfnamefont {C.}~\bibnamefont {Kim}}, \bibinfo {author} {\bibfnamefont
+  {J.-W.}\ \bibnamefont {Park}}, \bibinfo {author} {\bibfnamefont
+  {J.}~\bibnamefont {Choi}}, \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Kim}}, \bibinfo {author} {\bibfnamefont {Y.-J.}\ \bibnamefont {Kim}},
+  \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Lee}}, \bibinfo {author}
+  {\bibfnamefont {S.-G.}\ \bibnamefont {Lee}}, \bibinfo {author} {\bibfnamefont
+  {Y.-M.}\ \bibnamefont {Kim}}, \bibinfo {author} {\bibfnamefont {J.-H.}\
+  \bibnamefont {Lee}}, \ and\ \bibinfo {author} {\bibfnamefont {J.~Y.}\
+  \bibnamefont {Jo}},\ }\href {\doibase 10.1039/C5EE03063C} {\bibfield
+  {journal} {\bibinfo  {journal} {Energy {\&} Environmental Science}\ }\textbf
+  {\bibinfo {volume} {9}},\ \bibinfo {pages} {2806} (\bibinfo {year}
+  {2016})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Joshi}\ \emph {et~al.}(2008)\citenamefont {Joshi},
+  \citenamefont {Lee}, \citenamefont {Lan}, \citenamefont {Wang}, \citenamefont
+  {Zhu}, \citenamefont {Wang}, \citenamefont {Gould}, \citenamefont {Cuff},
+  \citenamefont {Tang}, \citenamefont {Dresselhaus}, \citenamefont {Chen},\
+  and\ \citenamefont {Ren}}]{Joshi:2008dd}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Joshi}}, \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont {Lee}}, \bibinfo
+  {author} {\bibfnamefont {Y.}~\bibnamefont {Lan}}, \bibinfo {author}
+  {\bibfnamefont {X.}~\bibnamefont {Wang}}, \bibinfo {author} {\bibfnamefont
+  {G.}~\bibnamefont {Zhu}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Wang}}, \bibinfo {author} {\bibfnamefont {R.~W.}\ \bibnamefont {Gould}},
+  \bibinfo {author} {\bibfnamefont {D.~C.}\ \bibnamefont {Cuff}}, \bibinfo
+  {author} {\bibfnamefont {M.~Y.}\ \bibnamefont {Tang}}, \bibinfo {author}
+  {\bibfnamefont {M.~S.}\ \bibnamefont {Dresselhaus}}, \bibinfo {author}
+  {\bibfnamefont {G.}~\bibnamefont {Chen}}, \ and\ \bibinfo {author}
+  {\bibfnamefont {Z.}~\bibnamefont {Ren}},\ }\href {\doibase 10.1021/nl8026795}
+  {\bibfield  {journal} {\bibinfo  {journal} {Nano Letters}\ }\textbf {\bibinfo
+  {volume} {8}},\ \bibinfo {pages} {4670} (\bibinfo {year} {2008})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Wang}\ \emph {et~al.}(2008)\citenamefont {Wang},
+  \citenamefont {Lee}, \citenamefont {Lan}, \citenamefont {Zhu}, \citenamefont
+  {Joshi}, \citenamefont {Wang}, \citenamefont {Yang}, \citenamefont {Muto},
+  \citenamefont {Tang}, \citenamefont {Klatsky}, \citenamefont {Song},
+  \citenamefont {Dresselhaus}, \citenamefont {Chen},\ and\ \citenamefont
+  {Ren}}]{Wang:2008te}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {X.~W.}\ \bibnamefont
+  {Wang}}, \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont {Lee}}, \bibinfo
+  {author} {\bibfnamefont {Y.~C.}\ \bibnamefont {Lan}}, \bibinfo {author}
+  {\bibfnamefont {G.~H.}\ \bibnamefont {Zhu}}, \bibinfo {author} {\bibfnamefont
+  {G.}~\bibnamefont {Joshi}}, \bibinfo {author} {\bibfnamefont {D.~Z.}\
+  \bibnamefont {Wang}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Yang}}, \bibinfo {author} {\bibfnamefont {A.~J.}\ \bibnamefont {Muto}},
+  \bibinfo {author} {\bibfnamefont {M.~Y.}\ \bibnamefont {Tang}}, \bibinfo
+  {author} {\bibfnamefont {J.}~\bibnamefont {Klatsky}}, \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Song}}, \bibinfo {author} {\bibfnamefont
+  {M.~S.}\ \bibnamefont {Dresselhaus}}, \bibinfo {author} {\bibfnamefont
+  {G.}~\bibnamefont {Chen}}, \ and\ \bibinfo {author} {\bibfnamefont {Z.~F.}\
+  \bibnamefont {Ren}},\ }\href {\doibase 10.1063/1.3027060} {\bibfield
+  {journal} {\bibinfo  {journal} {Applied Physics Letters}\ }\textbf {\bibinfo
+  {volume} {93}},\ \bibinfo {pages} {193121} (\bibinfo {year}
+  {2008})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Tang}\ \emph {et~al.}(2010)\citenamefont {Tang},
+  \citenamefont {Wang}, \citenamefont {Lee}, \citenamefont {Fardy},
+  \citenamefont {Huo}, \citenamefont {Russell},\ and\ \citenamefont
+  {Yang}}]{Tang:2010kv}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Tang}}, \bibinfo {author} {\bibfnamefont {H.-T.}\ \bibnamefont {Wang}},
+  \bibinfo {author} {\bibfnamefont {D.~H.}\ \bibnamefont {Lee}}, \bibinfo
+  {author} {\bibfnamefont {M.}~\bibnamefont {Fardy}}, \bibinfo {author}
+  {\bibfnamefont {Z.}~\bibnamefont {Huo}}, \bibinfo {author} {\bibfnamefont
+  {T.~P.}\ \bibnamefont {Russell}}, \ and\ \bibinfo {author} {\bibfnamefont
+  {P.}~\bibnamefont {Yang}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {Nano Letters}\ }\textbf {\bibinfo {volume} {10}},\ \bibinfo
+  {pages} {4279} (\bibinfo {year} {2010})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Nakamura}\ \emph {et~al.}(2015)\citenamefont
+  {Nakamura}, \citenamefont {Isogawa}, \citenamefont {Ueda}, \citenamefont
+  {Yamasaka}, \citenamefont {Matsui}, \citenamefont {Kikkawa}, \citenamefont
+  {Ikeuchi}, \citenamefont {Oyake}, \citenamefont {Hori}, \citenamefont
+  {Shiomi},\ and\ \citenamefont {Sakai}}]{Nakamura:2015jp}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {Nakamura}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Isogawa}},
+  \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Ueda}}, \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Yamasaka}}, \bibinfo {author}
+  {\bibfnamefont {H.}~\bibnamefont {Matsui}}, \bibinfo {author} {\bibfnamefont
+  {J.}~\bibnamefont {Kikkawa}}, \bibinfo {author} {\bibfnamefont
+  {S.}~\bibnamefont {Ikeuchi}}, \bibinfo {author} {\bibfnamefont
+  {T.}~\bibnamefont {Oyake}}, \bibinfo {author} {\bibfnamefont
+  {T.}~\bibnamefont {Hori}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Shiomi}}, \ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Sakai}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Nano
+  Energy}\ }\textbf {\bibinfo {volume} {12}},\ \bibinfo {pages} {845} (\bibinfo
+  {year} {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Dolyniuk}\ \emph {et~al.}(2016)\citenamefont
+  {Dolyniuk}, \citenamefont {Owens-Baird}, \citenamefont {Wang}, \citenamefont
+  {Zaikina},\ and\ \citenamefont {Kovnir}}]{Dolyniuk:2016ht}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.-A.}\ \bibnamefont
+  {Dolyniuk}}, \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont
+  {Owens-Baird}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Wang}},
+  \bibinfo {author} {\bibfnamefont {J.~V.}\ \bibnamefont {Zaikina}}, \ and\
+  \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Kovnir}},\ }\href
+  {\doibase 10.1016/j.mser.2016.08.001} {\bibfield  {journal} {\bibinfo
+  {journal} {Materials Science and Engineering: R: Reports}\ }\textbf {\bibinfo
+  {volume} {108}},\ \bibinfo {pages} {1} (\bibinfo {year} {2016})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Kim}\ \emph {et~al.}(2015)\citenamefont {Kim},
+  \citenamefont {Stefanoski}, \citenamefont {Kurakevych},\ and\ \citenamefont
+  {Strobel}}]{Kim:2014el}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~Y.}\ \bibnamefont
+  {Kim}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Stefanoski}},
+  \bibinfo {author} {\bibfnamefont {O.~O.}\ \bibnamefont {Kurakevych}}, \ and\
+  \bibinfo {author} {\bibfnamefont {T.~A.}\ \bibnamefont {Strobel}},\
+  }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Nature Materials}\
+  }\textbf {\bibinfo {volume} {14}},\ \bibinfo {pages} {169} (\bibinfo {year}
+  {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Tong}\ \emph {et~al.}(2017)\citenamefont {Tong},
+  \citenamefont {Xu}, \citenamefont {Fultz}, \citenamefont {Zhang},
+  \citenamefont {Strobel},\ and\ \citenamefont {Kim}}]{PhysRevB.95.094306}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {X.}~\bibnamefont
+  {Tong}}, \bibinfo {author} {\bibfnamefont {X.}~\bibnamefont {Xu}}, \bibinfo
+  {author} {\bibfnamefont {B.}~\bibnamefont {Fultz}}, \bibinfo {author}
+  {\bibfnamefont {H.}~\bibnamefont {Zhang}}, \bibinfo {author} {\bibfnamefont
+  {T.~A.}\ \bibnamefont {Strobel}}, \ and\ \bibinfo {author} {\bibfnamefont
+  {D.~Y.}\ \bibnamefont {Kim}},\ }\href {\doibase 10.1103/PhysRevB.95.094306}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo
+  {volume} {95}},\ \bibinfo {pages} {094306} (\bibinfo {year}
+  {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Zhang}\ \emph {et~al.}(2016)\citenamefont {Zhang},
+  \citenamefont {Liu}, \citenamefont {Cheng}, \citenamefont {Wei},
+  \citenamefont {Liang}, \citenamefont {Fan}, \citenamefont {Jiang},
+  \citenamefont {Sun},\ and\ \citenamefont {Shi}}]{Zhang:2016bh}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Zhang}}, \bibinfo {author} {\bibfnamefont {H.~J.}\ \bibnamefont {Liu}},
+  \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Cheng}}, \bibinfo
+  {author} {\bibfnamefont {J.}~\bibnamefont {Wei}}, \bibinfo {author}
+  {\bibfnamefont {J.~H.}\ \bibnamefont {Liang}}, \bibinfo {author}
+  {\bibfnamefont {D.~D.}\ \bibnamefont {Fan}}, \bibinfo {author} {\bibfnamefont
+  {P.~H.}\ \bibnamefont {Jiang}}, \bibinfo {author} {\bibfnamefont
+  {L.}~\bibnamefont {Sun}}, \ and\ \bibinfo {author} {\bibfnamefont
+  {J.}~\bibnamefont {Shi}},\ }\href {\doibase 10.1039/C5TC03238E} {\bibfield
+  {journal} {\bibinfo  {journal} {Journal of Materials Chemistry C}\ }\textbf
+  {\bibinfo {volume} {4}},\ \bibinfo {pages} {991} (\bibinfo {year}
+  {2016})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ouyang}\ \emph {et~al.}(2017)\citenamefont {Ouyang},
+  \citenamefont {Zhang}, \citenamefont {Xiao}, \citenamefont {Tang},
+  \citenamefont {Li}, \citenamefont {He},\ and\ \citenamefont
+  {Zhong}}]{Ouyang:2017bs}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Ouyang}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Zhang}},
+  \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont {Xiao}}, \bibinfo {author}
+  {\bibfnamefont {C.}~\bibnamefont {Tang}}, \bibinfo {author} {\bibfnamefont
+  {J.}~\bibnamefont {Li}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {He}}, \ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Zhong}},\
+  }\href {http://stacks.iop.org/0022-3727/50/i=42/a=425501} {\bibfield
+  {journal} {\bibinfo  {journal} {Journal of Physics D: Applied Physics}\
+  }\textbf {\bibinfo {volume} {50}},\ \bibinfo {pages} {425501} (\bibinfo
+  {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Qin}\ \emph {et~al.}(2014)\citenamefont {Qin},
+  \citenamefont {Yan}, \citenamefont {Qin}, \citenamefont {Yue}, \citenamefont
+  {Cui}, \citenamefont {Zheng},\ and\ \citenamefont {Su}}]{Qin:2014kc}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Qin}}, \bibinfo {author} {\bibfnamefont {Q.-B.}\ \bibnamefont {Yan}},
+  \bibinfo {author} {\bibfnamefont {Z.}~\bibnamefont {Qin}}, \bibinfo {author}
+  {\bibfnamefont {S.-Y.}\ \bibnamefont {Yue}}, \bibinfo {author} {\bibfnamefont
+  {H.-J.}\ \bibnamefont {Cui}}, \bibinfo {author} {\bibfnamefont {Q.-R.}\
+  \bibnamefont {Zheng}}, \ and\ \bibinfo {author} {\bibfnamefont
+  {G.}~\bibnamefont {Su}},\ }\href {\doibase 10.1038/srep06946} {\bibfield
+  {journal} {\bibinfo  {journal} {Scientific Reports}\ }\textbf {\bibinfo
+  {volume} {4}},\ \bibinfo {pages} {6922} (\bibinfo {year} {2014})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Zhang}\ \emph {et~al.}(2014)\citenamefont {Zhang},
+  \citenamefont {Liu}, \citenamefont {Cheng}, \citenamefont {Wei},
+  \citenamefont {Liang}, \citenamefont {Fan}, \citenamefont {Shi},
+  \citenamefont {Tang},\ and\ \citenamefont {Zhang}}]{Zhang:2014if}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Zhang}}, \bibinfo {author} {\bibfnamefont {H.~J.}\ \bibnamefont {Liu}},
+  \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Cheng}}, \bibinfo
+  {author} {\bibfnamefont {J.}~\bibnamefont {Wei}}, \bibinfo {author}
+  {\bibfnamefont {J.~H.}\ \bibnamefont {Liang}}, \bibinfo {author}
+  {\bibfnamefont {D.~D.}\ \bibnamefont {Fan}}, \bibinfo {author} {\bibfnamefont
+  {J.}~\bibnamefont {Shi}}, \bibinfo {author} {\bibfnamefont {X.~F.}\
+  \bibnamefont {Tang}}, \ and\ \bibinfo {author} {\bibfnamefont {Q.~J.}\
+  \bibnamefont {Zhang}},\ }\href {\doibase 10.1038/srep06452} {\bibfield
+  {journal} {\bibinfo  {journal} {Scientific Reports}\ }\textbf {\bibinfo
+  {volume} {4}},\ \bibinfo {pages} {4033} (\bibinfo {year} {2014})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Liao}\ \emph {et~al.}(2015)\citenamefont {Liao},
+  \citenamefont {Zhou}, \citenamefont {Qiu}, \citenamefont {Dresselhaus},\ and\
+  \citenamefont {Chen}}]{PhysRevB.91.235419}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.}~\bibnamefont
+  {Liao}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Zhou}}, \bibinfo
+  {author} {\bibfnamefont {B.}~\bibnamefont {Qiu}}, \bibinfo {author}
+  {\bibfnamefont {M.~S.}\ \bibnamefont {Dresselhaus}}, \ and\ \bibinfo {author}
+  {\bibfnamefont {G.}~\bibnamefont {Chen}},\ }\href {\doibase
+  10.1103/PhysRevB.91.235419} {\bibfield  {journal} {\bibinfo  {journal} {Phys.
+  Rev. B}\ }\textbf {\bibinfo {volume} {91}},\ \bibinfo {pages} {235419}
+  (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Giannozzi}\ \emph {et~al.}(2009)\citenamefont
+  {Giannozzi}, \citenamefont {Baroni}, \citenamefont {Bonini}, \citenamefont
+  {Calandra}, \citenamefont {Car}, \citenamefont {Cavazzoni}, \citenamefont
+  {Ceresoli}, \citenamefont {Chiarotti}, \citenamefont {Cococcioni},
+  \citenamefont {Dabo}, \citenamefont {Corso}, \citenamefont {de~Gironcoli},
+  \citenamefont {Fabris}, \citenamefont {Fratesi}, \citenamefont {Gebauer},
+  \citenamefont {Gerstmann}, \citenamefont {Gougoussis}, \citenamefont
+  {Kokalj}, \citenamefont {Lazzeri}, \citenamefont {Martin-Samos},
+  \citenamefont {Marzari}, \citenamefont {Mauri}, \citenamefont {Mazzarello},
+  \citenamefont {Paolini}, \citenamefont {Pasquarello}, \citenamefont
+  {Paulatto}, \citenamefont {Sbraccia}, \citenamefont {Scandolo}, \citenamefont
+  {Sclauzero}, \citenamefont {Seitsonen}, \citenamefont {Smogunov},
+  \citenamefont {Umari},\ and\ \citenamefont
+  {Wentzcovitch}}]{Giannozzi:2009vu}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Giannozzi}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Baroni}},
+  \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Bonini}}, \bibinfo
+  {author} {\bibfnamefont {M.}~\bibnamefont {Calandra}}, \bibinfo {author}
+  {\bibfnamefont {R.}~\bibnamefont {Car}}, \bibinfo {author} {\bibfnamefont
+  {C.}~\bibnamefont {Cavazzoni}}, \bibinfo {author} {\bibfnamefont
+  {D.}~\bibnamefont {Ceresoli}}, \bibinfo {author} {\bibfnamefont {G.~L.}\
+  \bibnamefont {Chiarotti}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Cococcioni}}, \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont {Dabo}},
+  \bibinfo {author} {\bibfnamefont {A.~D.}\ \bibnamefont {Corso}}, \bibinfo
+  {author} {\bibfnamefont {S.}~\bibnamefont {de~Gironcoli}}, \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Fabris}}, \bibinfo {author} {\bibfnamefont
+  {G.}~\bibnamefont {Fratesi}}, \bibinfo {author} {\bibfnamefont
+  {R.}~\bibnamefont {Gebauer}}, \bibinfo {author} {\bibfnamefont
+  {U.}~\bibnamefont {Gerstmann}}, \bibinfo {author} {\bibfnamefont
+  {C.}~\bibnamefont {Gougoussis}}, \bibinfo {author} {\bibfnamefont
+  {A.}~\bibnamefont {Kokalj}}, \bibinfo {author} {\bibfnamefont
+  {M.}~\bibnamefont {Lazzeri}}, \bibinfo {author} {\bibfnamefont
+  {L.}~\bibnamefont {Martin-Samos}}, \bibinfo {author} {\bibfnamefont
+  {N.}~\bibnamefont {Marzari}}, \bibinfo {author} {\bibfnamefont
+  {F.}~\bibnamefont {Mauri}}, \bibinfo {author} {\bibfnamefont
+  {R.}~\bibnamefont {Mazzarello}}, \bibinfo {author} {\bibfnamefont
+  {S.}~\bibnamefont {Paolini}}, \bibinfo {author} {\bibfnamefont
+  {A.}~\bibnamefont {Pasquarello}}, \bibinfo {author} {\bibfnamefont
+  {L.}~\bibnamefont {Paulatto}}, \bibinfo {author} {\bibfnamefont
+  {C.}~\bibnamefont {Sbraccia}}, \bibinfo {author} {\bibfnamefont
+  {S.}~\bibnamefont {Scandolo}}, \bibinfo {author} {\bibfnamefont
+  {G.}~\bibnamefont {Sclauzero}}, \bibinfo {author} {\bibfnamefont {A.~P.}\
+  \bibnamefont {Seitsonen}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Smogunov}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Umari}}, \
+  and\ \bibinfo {author} {\bibfnamefont {R.~M.}\ \bibnamefont {Wentzcovitch}},\
+  }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Journal of
+  Physics: Condensed Matter}\ }\textbf {\bibinfo {volume} {21}},\ \bibinfo
+  {pages} {395502} (\bibinfo {year} {2009})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Troullier}\ and\ \citenamefont
+  {Martins}(1991)}]{Troullier:1991ey}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Troullier}}\ and\ \bibinfo {author} {\bibfnamefont {J.~L.}\ \bibnamefont
+  {Martins}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Physical Review B}\ }\textbf {\bibinfo {volume} {43}},\ \bibinfo {pages}
+  {1993} (\bibinfo {year} {1991})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Perdew}\ \emph {et~al.}(1996)\citenamefont {Perdew},
+  \citenamefont {Burke},\ and\ \citenamefont {Ernzerhof}}]{Perdew:1996iq}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~P.}\ \bibnamefont
+  {Perdew}}, \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Burke}}, \
+  and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Ernzerhof}},\
+  }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Physical Review
+  Letters}\ }\textbf {\bibinfo {volume} {77}},\ \bibinfo {pages} {3865}
+  (\bibinfo {year} {1996})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Allen}(1978)}]{Allen:1978kg}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~B.}\ \bibnamefont
+  {Allen}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Physical Review B}\ }\textbf {\bibinfo {volume} {17}},\ \bibinfo {pages}
+  {3725} (\bibinfo {year} {1978})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Park}\ \emph {et~al.}(2014)\citenamefont {Park},
+  \citenamefont {Bonini}, \citenamefont {Sohier}, \citenamefont {Samsonidze},
+  \citenamefont {Kozinsky}, \citenamefont {Calandra}, \citenamefont {Mauri},\
+  and\ \citenamefont {Marzari}}]{Park:2014ht}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.-H.}\ \bibnamefont
+  {Park}}, \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Bonini}},
+  \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Sohier}}, \bibinfo
+  {author} {\bibfnamefont {G.}~\bibnamefont {Samsonidze}}, \bibinfo {author}
+  {\bibfnamefont {B.}~\bibnamefont {Kozinsky}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Calandra}}, \bibinfo {author}
+  {\bibfnamefont {F.}~\bibnamefont {Mauri}}, \ and\ \bibinfo {author}
+  {\bibfnamefont {N.}~\bibnamefont {Marzari}},\ }\href@noop {} {\bibfield
+  {journal} {\bibinfo  {journal} {Nano Letters}\ }\textbf {\bibinfo {volume}
+  {14}},\ \bibinfo {pages} {1113} (\bibinfo {year} {2014})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Noffsinger}\ \emph {et~al.}(2010)\citenamefont
+  {Noffsinger}, \citenamefont {Giustino}, \citenamefont {Malone}, \citenamefont
+  {Park}, \citenamefont {Louie},\ and\ \citenamefont
+  {Cohen}}]{Noffsinger:2010hw}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Noffsinger}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Giustino}}, \bibinfo {author} {\bibfnamefont {B.~D.}\ \bibnamefont
+  {Malone}}, \bibinfo {author} {\bibfnamefont {C.-H.}\ \bibnamefont {Park}},
+  \bibinfo {author} {\bibfnamefont {S.~G.}\ \bibnamefont {Louie}}, \ and\
+  \bibinfo {author} {\bibfnamefont {M.~L.}\ \bibnamefont {Cohen}},\ }\href@noop
+  {} {\bibfield  {journal} {\bibinfo  {journal} {Computer Physics
+  Communications}\ }\textbf {\bibinfo {volume} {181}},\ \bibinfo {pages} {2140}
+  (\bibinfo {year} {2010})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Marzari}\ \emph {et~al.}(2012)\citenamefont
+  {Marzari}, \citenamefont {Mostofi}, \citenamefont {Yates}, \citenamefont
+  {Souza},\ and\ \citenamefont {Vanderbilt}}]{Marzari:2012eu}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Marzari}}, \bibinfo {author} {\bibfnamefont {A.~A.}\ \bibnamefont
+  {Mostofi}}, \bibinfo {author} {\bibfnamefont {J.~R.}\ \bibnamefont {Yates}},
+  \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont {Souza}}, \ and\ \bibinfo
+  {author} {\bibfnamefont {D.}~\bibnamefont {Vanderbilt}},\ }\href@noop {}
+  {\bibfield  {journal} {\bibinfo  {journal} {Reviews of Modern Physics}\
+  }\textbf {\bibinfo {volume} {84}},\ \bibinfo {pages} {1419} (\bibinfo {year}
+  {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Souza}\ \emph {et~al.}(2001)\citenamefont {Souza},
+  \citenamefont {Marzari},\ and\ \citenamefont {Vanderbilt}}]{Souza:2001ba}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
+  {Souza}}, \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Marzari}}, \
+  and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Vanderbilt}},\
+  }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Physical Review
+  B}\ }\textbf {\bibinfo {volume} {65}},\ \bibinfo {pages} {035109} (\bibinfo
+  {year} {2001})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Marzari}\ and\ \citenamefont
+  {Vanderbilt}(1997)}]{Marzari:1997co}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Marzari}}\ and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Vanderbilt}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Physical Review B}\ }\textbf {\bibinfo {volume} {56}},\ \bibinfo {pages}
+  {12847} (\bibinfo {year} {1997})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Giustino}\ \emph {et~al.}(2007)\citenamefont
+  {Giustino}, \citenamefont {Cohen},\ and\ \citenamefont
+  {Louie}}]{PhysRevB.76.165108}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Giustino}}, \bibinfo {author} {\bibfnamefont {M.~L.}\ \bibnamefont {Cohen}},
+  \ and\ \bibinfo {author} {\bibfnamefont {S.~G.}\ \bibnamefont {Louie}},\
+  }\href {\doibase 10.1103/PhysRevB.76.165108} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {76}},\ \bibinfo
+  {pages} {165108} (\bibinfo {year} {2007})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Madsen}\ and\ \citenamefont
+  {Singh}(2006)}]{Madsen:2006fj}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.~K.~H.}\
+  \bibnamefont {Madsen}}\ and\ \bibinfo {author} {\bibfnamefont {D.~J.}\
+  \bibnamefont {Singh}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {Computer Physics Communications}\ }\textbf {\bibinfo {volume}
+  {175}},\ \bibinfo {pages} {67} (\bibinfo {year} {2006})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Ziman}(1962)}]{Ziman:1962vn}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~M.}\ \bibnamefont
+  {Ziman}},\ }\href@noop {} {\emph {\bibinfo {title} {{Electrons and
+  Phonons}}}},\ The Theory of Transport Phenomena in Solids\ (\bibinfo
+  {publisher} {Oxford University Press},\ \bibinfo {year} {1962})\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Togo}\ \emph {et~al.}(2015)\citenamefont {Togo},
+  \citenamefont {Chaput},\ and\ \citenamefont {Tanaka}}]{Togo:2015dy}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Togo}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Chaput}}, \ and\
+  \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont {Tanaka}},\ }\href@noop {}
+  {\bibfield  {journal} {\bibinfo  {journal} {Physical Review B}\ }\textbf
+  {\bibinfo {volume} {91}},\ \bibinfo {pages} {094306} (\bibinfo {year}
+  {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kresse}\ and\ \citenamefont
+  {Hafner}(1993)}]{Kresse:1993bz}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Kresse}}\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Hafner}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Physical Review B}\ }\textbf {\bibinfo {volume} {47}},\ \bibinfo {pages}
+  {558} (\bibinfo {year} {1993})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kresse}\ and\ \citenamefont
+  {Hafner}(1994)}]{Kresse:1994il}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Kresse}}\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Hafner}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Physical Review B}\ }\textbf {\bibinfo {volume} {49}},\ \bibinfo {pages}
+  {14251} (\bibinfo {year} {1994})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kresse}\ and\ \citenamefont
+  {Furthm{\"u}ller}(1996{\natexlab{a}})}]{Kresse:1996kg}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Kresse}}\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Furthm{\"u}ller}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {Computational Materials Science}\ }\textbf {\bibinfo {volume}
+  {6}},\ \bibinfo {pages} {15} (\bibinfo {year}
+  {1996}{\natexlab{a}})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kresse}\ and\ \citenamefont
+  {Furthm{\"u}ller}(1996{\natexlab{b}})}]{Kresse:1996kl}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Kresse}}\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Furthm{\"u}ller}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {Physical Review B}\ }\textbf {\bibinfo {volume} {54}},\ \bibinfo
+  {pages} {11169} (\bibinfo {year} {1996}{\natexlab{b}})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kresse}\ and\ \citenamefont
+  {Joubert}(1999)}]{Kresse:1999dk}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Kresse}}\ and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Joubert}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Physical Review B}\ }\textbf {\bibinfo {volume} {59}},\ \bibinfo {pages}
+  {1758} (\bibinfo {year} {1999})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Pei}\ \emph {et~al.}(2011)\citenamefont {Pei},
+  \citenamefont {Shi}, \citenamefont {LaLonde}, \citenamefont {Wang},
+  \citenamefont {Chen},\ and\ \citenamefont {Snyder}}]{Pei:2011kx}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {Pei}}, \bibinfo {author} {\bibfnamefont {X.}~\bibnamefont {Shi}}, \bibinfo
+  {author} {\bibfnamefont {A.}~\bibnamefont {LaLonde}}, \bibinfo {author}
+  {\bibfnamefont {H.}~\bibnamefont {Wang}}, \bibinfo {author} {\bibfnamefont
+  {L.}~\bibnamefont {Chen}}, \ and\ \bibinfo {author} {\bibfnamefont {G.~J.}\
+  \bibnamefont {Snyder}},\ }\href {\doibase 10.1038/nature09996} {\bibfield
+  {journal} {\bibinfo  {journal} {Nature}\ }\textbf {\bibinfo {volume} {473}},\
+  \bibinfo {pages} {66} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Linghu}\ \emph {et~al.}(2017)\citenamefont {Linghu},
+  \citenamefont {Shen}, \citenamefont {Yang}, \citenamefont {Xu},\ and\
+  \citenamefont {Feng}}]{doi:10.1021/acs.jpcc.7b04032}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Linghu}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Shen}},
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Yang}}, \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Xu}}, \ and\ \bibinfo {author}
+  {\bibfnamefont {Y.~P.}\ \bibnamefont {Feng}},\ }\href {\doibase
+  10.1021/acs.jpcc.7b04032} {\bibfield  {journal} {\bibinfo  {journal} {The
+  Journal of Physical Chemistry C}\ }\textbf {\bibinfo {volume} {121}},\
+  \bibinfo {pages} {15574} (\bibinfo {year} {2017})},\ \Eprint
+  {http://arxiv.org/abs/https://doi.org/10.1021/acs.jpcc.7b04032}
+  {https://doi.org/10.1021/acs.jpcc.7b04032} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Arrieta}\ \emph {et~al.}(2017)\citenamefont
+  {Arrieta}, \citenamefont {Katcho}, \citenamefont {Arcelus},\ and\
+  \citenamefont {Carrasco}}]{Arrieta:2017dp}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {U.}~\bibnamefont
+  {Arrieta}}, \bibinfo {author} {\bibfnamefont {N.~A.}\ \bibnamefont {Katcho}},
+  \bibinfo {author} {\bibfnamefont {O.}~\bibnamefont {Arcelus}}, \ and\
+  \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Carrasco}},\ }\href
+  {\doibase 10.1038/s41598-017-05629-x} {\bibfield  {journal} {\bibinfo
+  {journal} {Scientific Reports}\ }\textbf {\bibinfo {volume} {7}},\ \bibinfo
+  {pages} {510} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Thomas}\ \emph {et~al.}(2010)\citenamefont {Thomas},
+  \citenamefont {Iutzi},\ and\ \citenamefont {McGaughey}}]{Thomas:2010jq}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~A.}\ \bibnamefont
+  {Thomas}}, \bibinfo {author} {\bibfnamefont {R.~M.}\ \bibnamefont {Iutzi}}, \
+  and\ \bibinfo {author} {\bibfnamefont {A.~J.~H.}\ \bibnamefont {McGaughey}},\
+  }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Physical Review
+  B}\ }\textbf {\bibinfo {volume} {81}},\ \bibinfo {pages} {045413} (\bibinfo
+  {year} {2010})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Stefanoski}\ \emph {et~al.}(2012)\citenamefont
+  {Stefanoski}, \citenamefont {Malliakas}, \citenamefont {Kanatzidis},\ and\
+  \citenamefont {Nolas}}]{Stefanoski:2012jf}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Stefanoski}}, \bibinfo {author} {\bibfnamefont {C.~D.}\ \bibnamefont
+  {Malliakas}}, \bibinfo {author} {\bibfnamefont {M.~G.}\ \bibnamefont
+  {Kanatzidis}}, \ and\ \bibinfo {author} {\bibfnamefont {G.~S.}\ \bibnamefont
+  {Nolas}},\ }\href {\doibase 10.1021/ic202199t} {\bibfield  {journal}
+  {\bibinfo  {journal} {Inorganic Chemistry}\ }\textbf {\bibinfo {volume}
+  {51}},\ \bibinfo {pages} {8686} (\bibinfo {year} {2012})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Medeiros}\ \emph {et~al.}(2014)\citenamefont
+  {Medeiros}, \citenamefont {Stafstr\"om},\ and\ \citenamefont
+  {Bj\"ork}}]{PhysRevB.89.041407}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~V.~C.}\
+  \bibnamefont {Medeiros}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Stafstr\"om}}, \ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Bj\"ork}},\ }\href {\doibase 10.1103/PhysRevB.89.041407} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume}
+  {89}},\ \bibinfo {pages} {041407} (\bibinfo {year} {2014})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Medeiros}\ \emph {et~al.}(2015)\citenamefont
+  {Medeiros}, \citenamefont {Tsirkin}, \citenamefont {Stafstr\"om},\ and\
+  \citenamefont {Bj\"ork}}]{PhysRevB.91.041116}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~V.~C.}\
+  \bibnamefont {Medeiros}}, \bibinfo {author} {\bibfnamefont {S.~S.}\
+  \bibnamefont {Tsirkin}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Stafstr\"om}}, \ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Bj\"ork}},\ }\href {\doibase 10.1103/PhysRevB.91.041116} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume}
+  {91}},\ \bibinfo {pages} {041116} (\bibinfo {year} {2015})}\BibitemShut
+  {NoStop}%
+\end{thebibliography}%
+
+\widetext
+\clearpage
+
+\begin{center}
+\textbf{\large Supplementary Material for: \\Enhanced Thermoelectric Properties in a New Silicon Crystal Si$_{24}$ with Intrinsic Nanoscale Porous Structure} \\
+\vspace{10pt}
+Kisung Chae,$^{1, \ast}$ Seoung-Hun Kang,$^{1, \ast}$ Seon-Myeong Choi,$^{1, \dagger}$ Duck Young Kim,$^{2, 3, \ddagger}$ and Young-Woo Son$^{1, \S}$ \\
+\vspace{4pt}
+$^1$ \emph{Korea Institute for Advanced Study, Seoul 02455, South Korea} \\
+$^2$ \emph{Center for High Pressure Science and Technology Advanced Research, Shanghai 201203, P. R. China} \\
+$^3$ \emph{Division of Advanced Nuclear Engineering, POSTECH, Pohang, South Korea} \\
+(Dated: \today)
+\end{center}
+
+\renewcommand{\thesection}{S\Roman{section}}
+\setcounter{section}{0}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\setcounter{figure}{0}
+\renewcommand{\thetable}{S\arabic{table}}
+\setcounter{table}{0}
+\renewcommand{\bibnumfmt}[1]{[S#1]}
+\renewcommand{\citenumfont}[1]{S#1}
+
+\section{Factors on electric conductivity}
+Here, we justify our assumption for electronic relaxation time, $\tau^{e}_{n,\boldsymbol{k}}\approx\tau^{e-ph}_{n,\boldsymbol{k}}$, used in our study.
+According to the Matthiessen rule, scattering rates are:
+$$(\tau^{e}_{n,\boldsymbol{k}})^{-1} = (\tau^{e-ph}_{n,\boldsymbol{k}})^{-1} + (\tau^{e-e}_{n,\boldsymbol{k}})^{-1} + (\tau^{imp}_{n,\boldsymbol{k}})^{-1},$$
+where each of the terms on the right-hand side indicates contributions from electron-phonon, electron-electron and impurity scattering, respectively.
+First of all, an elaborated \emph{ab initio} calculations~\cite{PhysRevLett.112.257402} have shown that for relaxation of excess charge carriers in silicon with cubic diamond phase generated by photon injection, electron-electron scattering is negligible, i.e., $(\tau^{e-e}_{n,\boldsymbol{k}})^{-1}\approx0$. 
+Instead, it is electron-phonon interaction that plays a dominant role.
+Moreover, impurity scattering also seems to have minute effects on electron transport since relatively small optimal doping concentration (e.g., 0.21$\times$10$^{20}$ cm$^{-3}$ at 300 K as in Figure 1(d)) may be readily achieved due to the spontaneous electron transfer from the guest Na ions without affecting electronic structures of the crystal as seen in Figure 4.
+Furthermore, a recent theoretical study~\cite{doi:10.1021/acs.jpcc.7b04032} shows that substitutional doping generates delocalized defect states along the channel ($x$-axis), indicating that a trace of impurity, if any, would not significantly change the electronic transport behaviors: $(\tau^{imp}_{n,\boldsymbol{k}})^{-1}\approx0$.
+
+\section{Convergence tests}
+
+Here, we demonstrate that the computed transport coefficients in this study are obtained in well-converged conditions. 
+Calculation of transport coefficients requires numerical integration on discrete grid points in the Brillouin zone, of which the accuracy sensitively depends on the grid point spacing. 
+For example, for lattice thermal conductivity, coupling strength matrix of phonons needs to be dealt explicitly in the Brillouin zone~\cite{Togo:2015dy}.
+Figure~\ref{figs1} shows the lattice thermal conductivity along the $x$-axis computed on different number of grid points.
+The data shows that the lattice thermal conductivities seem to be converged on a 8$\times$8$\times$8 grid at all temperature range considered in this study. 
+We reported the values computed on the 14$\times$14$\times$14 grid.
+
+\begin{figure}[]
+	\centering
+	\includegraphics[width=0.6\columnwidth]{figs1.pdf}\\
+	\caption{Lattice thermal conductivities ($\kappa_{xx}$) computed on different grid meshes.}
+	\label{figs1}
+\end{figure}
+
+\begin{figure}[]
+	\centering
+	\includegraphics[width=\columnwidth]{figs2.pdf}\\
+	\caption{(a) Thermoelectric figure of merit (ZT) for varying doping concentration. The inset shows the ZT values due to electron doping in the vicinity of the maximum ZT values (ZT$_{\mathrm{max}}$). (b) ZT$_{\mathrm{max}}$ is plotted as a function of the number of grid points in the Brillouin zone (N). The blue dashed curves are inserted to guide the eyes.}
+	\label{figs2}
+\end{figure}
+
+We also show the convergence test results on computing electron-phonon coupling with respect to the number of $\boldsymbol{k}/\boldsymbol{q}$ points in the Brillouin zone (N) in Figure~\ref{figs2}.
+Note for given $\kappa$, it is convenient to compare ZT values to discuss the convergence of evaluating electron-phonon coupling as the power factor is directly proportional to ZT (eq. 2).
+Firstly, it seems crucial to compute ZT with caution as the size of N affects the ZT values significantly.
+For instance, on a coarse grid of (10$\times$10$\times$9), the maximum ZT occurs in hole-doped system, which is in stark contrast to all the other results computed on denser grids as in Figure~\ref{figs2}(a).
+In addition, even with a demanding calculations up to the grid of (50$\times$50$\times$9), the ZT appears to converge relatively slowly with respect to N, and behaves as damped oscillation as seen in Figure~\ref{figs2}(b).
+Unlike the grid spacing along the $x$- and $y$-axes, on the other hand, the grid spacing along the $z$-axis would not have significant effects on ZT when comparing the ZTs on (30$\times$30$\times$9) and (30$\times$30$\times$12).
+This different behavior is attributed to the highly anisotropic electronic structures.
+With a grid of (40$\times$40$\times$9) as we used in our Letter, we confirmed that the ZT$_{\mathrm{max}}$ is well-converged with the relative error less than 5\% when compared with that of (50$\times$50$\times$9).
+
+%\bibliography{references}
+% references
+\begin{thebibliography}{3}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{http://dx.doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Bernardi}\ \emph {et~al.}(2014)\citenamefont
+  {Bernardi}, \citenamefont {Vigil-Fowler}, \citenamefont {Lischner},
+  \citenamefont {Neaton},\ and\ \citenamefont
+  {Louie}}]{PhysRevLett.112.257402}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Bernardi}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Vigil-Fowler}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Lischner}}, \bibinfo {author} {\bibfnamefont {J.~B.}\ \bibnamefont
+  {Neaton}}, \ and\ \bibinfo {author} {\bibfnamefont {S.~G.}\ \bibnamefont
+  {Louie}},\ }\href {\doibase 10.1103/PhysRevLett.112.257402} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo
+  {volume} {112}},\ \bibinfo {pages} {257402} (\bibinfo {year}
+  {2014})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Linghu}\ \emph {et~al.}(2017)\citenamefont {Linghu},
+  \citenamefont {Shen}, \citenamefont {Yang}, \citenamefont {Xu},\ and\
+  \citenamefont {Feng}}]{doi:10.1021/acs.jpcc.7b04032}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Linghu}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Shen}},
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Yang}}, \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Xu}}, \ and\ \bibinfo {author}
+  {\bibfnamefont {Y.~P.}\ \bibnamefont {Feng}},\ }\href {\doibase
+  10.1021/acs.jpcc.7b04032} {\bibfield  {journal} {\bibinfo  {journal} {The
+  Journal of Physical Chemistry C}\ }\textbf {\bibinfo {volume} {121}},\
+  \bibinfo {pages} {15574} (\bibinfo {year} {2017})},\ \Eprint
+  {http://arxiv.org/abs/https://doi.org/10.1021/acs.jpcc.7b04032}
+  {https://doi.org/10.1021/acs.jpcc.7b04032} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Togo}\ \emph {et~al.}(2015)\citenamefont {Togo},
+  \citenamefont {Chaput},\ and\ \citenamefont {Tanaka}}]{Togo:2015dy}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Togo}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Chaput}}, \ and\
+  \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont {Tanaka}},\ }\href@noop {}
+  {\bibfield  {journal} {\bibinfo  {journal} {Physical Review B}\ }\textbf
+  {\bibinfo {volume} {91}},\ \bibinfo {pages} {094306} (\bibinfo {year}
+  {2015})}\BibitemShut {NoStop}%
+\end{thebibliography}%
+
+\end{document} 

@@ -1,0 +1,308 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{\uppercase{BCLK{\etalchar{*}}21}}
+
+\bibitem[AAB{\etalchar{*}}19]{arute2019quantum}
+\textsc{Arute F., Arya K., Babbush R., Bacon D., Bardin J.~C., Barends R.,
+  Biswas R., Boixo S., Brandao F.~G., Buell D.~A., et~al.}:
+\newblock Quantum supremacy using a programmable superconducting processor.
+\newblock \emph{Nature 574}, 7779 (2019), 505--510.
+
+\bibitem[AJMK09]{altepeter2009multiple}
+\textsc{Altepeter J.~B., Jeffrey E.~R., Medic M., Kumar P.}:
+\newblock Multiple-qubit quantum state visualization.
+\newblock In \emph{Proceedings of 2009 Conference on Lasers and Electro-Optics
+  and 2009 Conference on Quantum Electronics and Laser Science Conference}
+  (2009), IEEE, Optica Publishing Group, pp.~1--2.
+
+\bibitem[ARH{\etalchar{*}}15]{FA20153D2D}
+\textsc{Amini F., Rufiange S., Hossain Z., Ventura Q., Irani P., McGuffin
+  M.~J.}:
+\newblock The impact of interactivity on comprehending 2d and 3d visualizations
+  of movement data.
+\newblock \emph{IEEE Transactions on Visualization and Computer Graphics 21}, 1
+  (2015), 122--135.
+\newblock \href {https://doi.org/10.1109/TVCG.2014.2329308}
+  {\path{doi:10.1109/TVCG.2014.2329308}}.
+
+\bibitem[BBF{\etalchar{*}}20]{KerstinNature2022}
+\textsc{Beer K., Bondarenko D., Farrelly T., Osborne T.~J., Salzmann R.,
+  Scheiermann D., Wolf R.}:
+\newblock Training deep quantum neural networks.
+\newblock \emph{Nature Communications 11}, 1 (2020), 808.
+\newblock URL: \url{https://doi.org/10.1038/s41467-020-14454-2}, \href
+  {https://doi.org/10.1038/s41467-020-14454-2}
+  {\path{doi:10.1038/s41467-020-14454-2}}.
+
+\bibitem[BCLK{\etalchar{*}}21]{bharti2021noisy}
+\textsc{Bharti K., Cervera-Lierta A., Kyaw T.~H., Haug T., Alperin-Lea S.,
+  Anand A., Degroote M., Heimonen H., Kottmann J.~S., Menke T., et~al.}:
+\newblock Noisy intermediate-scale quantum (nisq) algorithms.
+\newblock \emph{arXiv preprint arXiv:2101.08448} (2021).
+
+\bibitem[Blo46]{bloch1946nuclear}
+\textsc{Bloch F.}:
+\newblock Nuclear induction.
+\newblock \emph{Physical Review 70}, 7-8 (1946), 460.
+
+\bibitem[BSR21]{bardin2021microwaves}
+\textsc{Bardin J.~C., Slichter D.~H., Reilly D.~J.}:
+\newblock Microwaves in quantum computing.
+\newblock \emph{IEEE Journal of Microwaves 1}, 1 (2021), 403--427.
+
+\bibitem[CKJA{\etalchar{*}}19]{corcoles2019challenges}
+\textsc{C{\'o}rcoles A.~D., Kandala A., Javadi-Abhari A., McClure D.~T., Cross
+  A.~W., Temme K., Nation P.~D., Steffen M., Gambetta J.~M.}:
+\newblock Challenges and opportunities of near-term quantum computing systems.
+\newblock \emph{arXiv preprint arXiv:1910.02894 108}, 8 (2019), 1338--1352.
+
+\bibitem[CMM17]{chernega2017triangle}
+\textsc{Chernega V.~N., Man’ko O.~V., Man’ko V.~I.}:
+\newblock Triangle geometry of the qubit state in the probability
+  representation expressed in terms of the triada of malevich’s squares.
+\newblock \emph{Journal of Russian Laser Research 38}, 2 (2017), 141--149.
+
+\bibitem[FA09]{131387}
+\textsc{Fargetton R., Arrighi P.}:
+\newblock The bloch representation of quantum states.
+\newblock \emph{AIP Conference Proceedings 1110}, 1 (2009), 87--90.
+\newblock URL: \url{https://aip.scitation.org/doi/abs/10.1063/1.3131387}, \href
+  {https://doi.org/10.1063/1.3131387} {\path{doi:10.1063/1.3131387}}.
+
+\bibitem[GI12]{galambos2012visualizing}
+\textsc{Galambos M., Imre S.}:
+\newblock Visualizing the effects of measurements and logic gates on
+  multi-qubit systems using fractal representation.
+\newblock \emph{International Journal on Advances in Systems and Measurements
+  Volume 5, Number 1 \& 2, 2012} (2012).
+
+\bibitem[GJAE{\etalchar{*}}20]{gokhale2020optimized}
+\textsc{Gokhale P., Javadi-Abhari A., Earnest N., Shi Y., Chong F.~T.}:
+\newblock Optimized quantum compilation for near-term algorithms with
+  openpulse.
+\newblock In \emph{Proceedings of 2020 53rd Annual IEEE/ACM International
+  Symposium on Microarchitecture (MICRO)} (2020), IEEE, arXiv, pp.~186--200.
+
+\bibitem[Gom18]{gomes2018quantum}
+\textsc{Gomes L.}:
+\newblock Quantum computing: Both here and not here.
+\newblock \emph{IEEE Spectrum 55}, 4 (2018), 42--47.
+
+\bibitem[GRL{\etalchar{*}}03]{gulde2003implementation}
+\textsc{Gulde S., Riebe M., Lancaster G., Becher C., Eschner J., H{\"a}ffner
+  H., Schmidt-Kaler F., Chuang I.~L., Blatt R.}:
+\newblock Implementation of the deutsch--jozsa algorithm on an ion-trap quantum
+  computer.
+\newblock \emph{Nature 421}, 6918 (2003), 48--50.
+
+\bibitem[Gro96]{grover1996fast}
+\textsc{Grover L.~K.}:
+\newblock A fast quantum mechanical algorithm for database search.
+\newblock In \emph{Proceedings of the Twenty-eighth annual ACM Symposium on
+  Theory of Computing} (New York, NY, USA, 1996), Association for Computing
+  Machinery, pp.~212--219.
+
+\bibitem[{Gro}26]{grover}
+Grover' algorithm.
+\newblock \url{https://qiskit.org/textbook/ch-algorithms/grover.html}, Access
+  Date: 2022-8-26.
+
+\bibitem[Hay08]{hayward2008quantum}
+\textsc{Hayward M.}:
+\newblock Quantum computing and shor’s algorithm.
+\newblock \emph{Sydney: Macquarie University Mathematics Department} (2008).
+
+\bibitem[HCS{\etalchar{*}}20]{hassija2020present}
+\textsc{Hassija V., Chamola V., Saxena V., Chanana V., Parashari P., Mumtaz S.,
+  Guizani M.}:
+\newblock Present landscape of quantum computing.
+\newblock \emph{IET Quantum Communication 1}, 2 (2020), 42--48.
+
+\bibitem[HD04]{havel2004bloch}
+\textsc{Havel T.~F., Doran C.~J.}:
+\newblock A bloch-sphere-type model for two qubits in the geometric algebra of
+  a 6d euclidean vector space.
+\newblock In \emph{Quantum Information and Computation II} (2004), vol.~5436,
+  SPIE, {SPIE}, pp.~93--106.
+
+\bibitem[Hey99]{Hey1999QuantumCA}
+\textsc{Hey T. A. J.~G.}:
+\newblock Quantum computing: an introduction.
+\newblock \emph{Computing \& Control Engineering Journal 10} (1999), 105--112.
+
+\bibitem[HIP{\etalchar{*}}21]{ciaran2021qc4c}
+\textsc{Hughes C., Isaacson J., Perry A., Sun R., Turner J.}:
+\newblock \emph{Quantum Computing for the Quantum Curious}.
+\newblock 01 2021.
+\newblock \href {https://doi.org/10.1007/978-3-030-61601-4}
+  {\path{doi:10.1007/978-3-030-61601-4}}.
+
+\bibitem[{ibm}14]{ibmq}
+Ibm quantum.
+\newblock \url{https://quantum-computing.ibm.com/}, Access Date: 2022-7-14.
+
+\bibitem[{Iri}11]{iris}
+Iris dataset.
+\newblock \url{https://archive.ics.uci.edu/ml/datasets/iris}, Access Date:
+  2022-8-11.
+
+\bibitem[Kaw05]{kawasaki2005proof}
+\textsc{Kawasaki K.-i.}:
+\newblock Proof without words: Viviani's theorem.
+\newblock \emph{Mathematics Magazine 78}, 3 (2005), 213.
+
+\bibitem[KMT{\etalchar{*}}17]{kandala2017hardware}
+\textsc{Kandala A., Mezzacapo A., Temme K., Takita M., Brink M., Chow J.~M.,
+  Gambetta J.~M.}:
+\newblock Hardware-efficient variational quantum eigensolver for small
+  molecules and quantum magnets.
+\newblock \emph{Nature 549}, 7671 (2017), 242--246.
+
+\bibitem[LB13]{lidar2013quantum}
+\textsc{Lidar D.~A., Brun T.~A.}:
+\newblock \emph{Quantum error correction}.
+\newblock Cambridge university press, 2013.
+
+\bibitem[Mun09]{munzner2009nested}
+\textsc{Munzner T.}:
+\newblock A nested model for visualization design and validation.
+\newblock \emph{IEEE Transactions on Visualization and Computer Graphics 15}, 6
+  (2009), 921--928.
+
+\bibitem[MV17]{moller2017impact}
+\textsc{M{\"o}ller M., Vuik C.}:
+\newblock On the impact of quantum computing technology on future developments
+  in high-performance scientific computing.
+\newblock \emph{Ethics and Information Technology 19}, 4 (2017), 253--269.
+
+\bibitem[Nar99]{nara1999QC4B}
+\textsc{Narayanan A.}:
+\newblock Quantum computing for beginners.
+\newblock In \emph{Proceedings of the 1999 Congress on Evolutionary
+  Computation-CEC99} (1999), vol.~3, pp.~2231--2238 Vol. 3.
+\newblock \href {https://doi.org/10.1109/CEC.1999.785552}
+  {\path{doi:10.1109/CEC.1999.785552}}.
+
+\bibitem[{Pen}11]{Pennylane_example}
+Pennylane examples.
+\newblock
+  \url{https://pennylane.ai/qml/demos/tutorial_variational_classifier.html},
+  Access Date: 2022-8-11.
+
+\bibitem[PRZ17]{paykin2017qwire}
+\textsc{Paykin J., Rand R., Zdancewic S.}:
+\newblock Qwire: A core language for quantum circuits.
+\newblock \emph{ACM SIGPLAN Notices 52}, 1 (2017), 846--858.
+
+\bibitem[{Qui}14]{quirk}
+Quirk.
+\newblock \url{https://github.com/Strilanc/Quirk}, Access Date: 2022-7-14.
+
+\bibitem[RP00]{rieffel2000introQCnonP}
+\textsc{Rieffel E., Polak W.}:
+\newblock An introduction to quantum computing for non-physicists.
+\newblock \emph{ACM Comput. Surv. 32} (sep 2000), 300–335.
+\newblock URL: \url{https://doi.org/10.1145/367701.367709}, \href
+  {https://doi.org/10.1145/367701.367709} {\path{doi:10.1145/367701.367709}}.
+
+\bibitem[RP11]{rieffel2011quantum}
+\textsc{Rieffel E.~G., Polak W.~H.}:
+\newblock \emph{Quantum computing: A gentle introduction}.
+\newblock MIT Press, 2011.
+
+\bibitem[RWJ{\etalchar{*}}22]{ruan2022vacsen}
+\textsc{Ruan S., Wang Y., Jiang W., Mao Y., Guan Q.}:
+\newblock Vacsen: A visualization approach for noise awareness in quantum
+  computing.
+\newblock \emph{arXiv preprint arXiv:2207.14135} (2022).
+
+\bibitem[SAP{\etalchar{*}}21]{saki2021survey}
+\textsc{Saki A.~A., Alam M., Phalak K., Suresh A., Topaloglu R.~O., Ghosh S.}:
+\newblock A survey and tutorial on security and resilience of quantum
+  computing.
+\newblock In \emph{Proceedings of the 2021 IEEE European Test Symposium (ETS)}
+  (2021), IEEE, pp.~1--10.
+
+\bibitem[SLM{\etalchar{*}}21]{SamMLSys22}
+\textsc{Stein S.~A., L’Abbate R., Mu W., Liu Y., Baheri B., Mao Y., Qiang G.,
+  Li A., Fang B.}:
+\newblock A hybrid system for learning classical data in quantum states.
+\newblock In \emph{Proceedings of the 2021 IEEE International Performance,
+  Computing, and Communications Conference (IPCCC)} (2021), pp.~1--7.
+\newblock \href {https://doi.org/10.1109/IPCCC51483.2021.9679430}
+  {\path{doi:10.1109/IPCCC51483.2021.9679430}}.
+
+\bibitem[SMM12]{sedlmair2012design}
+\textsc{Sedlmair M., Meyer M., Munzner T.}:
+\newblock Design study methodology: Reflections from the trenches and the
+  stacks.
+\newblock \emph{IEEE Transactions on Visualization and Computer Graphics 18},
+  12 (2012), 2431--2440.
+
+\bibitem[Ste98]{steane1998quantum}
+\textsc{Steane A.}:
+\newblock Quantum computing.
+\newblock \emph{Reports on Progress in Physics 61}, 2 (1998), 117.
+
+\bibitem[TCCG20]{tacchino2020quantum}
+\textsc{Tacchino F., Chiesa A., Carretta S., Gerace D.}:
+\newblock Quantum computers as universal quantum simulators: State-of-the-art
+  and perspectives.
+\newblock \emph{Advanced Quantum Technologies 3}, 3 (2020), 1900052.
+
+\bibitem[TKAM05]{tory2005visualization}
+\textsc{Tory M., Kirkpatrick A.~E., Atkins M.~S., Moller T.}:
+\newblock Visualization task performance with 2d, 3d, and combination displays.
+\newblock \emph{IEEE Transactions on Visualization and Computer Graphics 12}, 1
+  (2005), 2--13.
+
+\bibitem[{Tor}11]{TorchQuantum}
+Torchquantum.
+\newblock \url{https://github.com/mit-han-lab/torchquantum}, Access Date:
+  2022-8-11.
+
+\bibitem[TPCW17]{tao2017shorvis}
+\textsc{Tao Z., Pan Y., Chen A., Wang L.}:
+\newblock Shorvis: A comprehensive case study of quantum computing
+  visualization.
+\newblock In \emph{Proceedings of the 2017 International Conference on Virtual
+  Reality and Visualization (ICVRV)} (2017), IEEE, pp.~360--365.
+
+\bibitem[TQ19]{tannu2019not}
+\textsc{Tannu S.~S., Qureshi M.~K.}:
+\newblock Not all qubits are created equal: A case for variability-aware
+  policies for nisq-era quantum computers.
+\newblock In \emph{Proceedings of the Twenty-Fourth International Conference on
+  Architectural Support for Programming Languages and Operating Systems} (New
+  York, NY, USA, 2019), Association for Computing Machinery, pp.~987--999.
+
+\bibitem[Wie14]{wie2014bloch}
+\textsc{Wie C.-R.}:
+\newblock Bloch sphere model for two-qubit pure states.
+\newblock \emph{arXiv preprint arXiv:1403.8069} (2014).
+
+\bibitem[Wie20]{wie2020two}
+\textsc{Wie C.-R.}:
+\newblock Two-qubit bloch sphere.
+\newblock \emph{Physics 2}, 3 (2020), 383--396.
+
+\bibitem[Wil21]{williams2021qcvis}
+\textsc{Williams M.~M.}:
+\newblock \emph{QCVis: A quantum circuit visualization and education platform
+  for novices}.
+\newblock PhD thesis, Harvard University, 2021.
+
+\bibitem[ZHVG20]{zable2020investigating}
+\textsc{Zable A., Hollenberg L., Velloso E., Goncalves J.}:
+\newblock Investigating immersive virtual reality as an educational tool for
+  quantum computing.
+\newblock In \emph{Proceedings of the 26th ACM Symposium on Virtual Reality
+  Software and Technology} (New York, NY, USA, 2020), Association for Computing
+  Machinery, pp.~1--11.
+
+\bibitem[ZW18]{zulehner2018advanced}
+\textsc{Zulehner A., Wille R.}:
+\newblock Advanced simulation of quantum computations.
+\newblock \emph{IEEE Transactions on Computer-Aided Design of Integrated
+  Circuits and Systems 38}, 5 (2018), 848--859.
+
+\end{thebibliography}

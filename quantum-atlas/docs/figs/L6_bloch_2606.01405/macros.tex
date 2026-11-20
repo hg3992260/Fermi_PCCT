@@ -1,0 +1,77 @@
+\usepackage{ifthen}
+\usepackage{tikz}
+\usepackage{xspace}
+\usepackage{physics,bm}
+
+\newcommand{\nn}{\nonumber}
+
+\newcommand{\heff}{h_{\rm eff}}
+\newcommand{\geff}{g_{\rm eff}}
+
+\newcommand{\Fn}{f^N}
+\newcommand{\FnBar}{\overline{f}^N}
+\newcommand{\FnEq}{f^N_{\rm eq}}
+\newcommand{\FL}{f^L}
+\newcommand{\FLBar}{f^L}
+\newcommand{\FLEq}{f^L_{\rm eq}}
+\newcommand{\Fh}{f^\phi}
+\newcommand{\FhEq}{f^\phi_{\rm eq}}
+\newcommand{\FAvg}{\underline{f}^N}
+\newcommand{\dFn}{\delta \! f^N}
+
+
+\newcommand{\dint}{  \displaystyle \int }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ie}{{i.e.}\xspace}
+\newcommand{\eg}{{e.g.}\xspace}
+\newcommand{\GeV}{{\rm GeV}\xspace}
+\newcommand{\TeV}{{\rm TeV}\xspace}
+\newcommand{\MeV}{{\rm MeV}\xspace}
+\newcommand{\keV}{{\rm keV}\xspace}
+  
+%\newcommand{\vev}[1]{\langle #1 \rangle}
+\newcommand{\Bvev}[1]{\Bigg\langle #1 \Bigg\rangle}
+\newcommand{\bvev}[1]{\Big\langle #1 \Big\rangle}
+
+\newcommand{\lrb}[1]{\left( #1 \right)}
+\newcommand{\lrsb}[1]{\left[ #1 \right]}
+\newcommand{\lrcb}[1]{\left\{ #1 \right\}}
+\newcommand{\lrBigb}[1]{\Big( #1 \Big)}
+\newcommand{\lrBiggb}[1]{\Bigg( #1 \Bigg)}
+\newcommand{\lrBigsb}[1]{\Big[ #1 \Big]}
+\newcommand{\lrBiggsb}[1]{\Bigg[ #1 \Bigg]}
+\newcommand{\lrBigcb}[1]{\Big\{ #1 \Big\}}
+\newcommand{\lrBiggcb}[1]{\Bigg\{ #1 \Bigg\}}
+
+\renewcommand{\Re}[1]{\operatorname{Re}\lrsb{#1}\xspace}
+\renewcommand{\Im}[1]{\operatorname{Im}\lrsb{#1}\xspace}
+
+\renewcommand{\Tr}[1]{\operatorname{Tr}\lrsb{#1}\xspace}
+\newcommand{\Det}[1]{\operatorname{Det}\lrsb{#1}\xspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--Begin_refs--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{NumArgs}
+
+%Define reference to an arbitrary number of equations (\eqs{label_1,label_2....,label_n} will show eqs. ref_1, ref_2, ..., and ref_n)
+\newcommand{\eqs}[1]{\setcounter{NumArgs}{0}\foreach\i in{#1}{\stepcounter{NumArgs}}%
+	\ifthenelse{\equal{\theNumArgs}{1}}{(\ref{#1})}%
+	{\ifthenelse{\equal{\theNumArgs}{2}}%
+		{\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\theNumArgs}}{and (\ref{\i})}{(\ref{\i})~}}}%
+		{\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\theNumArgs}}{and (\ref{\i})}{(\ref{\i}),~}}}}}
+
+%Define reference to an arbitrary number of labels (\REF{label_1,label_2....,label_n} will show ref_1, ref_2, ..., and ref_n)
+\newcommand{\refs}[1]{\setcounter{NumArgs}{0}\foreach\i in{#1}{\stepcounter{NumArgs}}%
+	\ifthenelse{\equal{\theNumArgs}{1}}{(\ref{#1})}%
+	{\ifthenelse{\equal{\theNumArgs}{2}}%
+		{\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\theNumArgs}}{and (\ref{\i})}{(\ref{\i})~}}}%
+		{\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\theNumArgs}}{and (\ref{\i})}{(\ref{\i}),~}}}}}
+
+
+
+%Define reference to an arbitrary number of figs (\Figs{label_1,label_2....,label_n} will show ref_1, ref_2, ..., and ref_n)
+\newcommand{\Figs}[1]{\setcounter{NumArgs}{0}\foreach\i in{#1}{\stepcounter{NumArgs}}%
+	\ifthenelse{\equal{\theNumArgs}{1}}{Figure~\ref{#1}}%
+	{\ifthenelse{\equal{\theNumArgs}{2}}%
+		{Figures~\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\theNumArgs}}{and \ref{\i}}{\ref{\i}~}}}%
+		{Figures~\foreach\i[count=\q]in{#1}{\ifthenelse{\equal{\q}{\theNumArgs}}{and \ref{\i}}{\ref{\i},~}}}}}

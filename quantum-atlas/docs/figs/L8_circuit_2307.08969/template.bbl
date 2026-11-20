@@ -1,0 +1,1134 @@
+\begin{thebibliography}{10}
+
+\bibitem{Albertoni:2005:VSA}
+R.~Albertoni, A.~Bertone, and M.~D. Martino.
+\newblock Visualization and semantic analysis of geographic metadata.
+\newblock In {\em {Proc.\ GIR}}, pp. 9--16. {ACM}, New York, Nov. 2005.
+  \href{https://doi.org/10.1145/1096985.1096989}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}1096985\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1096989}}}
+
+
+\bibitem{Bauer:2020:QAQCQMS}
+B.~Bauer, S.~Bravyi, M.~Motta, and G.~K.-L. Chan.
+\newblock Quantum algorithms for quantum chemistry and quantum materials
+  science.
+\newblock {\em Chem. Rev.}, 120(22):12685--12717, Nov. 2020.
+  \href{https://doi.org/10.1021/acs.chemrev.9b00829}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1021\discretionary{/}{%
+}{/}acs\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}chemrev\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}9b00829}}}
+
+
+\bibitem{Bhattacharjee:2017:QCP}
+D.~Bhattacharjee and A.~Chattopadhyay.
+\newblock Depth-optimal quantum circuit placement for arbitrary topologies.
+\newblock {\em CoRR}, abs/1703.08540, Mar. 2017.
+  \href{https://doi.org/10.48550/arXiv.1703.08540}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}48550\discretionary{/}{%
+}{/}arXiv\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1703\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}08540}}}
+
+
+\bibitem{Biamonte:2019:CNCQ}
+J.~Biamonte, M.~Faccin, and M.~De~Domenico.
+\newblock Complex networks from classical to quantum.
+\newblock {\em Commun. Phys.}, 2(1):53, May 2019.
+  \href{https://doi.org/10.1038/s42005-019-0152-6}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1038\discretionary{/}{%
+}{/}s42005\discretionary{%
+}{-}{-}019\discretionary{%
+}{-}{-}0152\discretionary{%
+}{-}{-}6}}}
+
+
+\bibitem{Biamonte:2017:QML}
+J.~D. Biamonte, P.~Wittek, N.~Pancotti, P.~Rebentrost, N.~Wiebe, and S.~Lloyd.
+\newblock Quantum machine learning.
+\newblock {\em Nat.}, 549(7671):195--202, Sept. 2017.
+  \href{https://doi.org/10.1038/nature23474}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1038\discretionary{/}{%
+}{/}nature23474}}}
+
+
+\bibitem{biedl1998better}
+T.~Biedl and G.~Kant.
+\newblock A better heuristic for orthogonal graph drawings.
+\newblock {\em Comput. Geom.}, 9(3):159--180, Feb. 1998.
+  \href{https://doi.org/10.1016/S0925-7721(97)00026-6}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1016\discretionary{/}{%
+}{/}S0925\discretionary{%
+}{-}{-}7721\discretionary{%
+}{(}{(}97\discretionary{)}{%
+}{)}00026\discretionary{%
+}{-}{-}6}}}
+
+
+\bibitem{Borner:2000:EVSS}
+K.~B{\"{o}}rner.
+\newblock Extracting and visualizing semantic structures in retrieval results
+  for browsing.
+\newblock In {\em {Proc.\ DL}}, pp. 234--235. {ACM}, New York, 2000.
+  \href{https://doi.org/10.1145/336597.336672}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}336597\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}336672}}}
+
+
+\bibitem{Brandes:2002:VBN}
+U.~Brandes and T.~Willhalm.
+\newblock Visualization of bibliographic networks with a reshaped landscape
+  metaphor.
+\newblock In {\em Proc.\ VisSym}, pp. 159--164. Eurographics Association,
+  Eindhoven ,The Netherlands, May 2002.
+  \href{https://doi.org/10.2312/VisSym/VisSym02/159-164}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2312\discretionary{/}{%
+}{/}VisSym\discretionary{/}{%
+}{/}VisSym02\discretionary{/}{%
+}{/}159\discretionary{%
+}{-}{-}164}}}
+
+
+\bibitem{chen2018structure}
+W.~Chen, F.~Guo, D.~Han, J.~Pan, X.~Nie, J.~Xia, and X.~Zhang.
+\newblock Structure-based suggestive exploration: a new approach for effective
+  exploration of large networks.
+\newblock {\em IEEE Trans. Vis. Comput. Graph.}, 25(1):555--565, Aug. 2018.
+  \href{https://doi.org/10.1109/TVCG.2018.2865139}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TVCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2018\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2865139}}}
+
+
+\bibitem{Das:2021:ADAPT}
+P.~Das, S.~S. Tannu, S.~Dangwal, and M.~K. Qureshi.
+\newblock {ADAPT:} mitigating idling errors in qubits via adaptive dynamical
+  decoupling.
+\newblock In {\em {Proc.\ MICRO}}, pp. 950--962. {ACM}, New York, 2021.
+  \href{https://doi.org/10.1145/3466752.3480059}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}3466752\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3480059}}}
+
+
+\bibitem{Cirq}
+C.~Developers.
+\newblock Cirq.
+\newblock Zenodo, December 2022. \href{https://doi.org/10.5281/zenodo.7465577}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}5281\discretionary{/}{%
+}{/}zenodo\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}7465577}}}
+
+
+\bibitem{motif2013cody}
+C.~Dunne and B.~Shneiderman.
+\newblock Motif simplification: Improving network visualization readability
+  with fan, connector, and clique glyphs.
+\newblock In {\em Proc.\ CHI}, p. 3247–3256. ACM, New York, 2013.
+  \href{https://doi.org/10.1145/2470654.2466444}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}2470654\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2466444}}}
+
+
+\bibitem{Egger:2020:QCF}
+D.~J. Egger, C.~Gambella, J.~Marecek, S.~McFaddin, M.~Mevissen, R.~Raymond,
+  A.~Simonetto, S.~Woerner, and E.~Yndurain.
+\newblock Quantum computing for finance: State-of-the-art and future prospects.
+\newblock {\em IEEE Trans. Quantum Eng.}, 1:1--24, Oct. 2020.
+  \href{https://doi.org/10.1109/TQE.2020.3030314}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TQE\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2020\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3030314}}}
+
+
+\bibitem{Emani:2021:QBS}
+P.~S. Emani, J.~Warrell, A.~Anticevic, S.~Bekiranov, M.~Gandal, M.~J.
+  McConnell, G.~Sapiro, A.~Aspuru-Guzik, J.~T. Baker, M.~Bastiani, et~al.
+\newblock Quantum computing at the frontiers of biological sciences.
+\newblock {\em Nat. Methods}, 18(7):701--709, Jan. 2021.
+  \href{https://doi.org/10.1038/s41592-020-01004-3}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1038\discretionary{/}{%
+}{/}s41592\discretionary{%
+}{-}{-}020\discretionary{%
+}{-}{-}01004\discretionary{%
+}{-}{-}3}}}
+
+
+\bibitem{Feng:2023:XNLI}
+Y.~Feng, X.~Wang, B.~Pan, K.~K. Wong, Y.~Ren, S.~Liu, Z.~Yan, Y.~Ma, H.~Qu, and
+  W.~Chen.
+\newblock {XNLI}: Explaining and diagnosing {NLI}-based visual data analysis.
+\newblock {\em IEEE Trans. Vis. Comput. Graph.}, pp. 1--14, Jan. 2023.
+  \href{https://doi.org/10.1109/TVCG.2023.3240003}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TVCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2023\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3240003}}}
+
+
+\bibitem{Fickler:2013:RIQE}
+R.~Fickler, M.~Krenn, R.~Lapkiewicz, S.~Ramelow, and A.~Zeilinger.
+\newblock Real-time imaging of quantum entanglement.
+\newblock {\em Sci. Rep.}, 3(1):1--5, May 2013.
+  \href{https://doi.org/10.1038/srep01914}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1038\discretionary{/}{%
+}{/}srep01914}}}
+
+
+\bibitem{Figgatt:2019:PEO}
+C.~Figgatt, A.~Ostrander, N.~M. Linke, K.~A. Landsman, D.~Zhu, D.~Maslov, and
+  C.~R. Monroe.
+\newblock Parallel entangling operations on a universal ion trap quantum
+  computer.
+\newblock {\em Nat.}, 572(7769):368--372, July 2019.
+  \href{https://doi.org/10.1038/s41586-019-1427-5}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1038\discretionary{/}{%
+}{/}s41586\discretionary{%
+}{-}{-}019\discretionary{%
+}{-}{-}1427\discretionary{%
+}{-}{-}5}}}
+
+
+\bibitem{ghashami2016efficient}
+M.~Ghashami, E.~Liberty, and J.~M. Phillips.
+\newblock Efficient frequent directions algorithm for sparse matrices.
+\newblock In {\em Proc.\ SIGKDD}, pp. 845--854. ACM, New York, 2016.
+  \href{https://doi.org/10.1145/2939672.2939800}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}2939672\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2939800}}}
+
+
+\bibitem{ghoniem2004comparison}
+M.~Ghoniem, J.-D. Fekete, and P.~Castagliola.
+\newblock A comparison of the readability of graphs using node-link and
+  matrix-based representations.
+\newblock In {\em Proc.\ INFOVIS}, pp. 17--24. IEEE, Piscataway, 2004.
+  \href{https://doi.org/10.1109/INFVIS.2004.1}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}INFVIS\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2004\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1}}}
+
+
+\bibitem{gorg2005dynamic}
+C.~G{\"o}rg, P.~Birke, M.~Pohl, and S.~Diehl.
+\newblock Dynamic graph drawing of sequences of orthogonal and hierarchical
+  graphs.
+\newblock In {\em Proc.\ GD}, pp. 228--238. Springer, Berlin, 2005.
+  \href{https://doi.org/10.1007/978-3-540-31843-9_24}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1007\discretionary{/}{%
+}{/}978\discretionary{%
+}{-}{-}3\discretionary{%
+}{-}{-}540\discretionary{%
+}{-}{-}31843\discretionary{%
+}{-}{-}9\_24}}}
+
+
+\bibitem{Green:2013:Quipper}
+A.~S. Green, P.~L. Lumsdaine, N.~J. Ross, P.~Selinger, and B.~Valiron.
+\newblock Quipper: a scalable quantum programming language.
+\newblock In {\em Proc.\ PLDI}, pp. 333--342. {ACM}, New York, 2013.
+  \href{https://doi.org/10.1145/2499370.2462177}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}2499370\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2462177}}}
+
+
+\bibitem{Guo:2022:UniXcoder}
+D.~Guo, S.~Lu, N.~Duan, Y.~Wang, M.~Zhou, and J.~Yin.
+\newblock Uni{X}coder: Unified cross-modal pre-training for code
+  representation.
+\newblock In {\em Proc.\ ACL}, pp. 7212--7225. Association for Computational
+  Linguistics, Dublin, Ireland, 2022.
+  \href{https://doi.org/10.18653/v1/2022.acl-long.499}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}18653\discretionary{/}{%
+}{/}v1\discretionary{/}{%
+}{/}2022\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}acl\discretionary{%
+}{-}{-}long\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}499}}}
+
+
+\bibitem{Guo:2021:GraphCodeBERT}
+D.~Guo, S.~Ren, S.~Lu, Z.~Feng, D.~Tang, S.~Liu, L.~Zhou, N.~Duan,
+  A.~Svyatkovskiy, S.~Fu, M.~Tufano, S.~K. Deng, C.~B. Clement, D.~Drain,
+  N.~Sundaresan, J.~Yin, D.~Jiang, and M.~Zhou.
+\newblock Graph{C}ode{BERT}: Pre-training code representations with data flow.
+\newblock In {\em Proc.\ {ICLR}}. OpenReview.net, Toronto, 2021.
+  \href{https://doi.org/10.48550/arXiv.2009.08366}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}48550\discretionary{/}{%
+}{/}arXiv\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2009\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}08366}}}
+
+
+\bibitem{hachul2005drawing}
+S.~Hachul and M.~J{\"u}nger.
+\newblock Drawing large graphs with a potential-field-based multilevel
+  algorithm.
+\newblock In {\em Proc.\ DG}, pp. 285--295. Springer, Berlin, 2005.
+  \href{https://doi.org/10.1007/978-3-540-31843-9_29}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1007\discretionary{/}{%
+}{/}978\discretionary{%
+}{-}{-}3\discretionary{%
+}{-}{-}540\discretionary{%
+}{-}{-}31843\discretionary{%
+}{-}{-}9\_29}}}
+
+
+\bibitem{hachul2007large}
+S.~Hachul and M.~J{\"u}nger.
+\newblock Large-graph layout algorithms at work: An experimental study.
+\newblock {\em J. Graph Algorithms Appl.}, 11(21):345--369, Jan. 2007.
+  \href{https://doi.org/10.7155/jgaa.00150}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}7155\discretionary{/}{%
+}{/}jgaa\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}00150}}}
+
+
+\bibitem{haleem2019evaluating}
+H.~Haleem, Y.~Wang, A.~Puri, S.~Wadhwa, and H.~Qu.
+\newblock Evaluating the readability of force directed graph layouts: A deep
+  learning approach.
+\newblock {\em IEEE Comput. Graph. Appl.}, 39(4):40--53, June 2019.
+  \href{https://doi.org/10.1109/MCG.2018.2881501}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}MCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2018\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2881501}}}
+
+
+\bibitem{han2022inet}
+D.~Han, J.~Pan, R.~Pan, D.~Zhou, N.~Cao, J.~He, M.~Xu, and W.~Chen.
+\newblock i{N}et: visual analysis of irregular transition in multivariate
+  dynamic networks.
+\newblock {\em Front. Comput. Sci.}, 16(2):1--16, Sept. 2022.
+  \href{https://doi.org/10.1007/s11704-020-0013-1}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1007\discretionary{/}{%
+}{/}s11704\discretionary{%
+}{-}{-}020\discretionary{%
+}{-}{-}0013\discretionary{%
+}{-}{-}1}}}
+
+
+\bibitem{han2021visual}
+D.~Han, J.~Pan, C.~Xie, X.~Zhao, X.~Luo, and W.~Chen.
+\newblock A visual analytics approach for structural differences among graphs
+  via deep learning.
+\newblock {\em IEEE Comput. Graph. Appl.}, 41(5):18--31, July 2021.
+  \href{https://doi.org/10.1109/MCG.2021.3097799}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}MCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2021\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3097799}}}
+
+
+\bibitem{han2021netv}
+D.~Han, J.~Pan, X.~Zhao, and W.~Chen.
+\newblock Net{v}. js: A web-based library for high-efficiency visualization of
+  large-scale graphs and networks.
+\newblock {\em Vis. Informatics}, 5(1):61--66, Mar. 2021.
+  \href{https://doi.org/10.1016/j.visinf.2021.01.002}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1016\discretionary{/}{%
+}{/}j\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}visinf\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2021\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}01\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}002}}}
+
+
+\bibitem{Holten:2006:HEB}
+D.~Holten.
+\newblock Hierarchical edge bundles: Visualization of adjacency relations in
+  hierarchical data.
+\newblock {\em IEEE Trans. Vis. Comput. Graph.}, 12(5):741--748, Nov. 2006.
+  \href{https://doi.org/10.1109/TVCG.2006.147}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TVCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2006\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}147}}}
+
+
+\bibitem{Huang:2019:SAVA}
+Y.~Huang and M.~Martonosi.
+\newblock Statistical assertions for validating patterns and finding bugs in
+  quantum programs.
+\newblock In {\em Proc.\ ISCA}, pp. 541--553. {ACM}, New York, 2019.
+  \href{https://doi.org/10.1145/3307650.3322213}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}3307650\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3322213}}}
+
+
+\bibitem{Hubregtsen:2021:EPQC}
+T.~Hubregtsen, J.~Pichlmeier, P.~Stecher, and K.~Bertels.
+\newblock Evaluation of parameterized quantum circuits: on the relation between
+  classification accuracy, expressibility, and entangling capability.
+\newblock {\em Quantum Mach. Intell.}, 3(1):1--19, Mar. 2021.
+  \href{https://doi.org/10.1007/s42484-021-00038-w}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1007\discretionary{/}{%
+}{/}s42484\discretionary{%
+}{-}{-}021\discretionary{%
+}{-}{-}00038\discretionary{%
+}{-}{-}w}}}
+
+
+\bibitem{Iten:2022:EPPM}
+R.~Iten, R.~Moyard, T.~Metger, D.~Sutter, and S.~Woerner.
+\newblock Exact and practical pattern matching for quantum circuit
+  optimization.
+\newblock {\em ACM Trans. Quantum Comput.}, 3(1):1--41, Jan. 2022.
+  \href{https://doi.org/10.1145/3498325}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}3498325}}}
+
+
+\bibitem{jacomy2014forceatlas2}
+M.~Jacomy, T.~Venturini, S.~Heymann, and M.~Bastian.
+\newblock Force{A}tlas2, a continuous graph layout algorithm for handy network
+  visualization designed for the gephi software.
+\newblock {\em PloS one}, 9(6):e98679, June 2014.
+  \href{https://doi.org/10.1371/journal.pone.0098679}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1371\discretionary{/}{%
+}{/}journal\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}pone\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}0098679}}}
+
+
+\bibitem{JavadiAbhari:2014:ScaffCC}
+A.~JavadiAbhari, S.~Patil, D.~Kudrow, J.~Heckey, A.~Lvov, F.~T. Chong, and
+  M.~Martonosi.
+\newblock Scaff{CC}: a framework for compilation and analysis of quantum
+  computing programs.
+\newblock In {\em Proc.\ CF}, pp. 1--10. {ACM}, New York, 2014.
+  \href{https://doi.org/10.1145/2597917.2597939}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}2597917\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2597939}}}
+
+
+\bibitem{Jozsa:2003:REQ}
+R.~Jozsa and N.~Linden.
+\newblock On the role of entanglement in quantum-computational speed-up.
+\newblock {\em Proc.\ R. Soc. Lond. A.}, 459(2036):2011--2032, Aug. 2003.
+  \href{https://doi.org/10.1098/rspa.2002.1097}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1098\discretionary{/}{%
+}{/}rspa\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2002\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1097}}}
+
+
+\bibitem{Kim:2010:EEV}
+S.~Kim, I.~Woo, R.~Maciejewski, D.~S. Ebert, T.~D. Ropp, and K.~M. Thomas.
+\newblock Evaluating the effectiveness of visualization techniques for
+  schematic diagrams in maintenance tasks.
+\newblock In {\em Proc.\ APGV}, pp. 33--40. {ACM}, New York, 2010.
+  \href{https://doi.org/10.1145/1836248.1836254}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}1836248\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1836254}}}
+
+
+\bibitem{koutra2014vog}
+D.~Koutra, U.~Kang, J.~Vreeken, and C.~Faloutsos.
+\newblock {VOG}: Summarizing and understanding large graphs.
+\newblock In {\em Proc.\ SDM}, pp. 91--99. SIAM, {SIAM}, Philadelphia, USA,
+  2014. \href{https://doi.org/10.1137/1.9781611973440.11}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1137\discretionary{/}{%
+}{/}1\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}9781611973440\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}11}}}
+
+
+\bibitem{kwon2019deep}
+O.-H. Kwon and K.-L. Ma.
+\newblock A deep generative model for graph layout.
+\newblock {\em IEEE Trans. Vis. Comput. Graph.}, 26(1):665--675, Aug. 2019.
+  \href{https://doi.org/10.1109/TVCG.2019.2934396}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TVCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2019\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2934396}}}
+
+
+\bibitem{Lai:2020:AAS}
+C.~Lai, Z.~Lin, R.~Jiang, Y.~Han, C.~Liu, and X.~Yuan.
+\newblock Automatic annotation synchronizing with textual description for
+  visualization.
+\newblock In {\em Proc.\ CHI}, pp. 1--13. {ACM}, New York, 2020.
+  \href{https://doi.org/10.1145/3313831.3376443}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}3313831\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3376443}}}
+
+
+\bibitem{Thomas:2004:FPG}
+T.~K. Landauer, D.~Laham, and M.~Derr.
+\newblock From paragraph to graph: Latent semantic analysis for information
+  visualization.
+\newblock {\em PNAS}, 101(suppl\_1):5214--5219, Apr. 2004.
+  \href{https://doi.org/10.1073/pnas.0400341101}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1073\discretionary{/}{%
+}{/}pnas\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}0400341101}}}
+
+
+\bibitem{lee2006task}
+B.~Lee, C.~Plaisant, C.~S. Parr, J.-D. Fekete, and N.~Henry.
+\newblock Task taxonomy for graph visualization.
+\newblock In {\em Proc.\ BELIV}, pp. 1--5. New York, 2006.
+  \href{https://doi.org/10.1145/1168149.1168168}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}1168149\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1168168}}}
+
+
+\bibitem{lefevre2010grass}
+K.~LeFevre and E.~Terzi.
+\newblock Gra{SS}: Graph structure summarization.
+\newblock In {\em Proc.\ SDM}, pp. 454--465. SIAM, {SIAM}, Philadelphia, USA,
+  2010. \href{https://doi.org/10.1137/1.9781611972801.40}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1137\discretionary{/}{%
+}{/}1\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}9781611972801\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}40}}}
+
+
+\bibitem{module2017li}
+C.~Li, G.~Baciu, and Y.~Wang.
+\newblock Module-based visualization of large-scale graph network data.
+\newblock {\em J. Vis.}, 20(2):205--215, May 2017.
+  \href{https://doi.org/10.1007/s12650-016-0375-5}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1007\discretionary{/}{%
+}{/}s12650\discretionary{%
+}{-}{-}016\discretionary{%
+}{-}{-}0375\discretionary{%
+}{-}{-}5}}}
+
+
+\bibitem{Lin:2018:QuFlow}
+S.~Lin, J.~Hao, and L.~Sun.
+\newblock Quflow: Visualizing parameter flow in quantum circuits for
+  understanding quantum computation.
+\newblock In {\em Proc.\ SciVis}, pp. 37--41. IEEE, Piscataway, 2018.
+  \href{https://doi.org/10.1109/SciVis.2018.8823602}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}SciVis\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2018\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}8823602}}}
+
+
+\bibitem{Liu:2021:QSML}
+Y.~Liu, S.~Arunachalam, and K.~Temme.
+\newblock A rigorous and robust quantum speed-up in supervised machine
+  learning.
+\newblock {\em Nat. Phys.}, 17(9):1013--1017, July 2021.
+  \href{https://doi.org/10.1038/s41586-019-0980-2}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1038\discretionary{/}{%
+}{/}s41586\discretionary{%
+}{-}{-}019\discretionary{%
+}{-}{-}0980\discretionary{%
+}{-}{-}2}}}
+
+
+\bibitem{Liu:2018:GSM}
+Y.~Liu, T.~Safavi, A.~Dighe, and D.~Koutra.
+\newblock Graph summarization methods and applications: A survey.
+\newblock {\em ACM Comput. Surv.}, 51(3), June 2018.
+  \href{https://doi.org/10.1145/3186727}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}3186727}}}
+
+
+\bibitem{maccioni2016scalable}
+A.~Maccioni and D.~J. Abadi.
+\newblock Scalable pattern matching over compressed graphs via dedensification.
+\newblock In {\em Proc.\ SIGKDD}, pp. 1755--1764. {ACM}, New York, 2016.
+  \href{https://doi.org/10.1145/2939672.2939856}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}2939672\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2939856}}}
+
+
+\bibitem{Martin:2021:TPFD}
+A.~Martin, B.~Candelas, A.~Rodr\'{\i}guez-Rozas, J.~D. Mart\'{\i}n-Guerrero,
+  X.~Chen, L.~Lamata, R.~Or\'us, E.~Solano, and M.~Sanz.
+\newblock Toward pricing financial derivatives with an {IBM} quantum computer.
+\newblock {\em Phys. Rev. Res.}, 3:013167, Feb. 2021.
+  \href{https://doi.org/10.1103/PhysRevResearch.3.013167}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1103\discretionary{/}{%
+}{/}PhysRevResearch\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}013167}}}
+
+
+\bibitem{Maslov:2008:QCS}
+D.~Maslov, G.~W. Dueck, D.~M. Miller, and C.~Negrevergne.
+\newblock Quantum circuit simplification and level compaction.
+\newblock {\em IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.},
+  27(3):436--444, Feb. 2008. \href{https://doi.org/10.1109/TCAD.2007.911334}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TCAD\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2007\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}911334}}}
+
+
+\bibitem{mathioudakis2011sparsification}
+M.~Mathioudakis, F.~Bonchi, C.~Castillo, A.~Gionis, and A.~Ukkonen.
+\newblock Sparsification of influence networks.
+\newblock In {\em Proc.\ SIGKDD}, pp. 529--537. {ACM}, New York, 2011.
+  \href{https://doi.org/10.1145/2020408.2020492}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}2020408\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2020492}}}
+
+
+\bibitem{mehmood2013csi}
+Y.~Mehmood, N.~Barbieri, F.~Bonchi, and A.~Ukkonen.
+\newblock {CSI}: Community-level social influence analysis.
+\newblock In {\em Proc.\ ECML PKDD}, pp. 48--63. Springer, Springer, Berlin,
+  2013. \href{https://doi.org/10.1007/978-3-642-40991-2_4}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1007\discretionary{/}{%
+}{/}978\discretionary{%
+}{-}{-}3\discretionary{%
+}{-}{-}642\discretionary{%
+}{-}{-}40991\discretionary{%
+}{-}{-}2\_4}}}
+
+
+\bibitem{Miller:2021:GSV}
+M.~Miller and D.~Miller.
+\newblock Graph{S}tate{V}is: Interactive visual analysis of qubit graph states
+  and their stabilizer groups.
+\newblock In {\em Proc.\ QCE}, pp. 378--384. {IEEE}, Piscataway, 2021.
+  \href{https://doi.org/10.1109/QCE52317.2021.00057}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}QCE52317\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2021\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}00057}}}
+
+
+\bibitem{mueller2007comparison}
+C.~Mueller, B.~Martin, and A.~Lumsdaine.
+\newblock A comparison of vertex ordering algorithms for large graph
+  visualization.
+\newblock In {\em Proc.\ APVIS}, pp. 141--148. IEEE, IEEE, Piscataway, 2007.
+  \href{https://doi.org/10.1109/APVIS.2007.329289}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}APVIS\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2007\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}329289}}}
+
+
+\bibitem{navlakha2008graph}
+S.~Navlakha, R.~Rastogi, and N.~Shrivastava.
+\newblock Graph summarization with bounded error.
+\newblock In {\em Proc.\ SIGMOD}, pp. 419--432. {ACM}, New York, 2008.
+  \href{https://doi.org/10.1145/1376616.1376661}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}1376616\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1376661}}}
+
+
+\bibitem{Nielsen:2010:QCBook}
+M.~A. Nielsen and I.~L. Chuang.
+\newblock {\em Quantum Computation and Quantum Information: 10th Anniversary
+  Edition}.
+\newblock Cambridge University Press, Cambridge, 10\textsuperscript{th} ed.,
+  2010. \href{https://doi.org/10.1017/CBO9780511976667}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1017\discretionary{/}{%
+}{/}CBO9780511976667}}}
+
+
+\bibitem{north2002online}
+S.~C. North and G.~Woodhull.
+\newblock Online hierarchical graph drawing.
+\newblock In {\em Proc.\ GD}, pp. 232--246. Springer, Berlin, 2002.
+  \href{https://doi.org/10.1007/3-540-45848-4_19}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1007\discretionary{/}{%
+}{/}3\discretionary{%
+}{-}{-}540\discretionary{%
+}{-}{-}45848\discretionary{%
+}{-}{-}4\_19}}}
+
+
+\bibitem{pan2020rcanalyzer}
+J.~Pan, D.~Han, F.~Guo, D.~Zhou, N.~Cao, J.~He, M.~Xu, and W.~Chen.
+\newblock {RCA}nalyzer: visual analytics of rare categories in dynamic
+  networks.
+\newblock {\em Front. Inf. Technol. Electron. Eng.}, 21(4):491--506, Apr. 2020.
+  \href{https://doi.org/10.1631/FITEE.1900310}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1631\discretionary{/}{%
+}{/}FITEE\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1900310}}}
+
+
+\bibitem{Preskill:2012:QCEF}
+J.~Preskill.
+\newblock Quantum computing and the entanglement frontier.
+\newblock {\em CoRR}, Mar. 2012.
+  \href{https://doi.org/10.48550/arXiv.1203.5813}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}48550\discretionary{/}{%
+}{/}arXiv\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1203\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}5813}}}
+
+
+\bibitem{Preskill:2018:NISQ}
+J.~Preskill.
+\newblock Quantum computing in the {NISQ} era and beyond.
+\newblock {\em Quantum}, 2:79, Aug. 2018.
+  \href{https://doi.org/10.22331/q-2018-08-06-79}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}22331\discretionary{/}{%
+}{/}q\discretionary{%
+}{-}{-}2018\discretionary{%
+}{-}{-}08\discretionary{%
+}{-}{-}06\discretionary{%
+}{-}{-}79}}}
+
+
+\bibitem{purchase2007important}
+H.~C. Purchase, E.~Hoggan, and C.~G{\"o}rg.
+\newblock How important is the “{M}ental {M}ap”?--an empirical
+  investigation of a dynamic graph layout algorithm.
+\newblock In {\em Proc.\ GD}, pp. 184--195. Springer, Berlin, 2007.
+  \href{https://doi.org/10.1007/978-3-540-70904-6_19}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1007\discretionary{/}{%
+}{/}978\discretionary{%
+}{-}{-}3\discretionary{%
+}{-}{-}540\discretionary{%
+}{-}{-}70904\discretionary{%
+}{-}{-}6\_19}}}
+
+
+\bibitem{Ruan:2023:VACSEN}
+S.~Ruan, Y.~Wang, W.~Jiang, Y.~Mao, and Q.~Guan.
+\newblock {VACSEN}: A visualization approach for noise awareness in quantum
+  computing.
+\newblock {\em IEEE Trans. Vis. Comput. Graph.}, 29(1):462--472, Jan. 2023.
+  \href{https://doi.org/10.1109/TVCG.2022.3209455}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TVCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2022\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3209455}}}
+
+
+\bibitem{Sen:2017:Cartograph}
+S.~Sen, A.~B. Swoap, Q.~Li, B.~Boatman, I.~N. Dippenaar, R.~Gold, M.~Ngo,
+  S.~Pujol, B.~Jackson, and B.~J. Hecht.
+\newblock Cartograph: Unlocking spatial visualization through semantic
+  enhancement.
+\newblock In {\em Proc.\ IUI}, pp. 179--190. {ACM}, New York, 2017.
+  \href{https://doi.org/10.1145/3025171.3025233}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}3025171\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3025233}}}
+
+
+\bibitem{shen2006visual}
+Z.~Shen, K.-L. Ma, and T.~Eliassi-Rad.
+\newblock Visual analysis of large heterogeneous social networks by semantic
+  and structural abstraction.
+\newblock {\em IEEE Trans. Vis. Comput. Graph.}, 12(6):1427--1439, Sept. 2006.
+  \href{https://doi.org/10.1109/TVCG.2006.107}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TVCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2006\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}107}}}
+
+
+\bibitem{Stein:2021:QuGAN}
+S.~A. Stein, B.~Baheri, D.~Chen, Y.~Mao, Q.~Guan, A.~Li, B.~Fang, and S.~Xu.
+\newblock Qu{GAN}: {A} quantum state fidelity based generative adversarial
+  network.
+\newblock In {\em Proc.\ QCE}, pp. 71--81. {IEEE}, Piscataway, 2021.
+  \href{https://doi.org/10.1109/QCE52317.2021.00023}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}QCE52317\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2021\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}00023}}}
+
+
+\bibitem{Svore:2018:QSharp}
+K.~M. Svore, A.~Geller, M.~Troyer, J.~Azariah, C.~E. Granade, B.~Heim,
+  V.~Kliuchnikov, M.~Mykhailova, A.~Paz, and M.~Roetteler.
+\newblock Q{\#}: Enabling scalable quantum computing and development with a
+  high-level {DSL}.
+\newblock In {\em Proc.\ RWDSL@CGO}, pp. 1--10. {ACM}, New York, 2018.
+  \href{https://doi.org/10.1145/3183895.3183901}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}3183895\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3183901}}}
+
+
+\bibitem{Qiskit}
+A.~tA~v, M.~S. ANIS, Abby-Mitchell, H.~Abraham, AduOffei, R.~Agarwal,
+  G.~Agliardi, M.~Aharoni, V.~Ajith, I.~Y. Akhalwaya, G.~Aleksandrowicz, et~al.
+\newblock Qiskit: An open-source framework for quantum computing, 2021.
+  \href{https://doi.org/10.5281/zenodo.2573505}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}5281\discretionary{/}{%
+}{/}zenodo\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2573505}}}
+
+
+\bibitem{Tan:2020:OLS4QC}
+B.~Tan and J.~Cong.
+\newblock Optimal layout synthesis for quantum computing.
+\newblock In {\em Proc.\ ICCAD}. {ACM}, New York, 2020.
+  \href{https://doi.org/10.1145/3400302.3415620}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}3400302\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3415620}}}
+
+
+\bibitem{Tao:2022:Giallar}
+R.~Tao, Y.~Shi, J.~Yao, X.~Li, A.~Javadi{-}Abhari, A.~W. Cross, F.~T. Chong,
+  and R.~Gu.
+\newblock Giallar: push-button verification for the qiskit quantum compiler.
+\newblock In {\em Proc.\ PLDI}, pp. 641--656. {ACM}, New York, 2022.
+  \href{https://doi.org/10.1145/3519939.3523431}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}3519939\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3523431}}}
+
+
+\bibitem{Tao:2017:ShorVis}
+Z.~Tao, Y.~Pan, A.~Chen, and L.~Wang.
+\newblock Shor{V}is: A comprehensive case study of quantum computing
+  visualization.
+\newblock In {\em Proc.\ ICVRV}, pp. 360--365. {IEEE}, Berlin, 2017.
+  \href{https://doi.org/10.1109/ICVRV.2017.00082}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}ICVRV\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2017\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}00082}}}
+
+
+\bibitem{Viola:2018:PCAV}
+I.~Viola and T.~Isenberg.
+\newblock Pondering the concept of abstraction in (illustrative) visualization.
+\newblock {\em IEEE Trans. Vis. Comput. Graph.}, 24(9):2573--2588, Sept. 2018.
+  \href{https://doi.org/10.1109/TVCG.2017.2747545}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TVCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2017\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2747545}}}
+
+
+\bibitem{Wang:2023:VIS}
+X.~Wang, Z.~Wu, W.~Huang, Y.~Wei, Z.~Huang, M.~Xu, and W.~Chen.
+\newblock {VIS+AI:} integrating visualization with artificial intelligence for
+  efficient data analysis.
+\newblock {\em Frontiers Comput. Sci.}, 17(6):176709, June 2023.
+  \href{https://doi.org/10.1007/s11704-023-2691-y}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1007\discretionary{/}{%
+}{/}s11704\discretionary{%
+}{-}{-}023\discretionary{%
+}{-}{-}2691\discretionary{%
+}{-}{-}y}}}
+
+
+\bibitem{Wang:2021:G6}
+Y.~Wang, Z.~Bai, Z.~Lin, X.~Dong, Y.~Feng, J.~Pan, and W.~Chen.
+\newblock {G6:} {A} web-based library for graph visualization.
+\newblock {\em Vis. Informatics}, 5(4):49--55, Dec. 2021.
+  \href{https://doi.org/10.1016/j.visinf.2021.12.003}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1016\discretionary{/}{%
+}{/}j\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}visinf\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2021\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}12\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}003}}}
+
+
+\bibitem{Weder:2020:IQC}
+B.~Weder, U.~Breitenb{\"{u}}cher, F.~Leymann, and K.~Wild.
+\newblock Integrating quantum computing into workflow modeling and execution.
+\newblock In {\em Proc.\ UCC}, pp. 279--291. {IEEE}, Piscataway, 2020.
+  \href{https://doi.org/10.1109/UCC48980.2020.00046}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}UCC48980\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2020\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}00046}}}
+
+
+\bibitem{Weiden:2022:TAS}
+M.~Weiden, J.~Kalloor, J.~Kubiatowicz, E.~Younis, and C.~Iancu.
+\newblock Wide quantum circuit optimization with topology aware synthesis.
+\newblock In {\em Proc.\ QCS}, pp. 1--11. IEEE, Piscataway, 2022.
+  \href{https://doi.org/10.1109/QCS56647.2022.00006}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}QCS56647\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2022\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}00006}}}
+
+
+\bibitem{Willett:2007:SW}
+W.~Willett, J.~Heer, and M.~Agrawala.
+\newblock Scented widgets: Improving navigation cues with embedded
+  visualizations.
+\newblock {\em IEEE Trans. Vis. Comput. Graph.}, 13(6):1129--1136, Nov. 2007.
+  \href{https://doi.org/10.1109/TVCG.2007.70589}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TVCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2007\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}70589}}}
+
+
+\bibitem{Wu:2011:SPWC}
+Y.~Wu, T.~Provan, F.~Wei, S.~Liu, and K.~Ma.
+\newblock Semantic-preserving word clouds by seam carving.
+\newblock {\em Comput. Graph. Forum}, 30(3):741--750, June 2011.
+  \href{https://doi.org/10.1111/j.1467-8659.2011.01923.x}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1111\discretionary{/}{%
+}{/}j\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1467\discretionary{%
+}{-}{-}8659\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2011\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}01923\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}x}}}
+
+
+\bibitem{Xie:2019:SBM}
+X.~Xie, X.~Cai, J.~Zhou, N.~Cao, and Y.~Wu.
+\newblock A semantic-based method for visualizing large image collections.
+\newblock {\em IEEE Trans. Vis. Comput. Graph.}, 25(7):2362--2377, July 2019.
+  \href{https://doi.org/10.1109/TVCG.2018.2835485}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TVCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2018\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2835485}}}
+
+
+\bibitem{Xiong:2022:VSD}
+K.~Xiong, S.~Fu, G.~Ding, Z.~Luo, R.~Yu, W.~Chen, H.~Bao, and Y.~Wu.
+\newblock Visualizing the scripts of data wrangling with {SOMNUS}.
+\newblock {\em IEEE Trans. Vis. Comput. Graph.}, pp. 1--1, Jan. 2022.
+  \href{https://doi.org/10.1109/TVCG.2022.3144975}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TVCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2022\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3144975}}}
+
+
+\bibitem{Xu:2022:Quartz}
+M.~Xu, Z.~Li, O.~Padon, S.~Lin, J.~Pointing, A.~Hirth, H.~Ma, J.~Palsberg,
+  A.~Aiken, U.~A. Acar, and Z.~Jia.
+\newblock Quartz: superoptimization of quantum circuits.
+\newblock In {\em Proc.\ PLDI}, pp. 625--640. {ACM}, New York, 2022.
+  \href{https://doi.org/10.1145/3519939.3523433}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1145\discretionary{/}{%
+}{/}3519939\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3523433}}}
+
+
+\bibitem{Zhao:2023:ASTF}
+Y.~Zhao, L.~Ge, H.~Xie, G.~Bai, Z.~Zhang, Q.~Wei, Y.~Lin, Y.~Liu, and F.~Zhou.
+\newblock {ASTF:} visual abstractions of time-varying patterns in radio
+  signals.
+\newblock {\em IEEE Trans. Vis. Comput. Graph.}, 29(1):214--224, Jan. 2023.
+  \href{https://doi.org/10.1109/TVCG.2022.3209469}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TVCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2022\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3209469}}}
+
+
+\bibitem{Zhou:2019:VALS}
+Z.~Zhou, L.~Meng, C.~Tang, Y.~Zhao, Z.~Guo, M.~Hu, and W.~Chen.
+\newblock Visual abstraction of large scale geospatial origin-destination
+  movement data.
+\newblock {\em IEEE Trans. Vis. Comput. Graph.}, 25(1):43--53, Jan. 2019.
+  \href{https://doi.org/10.1109/TVCG.2018.2864503}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TVCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2018\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2864503}}}
+
+
+\bibitem{zhu2020drgraph}
+M.~Zhu, W.~Chen, Y.~Hu, Y.~Hou, L.~Liu, and K.~Zhang.
+\newblock {DRG}raph: An efficient graph layout algorithm for large-scale graphs
+  by dimensionality reduction.
+\newblock {\em IEEE Trans. Vis. Comput. Graph.}, 27(2):1666--1676, Dec. 2020.
+  \href{https://doi.org/10.1109/TVCG.2020.3030447}
+{doi: {{%
+10\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}1109\discretionary{/}{%
+}{/}TVCG\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}2020\hspace{.1pt}\discretionary{.}{%
+}{.}\hspace{.4pt}3030447}}}
+
+
+\end{thebibliography}
