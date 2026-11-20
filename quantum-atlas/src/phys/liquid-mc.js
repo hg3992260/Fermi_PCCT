@@ -44,9 +44,8 @@ function particleEnergy(pos, L, i, { sigma = 1, epsilon = 1, rc = 2.5 * sigma } 
   return E;
 }
 
-function initPos(N, L, sigma) {
+function initPos(N, L, sigma, rnd) {
   const dmin = sigma * 0.85;
-  const rnd = Math.random;
   const pos = [];
   let guard = 0;
   while (pos.length < N && guard < 400000) {
@@ -66,7 +65,7 @@ export function metropolisConfig({
   const L = cbrt(N / rho);
   const beta = 1 / T;                 // T = kT/ε
   const rnd = mulberry32(seed);
-  const pos = initPos(N, L, sigma);
+  const pos = initPos(N, L, sigma, rnd);
 
   let E = 0;
   for (let i = 0; i < N; i++) E += particleEnergy(pos, L, i, { sigma, epsilon, rc });
@@ -95,7 +94,7 @@ export function metropolisConfig({
 /* 初始能量（用于"平衡使能量下降"的断言） */
 export function initialEnergy({ N = 150, rho = 0.6, sigma = 1, epsilon = 1, seed = 7, rc = 2.5 * sigma } = {}) {
   const L = cbrt(N / rho);
-  const pos = initPos(N, L, sigma);
+  const pos = initPos(N, L, sigma, mulberry32(seed));
   let E = 0;
   for (let i = 0; i < N; i++) E += particleEnergy(pos, L, i, { sigma, epsilon, rc });
   return { E: E / 2, pos, L };
