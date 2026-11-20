@@ -6,9 +6,11 @@
   "description": "量子材料全尺度三维工作台：凝聚态 · 能带 · 自旋 · 光谱 · 液态自旋 · Bloch 动力学 · 量子计算 · 量子电路",
   "type": "module",
   "main": "main.cjs",
+  "packageManager": "pnpm@11.28.5",
   "scripts": {
     "serve": "node scripts/serve.mjs",
     "start": "electron .",
+    "dist": "electron-builder",
     "test": "node scripts/test-all.mjs",
     "test:physics": "node scripts/test-physics.mjs",
     "test:audit": "node scripts/test-audit.mjs",
@@ -22,6 +24,43 @@
     "xel": "^0.45.1"
   },
   "devDependencies": {
-    "electron": "^45.3.3"
+    "electron": "^45.3.3",
+    "electron-builder": "^26.0.12"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["electron", "electron-winstaller"]
+  },
+  "build": {
+    "appId": "com.quantumatlas.app",
+    "productName": "Quantum Atlas",
+    "directories": { "output": "dist" },
+    "asar": true,
+    "files": [
+      "main.cjs",
+      "preload.cjs",
+      "index.html",
+      "app.css",
+      "glass.css",
+      "casebook.css",
+      "src/**/*",
+      "theme/**/*",
+      "assets/**/*",
+      "mcp/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": ["nsis", "portable"],
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": ["dmg"],
+      "icon": "assets/icon-512.png",
+      "category": "public.app-category.education"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
   }
 }

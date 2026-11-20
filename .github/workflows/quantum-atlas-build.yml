@@ -1,0 +1,53 @@
+name: build-quantum-atlas
+
+on:
+  push:
+    paths:
+      - "quantum-atlas/**"
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            target: win
+            artifact: quantum-atlas-windows
+          - os: macos-latest
+            target: mac
+            artifact: quantum-atlas-macos
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: quantum-atlas/pnpm-lock.yaml
+
+      - name: Install dependencies
+        working-directory: quantum-atlas
+        run: pnpm install --frozen-lockfile
+
+      - name: Build (electron-builder)
+        working-directory: quantum-atlas
+        run: pnpm exec electron-builder --${{ matrix.target }} --publish never
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CSC_IDENTITY_AUTO_DISCOVERY: "false"
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: |
+            quantum-atlas/dist/*.exe
+            quantum-atlas/dist/*.dmg
+          if-no-files-found: error
